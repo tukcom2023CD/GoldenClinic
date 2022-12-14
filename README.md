@@ -8,14 +8,18 @@
    > 2. 
    > 3. 
    
- ## 언어와 개발 환경
-  > Swfit w. Xcode <br>
+## 개발 도구
+<img src="https://img.shields.io/badge/Xcode-147EFB?style=flat-square&logo=Xcode&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=Figma&logoColor=white"/></a> <br>
+
+## 개발 언어
+<img src="https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=Swift&logoColor=white"/></a> <br>
 
 ## 구성원 및 연락처
-> 권태우 kwontaewoo0901@gmail.com  
-> 유하임 mytypeyu@gmail.com  
-> 이현구 kugu98@naver.com  
-> 최유빈 cybin050300@naver.com  
+> [권태우](https://github.com/boifromangye) : kwontaewoo0901@gmail.com  
+> [유하임](https://github.com/typeYu) : mytypeyu@gmail.com  
+> [이현구](https://github.com/kugu98) : kugu98@naver.com  
+> [최유빈](https://github.com/cybin050300) : cybin050300@naver.com  
 
 ## 링크
 <a href="https://trello.com/2022goldenclinic"><img src="https://img.shields.io/badge/Trello-blue?style=flat-square&logo=Trello&logoColor=white&link=https://trello.com/"/></a> 
