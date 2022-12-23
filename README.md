@@ -4,9 +4,7 @@
 > 여행을 좋아한다면 누구나 한 번쯤 전국 일주를 해보고 싶다는 생각을 해봤을 것이다. 하지만 어느 지역을 가야 할지 언제 가야 할지 다녀온 후에 어떤 것을 기록할지를 정하는 것이 쉽지 않아 꿈을 미루곤 한다.
 
 ## 사용자 기능 및 설명
-   > 1. 
-   > 2. 
-   > 3. 
+   > 1. 미작성
    
 ## 개발 도구
 <img src="https://img.shields.io/badge/Xcode-147EFB?style=flat-square&logo=Xcode&logoColor=white"/></a>
