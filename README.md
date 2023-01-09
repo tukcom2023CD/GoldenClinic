@@ -9,11 +9,13 @@
 ## 사용자 기능 및 설명
 1. 미작성
    
-## 개발 도구
+## 개발 환경
+
+### 개발 도구
 <img src="https://img.shields.io/badge/Xcode-147EFB?style=flat-square&logo=Xcode&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=Figma&logoColor=white"/></a> <br>
 
-## 개발 언어
+### 개발 언어
 <img src="https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=Swift&logoColor=white"/></a> <br>
 
 ## 구성원 및 연락처
