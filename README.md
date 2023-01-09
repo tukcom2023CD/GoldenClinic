@@ -8,7 +8,7 @@
 - 국내 여행자들을 위한 전국 일주 애플리케이션을 주제로 선정
 
 ## 사용자 기능 및 설명
-   > 1. 미작성
+1. 미작성
    
 ## 개발 도구
 <img src="https://img.shields.io/badge/Xcode-147EFB?style=flat-square&logo=Xcode&logoColor=white"/></a>
