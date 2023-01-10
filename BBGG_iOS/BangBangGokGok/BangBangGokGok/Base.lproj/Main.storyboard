@@ -47,14 +47,40 @@
                     <view key="view" contentMode="scaleToFill" id="xJb-8h-xRE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="지도 삽입 예정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSm-xu-JNf">
+                                <rect key="frame" x="28" y="187" width="336" height="492"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="퍼센트 삽입 예정" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLA-2k-6aN">
+                                <rect key="frame" x="287" y="602" width="90" height="90"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="54f-RI-dBo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SLA-2k-6aN" firstAttribute="leading" secondItem="54f-RI-dBo" secondAttribute="leading" constant="287" id="2wN-xw-x4d"/>
+                            <constraint firstItem="SLA-2k-6aN" firstAttribute="trailing" secondItem="xJb-8h-xRE" secondAttribute="trailingMargin" id="6VV-WG-5G8"/>
+                            <constraint firstItem="GSm-xu-JNf" firstAttribute="centerX" secondItem="xJb-8h-xRE" secondAttribute="centerX" id="6pN-DU-bC5"/>
+                            <constraint firstItem="GSm-xu-JNf" firstAttribute="leading" secondItem="54f-RI-dBo" secondAttribute="leading" constant="28" id="PYf-03-xwr"/>
+                            <constraint firstItem="54f-RI-dBo" firstAttribute="bottom" secondItem="GSm-xu-JNf" secondAttribute="bottom" constant="139" id="QKd-EW-k29"/>
+                            <constraint firstItem="54f-RI-dBo" firstAttribute="bottom" secondItem="SLA-2k-6aN" secondAttribute="bottom" constant="126" id="WBb-bM-lTW"/>
+                            <constraint firstItem="GSm-xu-JNf" firstAttribute="top" secondItem="54f-RI-dBo" secondAttribute="top" constant="84" id="euk-mA-xvH"/>
+                            <constraint firstItem="SLA-2k-6aN" firstAttribute="top" secondItem="54f-RI-dBo" secondAttribute="top" constant="499" id="ky5-Fy-lRx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SDQ-oF-bZD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtT-nJ-Xw3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1782" y="-2"/>
+            <point key="canvasLocation" x="1780.916030534351" y="-2.1126760563380285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aAr-zI-8Py">
@@ -78,6 +104,12 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
