@@ -27,4 +27,4 @@
 [유하임](https://github.com/typeYu) : mytypeyu@gmail.com  
 
 ## 링크
-<a href="https://trello.com/2022goldenclinic"><img src="https://img.shields.io/badge/Trello-blue?style=flat-square&logo=Trello&logoColor=white&link=https://trello.com/"/></a> 
+<a href="https://kwontaewoo0901.atlassian.net/jira/software/projects/BBGG/boards/1/roadmap"><img src="https://img.shields.io/badge/JIRA-blue?style=flat-square&logo=JIRA&logoColor=white"/></a> 
