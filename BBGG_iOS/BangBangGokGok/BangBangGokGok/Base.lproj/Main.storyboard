@@ -49,24 +49,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gm0-1m-rMg">
-                                <rect key="frame" x="45.333333333333343" y="226.33333333333334" width="300" height="399.33333333333326"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="percent" translatesAutoresizingMaskIntoConstraints="NO" id="iEv-mo-9Sh">
+                                <rect key="frame" x="231" y="656" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="o4N-vv-5qp"/>
+                                </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="percent" translatesAutoresizingMaskIntoConstraints="NO" id="iEv-mo-9Sh">
-                                <rect key="frame" x="96" y="697" width="90" height="90"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Picture3" translatesAutoresizingMaskIntoConstraints="NO" id="Rfe-VH-Qfs">
+                                <rect key="frame" x="176" y="273" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="xhl-jF-14v"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Picture1" translatesAutoresizingMaskIntoConstraints="NO" id="6jX-Yl-Zav">
+                                <rect key="frame" x="17" y="422" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="vMC-ky-Lro"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="54f-RI-dBo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gm0-1m-rMg" firstAttribute="leading" secondItem="54f-RI-dBo" secondAttribute="leading" constant="45.430247047088415" id="4MC-p6-XTF"/>
-                            <constraint firstItem="54f-RI-dBo" firstAttribute="bottom" secondItem="iEv-mo-9Sh" secondAttribute="bottom" constant="19" id="7VP-Yb-Tfv"/>
-                            <constraint firstItem="54f-RI-dBo" firstAttribute="trailing" secondItem="iEv-mo-9Sh" secondAttribute="trailing" constant="152" id="8Mq-sr-6im"/>
-                            <constraint firstItem="54f-RI-dBo" firstAttribute="trailing" secondItem="gm0-1m-rMg" secondAttribute="trailing" constant="47.569752952887939" id="F3o-8i-C5u"/>
-                            <constraint firstItem="gm0-1m-rMg" firstAttribute="top" secondItem="54f-RI-dBo" secondAttribute="top" constant="123.25184005563847" id="Lx4-BI-MLQ"/>
-                            <constraint firstItem="iEv-mo-9Sh" firstAttribute="top" secondItem="54f-RI-dBo" secondAttribute="top" constant="606" id="bxI-q6-UPx"/>
-                            <constraint firstItem="iEv-mo-9Sh" firstAttribute="leading" secondItem="54f-RI-dBo" secondAttribute="leading" constant="151" id="g9Q-F6-5G7"/>
-                            <constraint firstItem="gm0-1m-rMg" firstAttribute="centerY" secondItem="xJb-8h-xRE" secondAttribute="centerY" id="h3f-ei-LMv"/>
+                            <constraint firstItem="iEv-mo-9Sh" firstAttribute="bottom" secondItem="54f-RI-dBo" secondAttribute="bottom" constant="-72" id="4Bo-bg-U2c"/>
+                            <constraint firstItem="6jX-Yl-Zav" firstAttribute="top" secondItem="Rfe-VH-Qfs" secondAttribute="top" constant="149" id="NoV-CH-bPF"/>
+                            <constraint firstItem="iEv-mo-9Sh" firstAttribute="centerX" secondItem="xJb-8h-xRE" secondAttribute="centerX" constant="79.5" id="Svc-3E-n5h"/>
+                            <constraint firstItem="54f-RI-dBo" firstAttribute="trailing" secondItem="Rfe-VH-Qfs" secondAttribute="trailing" constant="17" id="UQT-fJ-euj"/>
+                            <constraint firstItem="6jX-Yl-Zav" firstAttribute="leading" secondItem="Rfe-VH-Qfs" secondAttribute="leading" constant="-159" id="XLW-ZF-XSS"/>
+                            <constraint firstItem="54f-RI-dBo" firstAttribute="trailing" secondItem="6jX-Yl-Zav" secondAttribute="trailing" constant="176" id="axb-K4-1b2"/>
+                            <constraint firstItem="Rfe-VH-Qfs" firstAttribute="leading" secondItem="54f-RI-dBo" secondAttribute="leading" constant="176" id="ch9-mK-znG"/>
+                            <constraint firstItem="Rfe-VH-Qfs" firstAttribute="top" secondItem="54f-RI-dBo" secondAttribute="top" constant="170" id="o4j-1D-S00"/>
+                            <constraint firstItem="iEv-mo-9Sh" firstAttribute="leading" secondItem="54f-RI-dBo" secondAttribute="leading" constant="231" id="q6x-4D-A79"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SDQ-oF-bZD"/>
@@ -95,7 +108,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="map" width="1173" height="1567"/>
+        <image name="Picture1" width="1526" height="1242"/>
+        <image name="Picture3" width="1379" height="907"/>
         <image name="percent" width="297" height="284"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
