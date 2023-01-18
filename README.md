@@ -19,7 +19,7 @@
 ### 개발 도구
 <img src="https://img.shields.io/badge/Xcode-147EFB?style=flat-square&logo=Xcode&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=Figma&logoColor=white"/></a>
-<img src="https://img.shields.io/badge/IntelliJ IDEA-F24E1E?style=flat-square&logo=IntelliJ IDEA&logoColor=white"/></svg><br>
+<img src="https://img.shields.io/badge/IntelliJ IDEA-000000?style=flat-square&logo=IntelliJ IDEA&logoColor=white"/></svg><br>
 
 ## 구성원 및 연락처
 [권태우](https://github.com/boifromangye) : kwontaewoo0901@gmail.com  
