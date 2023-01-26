@@ -1,112 +1,37 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import ExploreIcon from '@mui/icons-material/Explore';
-import FitbitIcon from '@mui/icons-material/Fitbit';
+import * as ReactDom from 'react-dom';
+import { isPlainObject } from "@mui/utils";
+import React from "react";
 
-function Copyright(props) {
+import {
+  BrowserRouter,
+  Routes,
+  Route
+
+} from "react-router-dom";
+import styled from "styled-components";
+//Pages
+import HomePage from'./component/page/HomePage';
+import MainPage from'./component/page/MainPage';
+import SignInPage from'./component/page/SignInPage';
+import SignUpPage from'./component/page/SignUpPage';
+
+// const MainTitleText = styled.p`
+// font-size: 24px;
+// font-weight: borderLeft;
+// text-align: clearInterval;
+// `;
+function App(props){
   return (
-      <Typography variant="body2" color="text.secondary" align="center" {...props}>
-        {'Copyright © '}
-        <Link color="inherit" href="https://mui.com/">
-          GoldenClinic
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
+    <BrowserRouter>
+    {/* <MainTitleText>방방곡곡</MainTitleText> */}
+    <Routes>
+      <Route index element={<HomePage />} />
+      <Route path="SignUp" element={<SignUpPage />} />
+      <Route path="SignIn" element={<SignInPage />} />
+      <Route path="/MainPage" element={<MainPage />} />
+    </Routes>
+    </BrowserRouter>
   );
 }
 
-const theme = createTheme();
-
-export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
-
-  return (
-      <ThemeProvider theme={theme}>
-        <Container component="main" maxWidth="xs">
-          <CssBaseline />
-          <Box
-              sx={{
-                marginTop: 8,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}
-          >
-            <Avatar sx={{ m: 1, color: 'primary.main', bgcolor: 'white' }}>
-              <FitbitIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-              SIGN IN
-            </Typography>
-            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-              <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email"
-                  name="email"
-                  autoComplete="email"
-                  autoFocus
-              />
-              <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-              />
-              <FormControlLabel
-                  control={<Checkbox value="remember" color="primary" />}
-                  label="자동로그인"
-              />
-              <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  sx={{ mt: 3, mb: 2 }}
-              >
-                로그인
-              </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
-              </Grid>
-            </Box>
-          </Box>
-          <Copyright sx={{ mt: 8, mb: 4 }} />
-        </Container>
-      </ThemeProvider>
-  );
-}
+export default App;
