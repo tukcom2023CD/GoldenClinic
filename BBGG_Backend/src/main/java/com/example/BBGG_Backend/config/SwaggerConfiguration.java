@@ -19,7 +19,7 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.WinterToy"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.BBGG_Backend"))
                 .paths(PathSelectors.any())
                 .build();
     }
