@@ -1,5 +1,5 @@
 import * as React from 'react';
-function App() {
+function MainPage() {
     return (
         <div>
             MainPage!!!!
@@ -7,4 +7,4 @@ function App() {
     );
 }
 
-export default App;
+export default MainPage;

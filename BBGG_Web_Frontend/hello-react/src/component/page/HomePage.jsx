@@ -2,99 +2,83 @@ import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../ui/Button';
-import SignIn from './SignInPage';
+import { Link } from 'react-router-dom';
+import Box from '@mui/material/Box';
 
 
-//  function HomePage() {
-//     const navigate = useNavigate();
+const Wrapper = styled.div`
+        padding: 16px,
+        width: calc(100% - 32px);
+        display: flex ,
+        flex-direction: column,
+        align-items: center,
+        justify-content: center;
+        padding-left:20px;
+        `;
+
+const Container = styled.div`
     
-//     const navigateToSignUp = () =>{
+    width:100%;
+    max-width: 200px;
+        
+     & > * {
+        :not(:lash-child){
+            margin-bottom: 16px;
+        }
+    }
+}
+`;
 
-//         navigate("/SignUp");
-//     };
-//     return(
-//         <Button onClick={navigateToSignUp}></Button>
-//     )
-//  }
-    // return (
-    //     // <Wrapper>
-    //     //     <Container>
-    //             <Button
-    //                 title="로그인"
-    //                 onClick={ goToLogin }>로그인</Button>
-                
-    //             // <Button
-    //             //     title="회원가입"
-                    // onClick={() => {
-                    //     navigate("/SignUp");
-                    // }}
-                // />
-        //     </Container>
-        // </Wrapper>
+function HomePage(props) {
+    //컴포넌트 말고 navigate쓸 경우 코드
+    // const {} = props; 
+    // const navigate = useNavigate();
+
+    // const navigateToSignIn = () =>{
+
+    //     navigate("/SignIn");
+    
+    // };
+    //  const navigateToSignUp = () =>{
+
+    //     navigate("/SignUp");
+    
+    // };
+
+    return(
+        // <div>
+        // <button tittle = "button" onClick={navigateToSignIn}
+        // >로그인</button>
+        // <button classname="SignUpbtn" onClick={navigateToSignUp} 
+        //     >회원가입</button>
+
+            <div>
+          
+            <div style={styled.wrapper}>
+            </div>
+
+        <Wrapper>
+        <h1>방방곡곡</h1>
+        <h2>BangBangGokGok</h2>
+            <Container>
+            <Link to={"SignIn"}>
+                <Button>로그인</Button>
+            </Link>
+            <Link to={"SignUp"}>
+                <Button>회원가입</Button>
+            </Link>
+            </Container>
             
-    
-//     );
-// }
-
-// export default App;
-
-// const Wrapper = styled.div`
-//         padding: 16px,
-//         width: calc(100% - 32px);
-//         display: flex ,
-//         flex-direction: column,
-//         align-items: center,
-//         justify-content: center;
-//         `;
-
-// const Container = styled.div`
-//     width:100%;
-//     max-width: 720px;
-        
-//      & > * {
-//         :not(:lash-child){
-//             margin-bottom: 16px;
-//         }
-//     }
-// }
-// `;
-
-// function HomePage(props) {
-// //    const { } = props;
-
-//     const navigate = useNavigate();
-
-//     return (
-        // <Wrapper>
-        //     <Container>
-        //         <Button
-        //             title="로그인"
-        //             onClick={() => {
-        //                 navigate("/SignIn");
-        //             }}
-        //         />
-        //         <Button
-        //             title="회원가입"
-        //             onClick={() => {
-        //                 navigate("/SignUp");
-        //             }}
-        //         />
-        //     </Container>
-        // </Wrapper>
-//     );
-// }
+        </Wrapper>
+         </div>
+            
+            
 
         
-//         <div>
-//             <h1>방방곡곡</h1>
-//             <h2>BangBangGokGok</h2>
-//             <div style={styled.wrapper}>
+        
+    )
+ }
 
-//             </div>
-
-//         </div>
-    
-//  };
 
 
 // function LoginButton(props) {
@@ -112,5 +96,4 @@ import SignIn from './SignInPage';
 //     );
 // }
 
-// export default HomePage;
-
+export default HomePage;
