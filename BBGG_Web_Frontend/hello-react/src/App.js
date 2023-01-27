@@ -26,8 +26,8 @@ function App(props){
     {/* <MainTitleText>방방곡곡</MainTitleText> */}
     <Routes>
       <Route index element={<HomePage />} />
-      <Route path="SignUp" element={<SignUpPage />} />
-      <Route path="SignIn" element={<SignInPage />} />
+      <Route path="/SignUp" element={<SignUpPage />} />
+      <Route path="/SignIn" element={<SignInPage />} />
       <Route path="/MainPage" element={<MainPage />} />
     </Routes>
     </BrowserRouter>

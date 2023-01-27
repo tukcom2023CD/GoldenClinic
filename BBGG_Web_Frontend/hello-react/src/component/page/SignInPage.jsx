@@ -5,26 +5,15 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import FitbitIcon from '@mui/icons-material/Fitbit';
-
-function Copyright(props) {
-  return (
-      <Typography variant="body2" color="text.secondary" align="center" {...props}>
-        {'Copyright © '}
-        <Link color="inherit" href="https://mui.com/">
-          GoldenClinic
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-  );
-}
+import { Link as RouterLink } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
+import SignUpPage from "./SignUpPage";
 
 const theme = createTheme();
 
@@ -91,20 +80,23 @@ export default function SignIn() {
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  <Typography href="#" variant="body2">
                     Forgot password?
-                  </Link>
+                  </Typography>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Typography component={RouterLink} to="/SignUp" href="#" variant="body2">
                     {"Don't have an account? Sign Up"}
-                  </Link>
+                    </Typography>
+                  <Routes>
+                    <Route path="SignUpPage" element={<SignUpPage/>}></Route>
+                  </Routes>
                 </Grid>
               </Grid>
             </Box>
           </Box>
-          <Copyright sx={{ mt: 8, mb: 4 }} />
         </Container>
       </ThemeProvider>
+
   );
 }
