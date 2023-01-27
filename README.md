@@ -15,7 +15,7 @@
 <img src="https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=Swift&logoColor=white"/></a> 
 <img src="https://img.shields.io/badge/JAVA-F05138?style=flat-square&logo=Java&logoColor=white"/></a> 
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/></a> 
-<img src=https://img.shields.io/badge/html-E34F26?style=flat-square&logo=html&logoColor=white"/> <br>
+<img src=https://img.shields.io/badge/Html5-E34F26?style=flat-square&logo=Html5&logoColor=white"/> <br>
 
 ### 개발 도구
 <img src="https://img.shields.io/badge/Xcode-147EFB?style=flat-square&logo=Xcode&logoColor=white"/></a>
