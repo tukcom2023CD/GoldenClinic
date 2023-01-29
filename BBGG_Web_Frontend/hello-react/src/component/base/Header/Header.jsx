@@ -2,6 +2,7 @@ import styled from "styled-components";
 import HomePage from "../../page/HomePage";
 import { Link } from 'react-router-dom';
 import oc from 'open-color';
+import LoginButton from "./LoginButton";
 
 const Head = styled.div`
 text: bold;
@@ -47,12 +48,18 @@ const HeaderContents = styled.div`
     flex-grow: 1;
 `;
 
-const Logo = styled.div`
+//로고 클릭시 HomePage 이동
+const Logo = styled(Link)`
     cursor: pointer;
+    text-decoration: none;
     font-size: 1.4rem;
     letter-spacing: 2px;
     color: ${oc.teal[7]};
     font-family: 'Rajdhani';
+
+    &:active {
+        transform: translateY(1px);
+    }
 `;
 
 // 하단 그래디언트 테두리
@@ -61,14 +68,15 @@ const GradientBorder = styled.div`
     background: linear-gradient(to right, ${oc.teal[3]}, ${oc.cyan[5]});
 `;
 
-const Header = ({children}) => {
+const Header = ({childern}) => {
     return (
         <Positioner>
             <WhiteBackground>
                 <HeaderContents>
-                    <Logo>방방곡곡</Logo>
+                    <Logo to ='/HomePage'>방방곡곡</Logo>
                     <Spacer/>
-                    {children}
+                    {childern}
+                    <LoginButton/>
                 </HeaderContents>
             </WhiteBackground>
             <GradientBorder/>
