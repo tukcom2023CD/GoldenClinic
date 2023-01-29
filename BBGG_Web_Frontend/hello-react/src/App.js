@@ -14,6 +14,7 @@ import HomePage from'./component/page/HomePage';
 import MainPage from'./component/page/MainPage';
 import SignInPage from'./component/page/SignInPage';
 import SignUpPage from'./component/page/SignUpPage';
+import HeaderContainer from './component/base/HeaderContainer';
 
 // const MainTitleText = styled.p`
 // font-size: 24px;
@@ -22,7 +23,9 @@ import SignUpPage from'./component/page/SignUpPage';
 // `;
 function App(props){
   return (
+    
     <BrowserRouter>
+    <HeaderContainer/>
     {/* <MainTitleText>방방곡곡</MainTitleText> */}
     <Routes>
       <Route index element={<HomePage />} />

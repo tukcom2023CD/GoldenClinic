@@ -4,20 +4,23 @@ import styled from 'styled-components';
 import Button from '../ui/Button';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
-
+import Header from '../base/Header/Header';
+import Footer from '../base/Footer'
+import Gnb from '../base/Gnb';
 
 const Wrapper = styled.div`
-        padding: 16px,
+        padding: 100px,
         width: calc(100% - 32px);
         display: flex ,
         flex-direction: column,
         align-items: center,
         justify-content: center;
-        padding-left:20px;
+        padding-left:0;
+        
         `;
 
 const Container = styled.div`
-    
+    display: flex;
     width:100%;
     max-width: 200px;
         
@@ -56,20 +59,18 @@ function HomePage(props) {
           
             <div style={styled.wrapper}>
             </div>
-
-        <Wrapper>
-        <h1>방방곡곡</h1>
-        <h2>BangBangGokGok</h2>
-            <Container>
+           
+            
+        
+            
             <Link to={"SignIn"}>
                 <Button>로그인</Button>
             </Link>
             <Link to={"SignUp"}>
                 <Button>회원가입</Button>
             </Link>
-            </Container>
             
-        </Wrapper>
+            <Footer/>
          </div>
             
             
@@ -96,4 +97,4 @@ function HomePage(props) {
 //     );
 // }
 
-export default HomePage;
+export default HomePage; 
