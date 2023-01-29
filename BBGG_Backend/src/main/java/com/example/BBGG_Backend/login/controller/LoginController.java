@@ -27,4 +27,13 @@ public class LoginController {
         }
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
+    @PostMapping("/login")
+    public UserDto login(@RequestBody UserDto request) {
+        UserDto nullDto = null;
+        log.info("userId = {}, password = {}", request.getUserId(), request.getPassword());
+        if(userService.login(request.getUserId(), request.getPassword()).equals("Success")) {
+            return request;
+        }
+        return nullDto;
+    }
 }
