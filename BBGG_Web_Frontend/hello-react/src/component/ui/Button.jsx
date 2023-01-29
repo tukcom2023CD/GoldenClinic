@@ -10,7 +10,7 @@ function Button({ onClick, children }) {
 const StyledButton = styled.button`
 
   margin: 5px;
-  border: none;
+  border: 0;
   cursor: pointer;
   font-family: "Noto Sans KR", sans-serif;
   font-size: var(--button-font-size, 1rem);
