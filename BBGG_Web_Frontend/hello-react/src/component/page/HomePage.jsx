@@ -61,7 +61,7 @@ function HomePage(props) {
             </div>
            
             
-        
+        <button>여행지</button>
             
             <Link to={"SignIn"}>
                 <Button>로그인</Button>
