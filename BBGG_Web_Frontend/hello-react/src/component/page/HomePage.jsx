@@ -7,6 +7,8 @@ import Box from '@mui/material/Box';
 import Header from '../base/Header/Header';
 import Footer from '../base/Footer'
 import Gnb from '../base/Gnb';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 const Wrapper = styled.div`
         padding: 100px,
@@ -33,7 +35,10 @@ const Container = styled.div`
 `;
 
 function HomePage(props) {
-    //컴포넌트 말고 navigate쓸 경우 코드
+    useEffect(()=>{
+        axios.get('/api/hello')
+        .then(response => console.log(response.data))
+    },[])
     // const {} = props; 
     // const navigate = useNavigate();
 
@@ -49,38 +54,26 @@ function HomePage(props) {
     // };
 
     return(
-        // <div>
-        // <button tittle = "button" onClick={navigateToSignIn}
-        // >로그인</button>
+       
+        <div style={{ 
+            display: 'flex', justifyContent: 'center', alignItems: 'center', 
+            width: '100%', height: '100vh', 
+            }}>
+            <h2>시작 페이지</h2>
+            <Gnb/>
+            <Footer/>
+           </div>
+    
+
+    )
+
+}
+ {/* // <button tittle = "button" onClick={navigateToSignIn}>로그인</button>
         // <button classname="SignUpbtn" onClick={navigateToSignUp} 
         //     >회원가입</button>
 
-            <div>
           
-            <div style={styled.wrapper}>
-            </div>
-           
-            
-        <button>여행지</button>
-            
-            <Link to={"SignIn"}>
-                <Button>로그인</Button>
-            </Link>
-            <Link to={"SignUp"}>
-                <Button>회원가입</Button>
-            </Link>
-            
-            <Footer/>
-         </div>
-            
-            
-
-        
-        
-    )
- }
-
-
+            // <div style={styled.wrapper}>
 
 // function LoginButton(props) {
 //     const { isLoggedIn, onClickLogin, onClickLogout } = props;
@@ -95,6 +88,6 @@ function HomePage(props) {
 //             )}
 //         </div>
 //     );
-// }
+// } */}
 
 export default HomePage; 
