@@ -10,6 +10,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import FitbitIcon from '@mui/icons-material/Fitbit';
 import { useState } from 'react';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
 
 const theme = createTheme();
 
@@ -18,6 +20,7 @@ export default function SignUp() {
     const [Id, SetId] = useState("");
     const [Password, SetPassword] = useState("");
     const [ConfirmPassword, SetConfirmPassword] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -30,13 +33,31 @@ export default function SignUp() {
         });
     };
 
+    //axios
+    
+        
+    const SignUpRegister = () => {
+        axios.post("http://localhost:8080/bbgg/signup", {
+            userId: Id,
+            password: Password,
+            userName: Name
+        }).then(function (response) {
+            alert("환영합니다.");
+            navigate('/SignIn');
+        }).catch(function (error) {
+            console.log(error);
+        });
+}
+    
+    
+
     return (
         <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
                 <Box
                     sx={{
-                        marginTop: 8,
+                        marginTop: 15,
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
@@ -116,7 +137,7 @@ export default function SignUp() {
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
                             onClick={() => {
-                                
+                                SignUpRegister();
                             }
                             }
                         >
