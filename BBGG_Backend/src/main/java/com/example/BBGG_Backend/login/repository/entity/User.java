@@ -17,10 +17,11 @@ import javax.persistence.*;
 @Getter
 @Table
 public class User {
-    @Id
+
     @GeneratedValue
     private long seq;
-
+    
+    @Id
     @Column(unique = true)
     private String userId;
 
