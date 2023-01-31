@@ -3,6 +3,7 @@ import HomePage from "../../page/HomePage";
 import { Link } from 'react-router-dom';
 import oc from 'open-color';
 import LoginButton from "./LoginButton";
+import LogoutButton from "./LogoutButton";
 
 const Head = styled.div`
 text: bold;
@@ -76,6 +77,7 @@ const Header = ({childern}) => {
                     <Logo to ='/HomePage'>방방곡곡</Logo>
                     <Spacer/>
                     {childern}
+                    <LogoutButton/>
                     <LoginButton/>
                 </HeaderContents>
             </WhiteBackground>
