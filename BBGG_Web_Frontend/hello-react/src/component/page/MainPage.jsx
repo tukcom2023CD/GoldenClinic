@@ -17,6 +17,8 @@ const MainPage =() => {
     return(
         <div>
             {posts.length}
+
+            <Gnb/>
         </div>
         // <ul>
         //     {posts.map(post => (
