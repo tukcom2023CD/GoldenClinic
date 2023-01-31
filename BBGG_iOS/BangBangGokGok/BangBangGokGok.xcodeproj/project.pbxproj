@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		393F08432987AA3400CE88E4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F08422987AA3400CE88E4 /* SignUpViewController.swift */; };
 		39D212FC296BCB620023D0CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D212FB296BCB620023D0CF /* AppDelegate.swift */; };
 		39D212FE296BCB620023D0CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D212FD296BCB620023D0CF /* SceneDelegate.swift */; };
 		39D21300296BCB620023D0CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D212FF296BCB620023D0CF /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		393F08422987AA3400CE88E4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		39D212F8296BCB620023D0CF /* BangBangGokGok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangBangGokGok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D212FB296BCB620023D0CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39D212FD296BCB620023D0CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				39D212FD296BCB620023D0CF /* SceneDelegate.swift */,
 				39D212FF296BCB620023D0CF /* ViewController.swift */,
 				39D21301296BCB620023D0CF /* Main.storyboard */,
+				393F08422987AA3400CE88E4 /* SignUpViewController.swift */,
 				39D21304296BCB640023D0CF /* Assets.xcassets */,
 				39D21306296BCB640023D0CF /* LaunchScreen.storyboard */,
 				39D21309296BCB640023D0CF /* Info.plist */,
@@ -140,6 +143,7 @@
 			files = (
 				39D21300296BCB620023D0CF /* ViewController.swift in Sources */,
 				39D212FC296BCB620023D0CF /* AppDelegate.swift in Sources */,
+				393F08432987AA3400CE88E4 /* SignUpViewController.swift in Sources */,
 				39D212FE296BCB620023D0CF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
