@@ -26,7 +26,7 @@
 ## 6. 팀원 
 | 이름 | 권태우 | 이현구 | 최유빈 | 유하임 |
 | --- | --- | --- | --- | --- |
-| GitHub | [권태우](https://github.com/boifromangye) | [이현구](https://github.com/kugu98 | [최유빈](https://github.com/cybin050300) | [유하임](https://github.com/typeYu) |
+| GitHub | [권태우](https://github.com/boifromangye) | [이현구](https://github.com/kugu98) | [최유빈](https://github.com/cybin050300) | [유하임](https://github.com/typeYu) |
 | 역할 | Ios | Backend | Frontend | Frontend |
 ## 구성원 및 연락처
 [권태우](https://github.com/boifromangye) : kwontaewoo0901@gmail.com  
