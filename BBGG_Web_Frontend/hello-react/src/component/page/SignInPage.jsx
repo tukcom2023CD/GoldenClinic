@@ -21,7 +21,7 @@ import { useNavigate } from "react-router-dom";
 const theme = createTheme();
 
 export default function SignIn() {
-  const [userId, SetId] = useState("");
+  const [userId, SetUserId] = useState("");
   const [password, SetPassword] = useState("");
   const navigate = useNavigate();
 
@@ -34,7 +34,7 @@ export default function SignIn() {
     });
   };
 
-  const SignInRegister = () => {
+  const SignInRegister = async () => {
     axios
       .post("http://localhost:8080/bbgg/login", {
         userId: userId,
@@ -42,9 +42,12 @@ export default function SignIn() {
       })
       .then(function (response) {
         alert("로그인 성공");
+        localStorage.setItem("userId", response.data.userId);
+        localStorage.setItem("userName", response.data.userName);
         navigate("/MainPage");
       })
       .catch(function (error) {
+        alert("아이디/비밀번호를 확인하세요");
         console.log(error);
       });
   };
@@ -84,7 +87,7 @@ export default function SignIn() {
               autoFocus
               value={userId}
               onChange={(event) => {
-                SetId(event.target.value);
+                SetUserId(event.target.value);
               }}
             />
             <TextField

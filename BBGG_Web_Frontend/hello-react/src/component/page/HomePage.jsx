@@ -1,14 +1,14 @@
-import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import Button from '../ui/Button';
-import { Link } from 'react-router-dom';
-import Box from '@mui/material/Box';
-import Header from '../base/Header/Header';
-import Footer from '../base/Footer'
-import Gnb from '../base/Gnb';
-import axios from 'axios';
-import { useEffect } from 'react';
+import * as React from "react";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import Button from "../ui/Button";
+import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
+import Header from "../base/Header/Header";
+import Footer from "../base/Footer";
+import Gnb from "../base/Gnb";
+import axios from "axios";
+import { useEffect } from "react";
 
 const Wrapper = styled.div`
         padding: 100px,
@@ -35,40 +35,41 @@ const Container = styled.div`
 `;
 
 function HomePage(props) {
-    useEffect(()=>{
-        axios.get('/api/hello')
-        .then(response => console.log(response.data))
-    },[])
-    // const {} = props; 
-    // const navigate = useNavigate();
+  useEffect(() => {
+    axios.get("/api/hello").then((response) => console.log(response.data));
+  }, []);
+  // const {} = props;
+  // const navigate = useNavigate();
 
-    // const navigateToSignIn = () =>{
+  // const navigateToSignIn = () =>{
 
-    //     navigate("/SignIn");
-    
-    // };
-    //  const navigateToSignUp = () =>{
+  //     navigate("/SignIn");
 
-    //     navigate("/SignUp");
-    
-    // };
+  // };
+  //  const navigateToSignUp = () =>{
 
-    return(
-       
-        <div style={{ 
-            display: 'flex', justifyContent: 'center', alignItems: 'center', 
-            width: '100%', height: '100vh', 
-            }}>
-            <h2>시작 페이지</h2>
-            <Gnb/>
-            <Footer/>
-           </div>
-    
+  //     navigate("/SignUp");
 
-    )
+  // };
 
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        height: "100vh",
+      }}
+    >
+      <h2>시작 페이지</h2>
+      <Gnb />
+      <Footer />
+    </div>
+  );
 }
- {/* // <button tittle = "button" onClick={navigateToSignIn}>로그인</button>
+{
+  /* // <button tittle = "button" onClick={navigateToSignIn}>로그인</button>
         // <button classname="SignUpbtn" onClick={navigateToSignUp} 
         //     >회원가입</button>
 
@@ -88,6 +89,7 @@ function HomePage(props) {
 //             )}
 //         </div>
 //     );
-// } */}
+// } */
+}
 
-export default HomePage; 
+export default HomePage;
