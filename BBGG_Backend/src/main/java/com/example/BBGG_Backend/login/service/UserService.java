@@ -28,13 +28,13 @@ public class UserService {
                 .build());
         return "Success";
     }
-    public String login(String userId, String password) {
+    public Optional<User> login(String userId, String password) {
         Optional<User> user = userRepository.findByUserId(userId);
         log.info("db password = {}, input password = {}", user.get().getPassword(), password);
         String encodePw=user.get().getPassword();
         if(passwordEncoder.matches(password,encodePw)) {
-            return "Success";
+            return user;
         }
-        return "Failed";
+        return null;
     }
 }
