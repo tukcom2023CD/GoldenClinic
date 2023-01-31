@@ -8,14 +8,21 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-
+    @IBOutlet weak var tfName: UITextField!
+    @IBOutlet weak var tfId: UITextField!
+    @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var tfCheckPw: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func btnSignUp(_ sender: UIButton) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -24,6 +31,22 @@ class SignUpViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
+     
+     guard let email = emailTextField.text, !email.isEmpty else { return }
+             guard let username = nametextField.text, !username.isEmpty else { return }
+             guard let password = passwordTextField.text, !password.isEmpty else { return }
+             let url = "http://localhost:8080/join"
+             let param: Parameters = [
+                 "username":username,
+                 "email":email,
+                 "password":password
+             ]
+             let headers: HTTPHeaders = [
+                 "Accept": "application/json"
+             ]
+             AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers).responseString() { response in
+                     print(response)
+             }
     */
 
-}
+} // SignUpViewController
