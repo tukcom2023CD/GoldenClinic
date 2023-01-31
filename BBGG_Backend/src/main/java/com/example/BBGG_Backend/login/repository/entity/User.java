@@ -20,7 +20,7 @@ public class User {
 
     @GeneratedValue
     private long seq;
-    
+
     @Id
     @Column(unique = true)
     private String userId;
