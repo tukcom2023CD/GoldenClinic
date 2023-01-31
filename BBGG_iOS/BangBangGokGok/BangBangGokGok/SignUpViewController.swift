@@ -26,8 +26,8 @@ class SignUpViewController: UIViewController {
                 guard let password = tfPassword.text, !password.isEmpty else { return }
                 let url = "http://localhost:8080/join"
                 let param: Parameters = [
-                    "username":username,
-                    "email":email,
+                    "username":name,
+                    "id":id,
                     "password":password
                 ]
                 let headers: HTTPHeaders = [
