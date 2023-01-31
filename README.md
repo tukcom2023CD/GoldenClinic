@@ -23,11 +23,11 @@
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=Figma&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/IntelliJ IDEA-000000?style=flat-square&logo=IntelliJ IDEA&logoColor=white"/>
 <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/></svg><br>
-## 6. 팀원 
+## 팀원 
 | 이름 | 권태우 | 이현구 | 최유빈 | 유하임 |
 | --- | --- | --- | --- | --- |
 | GitHub | [권태우](https://github.com/boifromangye) | [이현구](https://github.com/kugu98) | [최유빈](https://github.com/cybin050300) | [유하임](https://github.com/typeYu) |
-| 역할 | Ios | Backend | Frontend | Frontend |
+| 역할 | iOS | Backend | Frontend | Frontend |
 ## 구성원 및 연락처
 [권태우](https://github.com/boifromangye) : kwontaewoo0901@gmail.com  
 [이현구](https://github.com/kugu98) : kugu98@naver.com  
