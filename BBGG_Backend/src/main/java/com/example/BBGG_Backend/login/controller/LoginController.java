@@ -44,5 +44,12 @@ public class LoginController {
         session.setAttribute("pw", member.get().getPassword());
         return member;
     }
-    
+    @GetMapping("/logout")
+    public String logout(HttpServletResponse response, HttpServletRequest request){
+        request.getSession().invalidate();
+        request.getSession(true);
+        log.info("수행됨");
+        return "Success";
+
+    }
 }
