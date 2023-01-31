@@ -88,6 +88,9 @@
                                 <rect key="frame" x="154" y="555" width="84" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
+                                <connections>
+                                    <action selector="btnSignUp:" destination="aBO-DF-sel" eventType="touchUpInside" id="kgE-oh-yAx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vpM-ip-ZRk"/>
@@ -111,6 +114,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up View Controller" id="jGp-ie-4mv"/>
+                    <connections>
+                        <outlet property="tfCheckPw" destination="cFX-kp-5OJ" id="Mt4-x1-Yj7"/>
+                        <outlet property="tfId" destination="68q-8U-VJq" id="MgD-Zg-9LO"/>
+                        <outlet property="tfName" destination="68q-8U-VJq" id="Icb-xo-YFB"/>
+                        <outlet property="tfPassword" destination="QTg-fX-nvD" id="mS4-3h-7mA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNg-1U-bhc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

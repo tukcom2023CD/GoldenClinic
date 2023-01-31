@@ -20,7 +20,21 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func btnSignUp(_ sender: UIButton) {
-        
+        guard let id = tfId.text, !id.isEmpty else { return }
+                guard let name = tfName.text, !name.isEmpty else { return }
+                guard let password = tfPassword.text, !password.isEmpty else { return }
+                let url = "http://localhost:8080/join"
+                let param: Parameters = [
+                    "username":username,
+                    "email":email,
+                    "password":password
+                ]
+                let headers: HTTPHeaders = [
+                    "Accept": "application/json"
+                ]
+                AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headers).responseString() { response in
+                        print(response)
+                }
     }
     
     /*
