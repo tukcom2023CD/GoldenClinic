@@ -37,6 +37,7 @@ export default function SignUp() {
     
         
     const SignUpRegister = () => {
+        if(Id != "" && Name != "" && Password != "" && ConfirmPassword != "") {
         axios.post("http://localhost:8080/bbgg/signup", {
             userId: Id,
             password: Password,
@@ -47,6 +48,7 @@ export default function SignUp() {
         }).catch(function (error) {
             console.log(error);
         });
+    } else { alert("모든 항목을 기입해주세요.");}
 }
     
     
