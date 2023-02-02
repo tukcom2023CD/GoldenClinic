@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 public final class Markdto {
-    private String userId;
     private double latitude;
     private double longitude;
     private String text;
