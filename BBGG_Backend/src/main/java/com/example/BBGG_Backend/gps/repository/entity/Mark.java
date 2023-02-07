@@ -28,6 +28,8 @@ public class Mark extends BaseTimeEntity{
     private double longitude;
     @Column
     private String text;
+    @Column
+    private byte[] img;
 
 
     public Markdto markdto(){
