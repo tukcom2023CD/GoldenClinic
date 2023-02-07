@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -20,8 +21,14 @@ public class MarkService {
                 userId((String) request.getSession().getAttribute("id")).
                 latitude(markdto.getLatitude()).
                 longitude(markdto.getLongitude()).
-                text(markdto.getText()).build());
+                text(markdto.getText()).
+                img(markdto.getImg()).
+                build());
         return "Success";
+    }
+    public List<Mark> mark(String userId, HttpServletRequest request){
+        List<Mark> mark=markRepository.findByUserId(userId);
+        return mark;
     }
 
 }
