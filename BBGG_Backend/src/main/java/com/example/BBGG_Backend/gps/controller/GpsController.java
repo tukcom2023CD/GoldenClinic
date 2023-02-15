@@ -28,8 +28,8 @@ public class GpsController {
     }
     @GetMapping("/mark")
     @ResponseBody
-    public List<Mark> mark( HttpServletRequest request){
-        List<Mark> mark=markService.mark((String) request.getSession().getAttribute("id"),request);
+    public List<Mark> mark(@RequestParam String userId){
+        List<Mark> mark=markService.mark(userId);
         return mark;
     }
 }

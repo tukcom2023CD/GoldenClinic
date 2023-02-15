@@ -26,7 +26,7 @@ public class MarkService {
                 build());
         return "Success";
     }
-    public List<Mark> mark(String userId, HttpServletRequest request){
+    public List<Mark> mark(String userId){
         List<Mark> mark=markRepository.findByUserId(userId);
         return mark;
     }
