@@ -16,17 +16,16 @@ import java.util.List;
 public class MarkService {
     private final MarkRepository markRepository;
 
-    public String save(Markdto markdto, HttpServletRequest request){
+    public String save(Markdto markdto){
         markRepository.save(Mark.builder().
-                userId((String) request.getSession().getAttribute("id")).
+                userId(markdto.getUserId()).
                 latitude(markdto.getLatitude()).
                 longitude(markdto.getLongitude()).
                 text(markdto.getText()).
-                img(markdto.getImg()).
                 build());
         return "Success";
     }
-    public List<Mark> mark(String userId, HttpServletRequest request){
+    public List<Mark> mark(String userId){
         List<Mark> mark=markRepository.findByUserId(userId);
         return mark;
     }
