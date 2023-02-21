@@ -5,11 +5,11 @@ import { Component } from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-function MainPage(props) {
+function TravelMap(props) {
   // const isLogin = props.isLogin;
   // axios
   //   .get("http://localhost:8080/sessioninfo", {})
-  //   .then(function (response) {
+  //   .then(function (t) {
   //     //   localStorage.setItem("userName", response.data.userName);
   //     //   alert("userName 님 안녕하세요");
   //   })
@@ -30,18 +30,7 @@ function MainPage(props) {
     //         <li key = {post.Id}>{post.Name}</li>
     //     ))}
     // </ul>
-
-    // function MainPage() {
-    //     return (
-    //         <div>
-    //             MainPage##
-
-    //             <Gnb/>
-    //             <Footer/>
-    //         </div>
-    //     );
-    // }
   );
 }
 
-export default MainPage;
+export default TravelMap;

@@ -5,6 +5,7 @@ import oc from "open-color";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import { useEffect, useState } from "react";
+import Gnb from "../Gnb";
 
 const Head = styled.div`
   text: bold;
@@ -93,6 +94,8 @@ const Header = ({ childern }) => {
           </HeaderContents>
         </WhiteBackground>
         <GradientBorder />
+
+        <Gnb />
       </Positioner>
     );
   } else
@@ -107,6 +110,7 @@ const Header = ({ childern }) => {
           </HeaderContents>
         </WhiteBackground>
         <GradientBorder />
+        <Gnb />
       </Positioner>
     );
 };
