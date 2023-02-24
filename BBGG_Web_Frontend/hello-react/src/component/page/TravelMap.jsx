@@ -10,21 +10,28 @@ const { kakao } = window;
 
 const TravelMap = () => {
   useEffect(() => {
-    let container = document.getElementById("map");
+    var container = document.getElementById("map");
 
-    let options = {
+    var options = {
       center: new window.kakao.maps.LatLng(35.85133, 127.734086),
       level: 13,
     };
 
-    let map = new window.kakao.maps.Map(container, options);
-
+    var map = new window.kakao.maps.Map(container, options);
+    var markerPosition = new kakao.maps.LatLng(
+      37.365264512305174,
+      127.10676860117488
+    );
+    var marker = new kakao.maps.Marker({
+      position: markerPosition,
+    });
+    marker.setMap(map);
     console.log("loading kakaomap");
   }, []);
 
   return (
-    <div className={"Map"}>
-      <div className={"MapContainer"} id="map"></div>
+    <div>
+      <div id="map" style={{ width: "800px", height: "700px" }}></div>
     </div>
   );
 };
