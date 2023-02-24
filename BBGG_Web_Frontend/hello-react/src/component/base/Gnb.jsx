@@ -1,5 +1,6 @@
 import { listClasses } from "@mui/material";
 import styled from "styled-components";
+import { Link, Link as RouterLink } from "react-router-dom";
 
 const Ul = styled.ul`
   list-style: none;
@@ -23,19 +24,19 @@ export default function Gnb() {
     <div>
       <Ul className="gnb">
         <Li>
-          <a href="destination" className="destianation">
+          <Link component={RouterLink} to="/TravelMap">
             여행지
-          </a>
+          </Link>
         </Li>
         <Li>
-          <a href="restaurant" className="restaurant">
+          <Link component={RouterLink} to="/TravelMap">
             맛집
-          </a>
+          </Link>
         </Li>
         <Li>
-          <a href="travel record" className="travelRecord">
+          <Link component={RouterLink} to="/TravelMap">
             여행기록
-          </a>
+          </Link>
         </Li>
       </Ul>
     </div>
