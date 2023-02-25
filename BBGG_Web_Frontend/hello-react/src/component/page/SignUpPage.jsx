@@ -41,7 +41,7 @@ export default function SignUp() {
         axios.post("http://localhost:8080/bbgg/signup", {
             userId: Id,
             password: Password,
-            userName: Name
+            userName: Name 
         }).then(function (response) {
             alert("환영합니다.");
             navigate('/SignIn');

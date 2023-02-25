@@ -19,6 +19,7 @@ const StyledButton = styled.button`
   background: var(--button-bg-color, #0d6efd);
   color: var(--button-color, #ffffff);
 
+
   &:active,
   &:hover,
   &:focus {

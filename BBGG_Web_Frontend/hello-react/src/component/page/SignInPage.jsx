@@ -14,7 +14,7 @@ import FitbitIcon from "@mui/icons-material/Fitbit";
 import { Link as RouterLink } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import SignUpPage from "./SignUpPage";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -44,13 +44,22 @@ export default function SignIn() {
         alert("로그인 성공");
         localStorage.setItem("userId", response.data.userId);
         localStorage.setItem("userName", response.data.userName);
-        navigate("/MainPage");
+        localStorage.setItem("sessioninfo", null);
+
+        document.location.href = "/";
+        // navigate("/MainPage");
       })
       .catch(function (error) {
         alert("아이디/비밀번호를 확인하세요");
         console.log(error);
       });
   };
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/bbgg/login")
+      .then((res) => console.log(res))
+      .catch();
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
