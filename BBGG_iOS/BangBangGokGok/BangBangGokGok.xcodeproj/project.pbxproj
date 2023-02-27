@@ -14,6 +14,7 @@
 		39D21303296BCB620023D0CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D21301296BCB620023D0CF /* Main.storyboard */; };
 		39D21305296BCB640023D0CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D21304296BCB640023D0CF /* Assets.xcassets */; };
 		39D21308296BCB640023D0CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D21306296BCB640023D0CF /* LaunchScreen.storyboard */; };
+		6CDECCFA660C84806F858C74 /* Pods_BangBangGokGok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1330CED7E8E8D7FF2BDC9 /* Pods_BangBangGokGok.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		39D21304296BCB640023D0CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39D21307296BCB640023D0CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39D21309296BCB640023D0CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5937E161A9B3601331412BE6 /* Pods-BangBangGokGok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BangBangGokGok.release.xcconfig"; path = "Target Support Files/Pods-BangBangGokGok/Pods-BangBangGokGok.release.xcconfig"; sourceTree = "<group>"; };
+		62B1330CED7E8E8D7FF2BDC9 /* Pods_BangBangGokGok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BangBangGokGok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A17C96D363C383ECAB1A8CB6 /* Pods-BangBangGokGok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BangBangGokGok.debug.xcconfig"; path = "Target Support Files/Pods-BangBangGokGok/Pods-BangBangGokGok.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CDECCFA660C84806F858C74 /* Pods_BangBangGokGok.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				39D212FA296BCB620023D0CF /* BangBangGokGok */,
 				39D212F9296BCB620023D0CF /* Products */,
+				CFF407291E2AB06E0241DC86 /* Pods */,
+				BFDEEE30DA88FEFFD67A0B8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +77,24 @@
 			path = BangBangGokGok;
 			sourceTree = "<group>";
 		};
+		BFDEEE30DA88FEFFD67A0B8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62B1330CED7E8E8D7FF2BDC9 /* Pods_BangBangGokGok.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFF407291E2AB06E0241DC86 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A17C96D363C383ECAB1A8CB6 /* Pods-BangBangGokGok.debug.xcconfig */,
+				5937E161A9B3601331412BE6 /* Pods-BangBangGokGok.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39D2130C296BCB640023D0CF /* Build configuration list for PBXNativeTarget "BangBangGokGok" */;
 			buildPhases = (
+				8538BB787B794B635D1CA15E /* [CP] Check Pods Manifest.lock */,
 				39D212F4296BCB620023D0CF /* Sources */,
 				39D212F5296BCB620023D0CF /* Frameworks */,
 				39D212F6296BCB620023D0CF /* Resources */,
+				B7367E9DE931487C8213094D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8538BB787B794B635D1CA15E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BangBangGokGok-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7367E9DE931487C8213094D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BangBangGokGok/Pods-BangBangGokGok-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BangBangGokGok/Pods-BangBangGokGok-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BangBangGokGok/Pods-BangBangGokGok-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		39D212F4296BCB620023D0CF /* Sources */ = {
@@ -286,6 +355,7 @@
 		};
 		39D2130D296BCB640023D0CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A17C96D363C383ECAB1A8CB6 /* Pods-BangBangGokGok.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -316,6 +386,7 @@
 		};
 		39D2130E296BCB640023D0CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5937E161A9B3601331412BE6 /* Pods-BangBangGokGok.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
