@@ -1,4 +1,4 @@
-
+import axios from "axios";
 import React, { useEffect } from 'react';
 
 const { kakao } = window;
@@ -13,41 +13,63 @@ const Kakao = () => {
             };
         var map = new kakao.maps.Map(mapContainer, mapOption);
 
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                var lat = position.coords.latitude,
-                    lon = position.coords.longitude;
+
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var lat = position.coords.latitude,
+                lon = position.coords.longitude;
+
+            if (navigator.geolocation) {
+
 
                 var locPosition = new kakao.maps.LatLng(lat, lon),
-                    message = '<div style="padding:5px;">현재 위치</div>';
+                    message = '<div style="padding:5px;">기록하려면 클릭</div>';
                 displayMarker(locPosition, message);
-            });
-        } else {
-            var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),
-                message = 'geolocation을 사용할 수 없어용'
 
-            displayMarker(locPosition, message);
-        }
-        function displayMarker(locPosition, message) {
+            } else {
+                var locPosition2 = new kakao.maps.LatLng(33.450701, 126.570667),
+                    message2 = 'geolocation을 사용할 수 없어용'
 
-            var marker = new kakao.maps.Marker({
-                map: map,
-                position: locPosition
-            });
+                displayMarker(locPosition2, message2);
+            }
 
-            var iwContent = message,
-                iwRemoveable = true;
+            //위도 경도 이름 아이디 DB로 전송
+            const GpsSave = () => {
+                axios.post("http://localhost:8080/gps/save", {
+                    latitude: lat,
+                    longitude: lon,
+                    text: localStorage.getItem('userName'),
+                    userId: localStorage.getItem('userId')
+                }).then(function () {
+                    alert("현재 위치가 기록되었습니다.");
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            }
+            function displayMarker(locPosition, message) {
 
-            var infowindow = new kakao.maps.InfoWindow({
-                content: iwContent,
-                removable: iwRemoveable
-            });
+                var marker = new kakao.maps.Marker({
+                    map: map,
+                    position: locPosition
+                });
 
-            infowindow.close(map, marker);
+                var iwContent = message;
 
-            map.setCenter(locPosition);
-        }
+                var infowindow = new kakao.maps.InfoWindow({
+                    content: iwContent,
+                });
+
+                infowindow.open(map, marker);
+
+                map.setCenter(locPosition);
+
+                kakao.maps.event.addListener(marker, 'click', function () {
+                    GpsSave();
+                });
+
+            }
+        });
     });
+
 
     return (
         <div id="map"
