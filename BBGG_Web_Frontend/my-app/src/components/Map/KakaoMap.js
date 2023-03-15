@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from 'react';
+import classes from './KakaoMap.module.css';
 
 const { kakao } = window;
 
@@ -19,7 +20,6 @@ const Kakao = () => {
                 lon = position.coords.longitude;
 
             if (navigator.geolocation) {
-
 
                 var locPosition = new kakao.maps.LatLng(lat, lon),
                     message = '<div style="padding:5px;">기록하려면 클릭</div>';
@@ -65,18 +65,32 @@ const Kakao = () => {
                 kakao.maps.event.addListener(marker, 'click', function () {
                     GpsSave();
                 });
+                
+                var mapTypeControl = new kakao.maps.MapTypeControl();
+                map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
+
+                var zoomControl = new kakao.maps.ZoomControl();
+                map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
             }
         });
     });
 
+    const MarkSwitchBtn = () => {
+          window.location.replace('/Profile')
+      }
 
     return (
+        <div>
         <div id="map"
             style={{
                 width: "100%",
                 height: '700px'
-            }}></div>
+            }}>
+            </div><button className={classes.top_btn} onClick={MarkSwitchBtn}>
+                방문한 지역 보기
+            </button>
+            </div>
     )
 }
 
