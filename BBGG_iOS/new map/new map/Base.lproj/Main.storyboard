@@ -17,23 +17,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cYF-f2-CMh">
-                                <rect key="frame" x="131" y="123" width="131" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cYF-f2-CMh">
+                                <rect key="frame" x="128" y="59" width="137" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aSW-rz-6WA"/>
+                                </constraints>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="BBGG"/>
+                                    <segment title="MyPage"/>
                                 </segments>
                             </segmentedControl>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCB-G7-U2w">
-                                <rect key="frame" x="16" y="161" width="361" height="574"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCB-G7-U2w">
+                                <rect key="frame" x="17" y="106" width="360" height="640"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujZ-Dk-0aI">
+                                <rect key="frame" x="155" y="783" width="83" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="시작하기"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ujZ-Dk-0aI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2BN-g0-Oht"/>
+                            <constraint firstItem="cYF-f2-CMh" firstAttribute="centerX" secondItem="xCB-G7-U2w" secondAttribute="centerX" id="JeP-na-1L4"/>
+                            <constraint firstItem="xCB-G7-U2w" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Kpk-9g-h7P"/>
+                            <constraint firstItem="xCB-G7-U2w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XLi-rT-LSE"/>
+                            <constraint firstItem="xCB-G7-U2w" firstAttribute="top" secondItem="cYF-f2-CMh" secondAttribute="bottom" constant="17" id="aHh-ZN-lwd"/>
+                            <constraint firstItem="xCB-G7-U2w" firstAttribute="centerX" secondItem="ujZ-Dk-0aI" secondAttribute="centerX" id="gQe-24-1VJ"/>
+                            <constraint firstItem="cYF-f2-CMh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rLw-86-ike"/>
+                            <constraint firstItem="cYF-f2-CMh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vo1-Bv-rIT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myMap" destination="xCB-G7-U2w" id="dHO-aN-kmR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
