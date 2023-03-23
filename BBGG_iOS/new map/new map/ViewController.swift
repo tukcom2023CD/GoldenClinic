@@ -21,8 +21,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         loctionManger.requestWhenInUseAuthorization()
         loctionManger.startUpdatingLocation()
         myMap.showsUserLocation = true
-    } // ViewController
-
+    }
     
-}
+    func goLocation(latitudeValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span: Double){
+        let pLocation= CLLocationCoordinate2DMake(latitudeValue, longitudeValue)
+        let spanValue= MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
+        let
+    }
+
+    func setAnnotation(latitudeValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span: Double, title strTitle: String, subtitle strSubtitle: String){
+        let annotaion  = MKPointAnnotation()
+        
+        annotaion.coordinate
+    }
+} // ViewController
 
