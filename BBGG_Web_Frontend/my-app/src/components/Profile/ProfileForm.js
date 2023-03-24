@@ -7,6 +7,27 @@ const ProfileForm = () => {
   const { kakao } = window;
 
   useEffect(() => {
+    // 동 단위 경계선 표시
+    const geoJsonUrl = 'https://apis.openapi.sk.com/tmap/geo/v1/areas?version=1&category=LH&appKey={7238b8878632dc8ebbc9e560144c940c}';
+    fetch(geoJsonUrl)
+        .then((response) => response.json())
+        .then((data) => {
+            const features = data.features;
+            const polygons = features.map((feature) => {
+                const geometry = feature.geometry;
+                const paths = geometry.coordinates[0].map(([lng, lat]) => new kakao.maps.LatLng(lat, lng));
+                const polygon = new kakao.maps.Polygon({
+                    paths: paths,
+                    strokeWeight: 2,
+                    strokeColor: '#004c80',
+                    strokeOpacity: 0.8,
+                    fillColor: '#fff',
+                    fillOpacity: 0.1,
+                });
+                polygon.setMap(map);
+                return polygon;
+            });
+        });
 
     var mapContainer = document.getElementById('map'),
       mapOption = {
@@ -21,22 +42,28 @@ const ProfileForm = () => {
     var zoomControl = new kakao.maps.ZoomControl();
     map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-    navigator.geolocation.getCurrentPosition(function (position) {
-      var lat = position.coords.latitude,
-        lon = position.coords.longitude;
+    var clusterer = new kakao.maps.MarkerClusterer({
+      map: map,
+      averageCenter: true,
+      minLevel: 10,
+    });
 
-      if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function () {
 
-        var locPosition = new kakao.maps.LatLng(lat, lon),
-          message = '<div style="padding:5px;"></div>';
-        displayMarker(locPosition, message);
+      function displayMarker(locPosition) {
 
-      } else {
-        var locPosition2 = new kakao.maps.LatLng(33.450701, 126.570667),
-          message2 = 'geolocation을 사용할 수 없어용'
+        var marker = new kakao.maps.Marker({
+          map: map,
+          position: locPosition
+        });
 
-        displayMarker(locPosition2, message2);
-      }
+        var markers = [];
+        
+        markers.push(marker);
+        clusterer.addMarkers(markers);
+
+        map.setCenter(locPosition);
+      };
 
       const getData = () => {
 
@@ -63,25 +90,29 @@ const ProfileForm = () => {
         })
       };
       getData();
-
-      function displayMarker(locPosition, message) {
-
-        var marker = new kakao.maps.Marker({
-          map: map,
-          position: locPosition
-        });
-
-        var iwContent = message;
-
-        var infowindow = new kakao.maps.InfoWindow({
-          content: iwContent,
-        });
-
-        infowindow.close(map, marker);
-
-        map.setCenter(locPosition);
-      }
     });
+
+    // // 다각형을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 다각형을 표시합니다
+    // var polygonPath = [
+    //   new kakao.maps.LatLng(37.32912247557823, 126.67091174887754),
+    //   new kakao.maps.LatLng(37.30350064095492, 126.82478476872446),
+    //   new kakao.maps.LatLng(37.40152337758723, 126.8187742026357),
+    // ];
+
+    // // 지도에 표시할 다각형을 생성합니다
+    // var polygon = new kakao.maps.Polygon({
+    //   path: polygonPath, // 그려질 다각형의 좌표 배열입니다
+    //   strokeWeight: 3, // 선의 두께입니다
+    //   strokeColor: '#39DE2A', // 선의 색깔입니다
+    //   strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+    //   strokeStyle: 'longdash', // 선의 스타일입니다
+    //   fillColor: '#A2FF99', // 채우기 색깔입니다
+    //   fillOpacity: 0.7 // 채우기 불투명도 입니다
+    // });
+
+    // // 지도에 다각형을 표시합니다
+    // polygon.setMap(map);
+
   });
 
   const MarkSwitchBtn = () => {
