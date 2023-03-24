@@ -40,6 +40,8 @@ dependencies {
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	//lombok
 	implementation 'org.projectlombok:lombok:1.18.24'
+	//JSON
+	implementation 'org.json:json:20230227'
 }
 
 tasks.named('test') {
