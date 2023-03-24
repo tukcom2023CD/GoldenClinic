@@ -30,6 +30,10 @@ public class Mark extends BaseTimeEntity{
     private String text;
     @Column
     private byte[] img;
+    @Column
+    private String area;
+    @Column(columnDefinition = "MULTIPOLYGON")
+    //private Geometry boundary;
 
 
     public Markdto markdto(){

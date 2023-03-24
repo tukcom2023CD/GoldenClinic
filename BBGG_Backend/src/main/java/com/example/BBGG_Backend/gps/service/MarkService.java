@@ -7,6 +7,7 @@ import com.example.BBGG_Backend.gps.repository.entity.Mark;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,15 +18,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
 public class MarkService {
-    private final MarkRepository markRepository;
 
+    private static final String API_URL = "https://dapi.kakao.com";
+    private static final String API_KEY = "86280b843d97a26fbc819a8d0b4b3460";
+
+    private final MarkRepository markRepository;
 
     public String save(Markdto markdto){
         markRepository.save(Mark.builder().
@@ -36,10 +39,12 @@ public class MarkService {
                 build());
         return "Success";
     }
+
     public List<Mark> mark(String userId){
         List<Mark> mark=markRepository.findByUserId(userId);
         return mark;
     }
+
     public String getLocationFromCoordinates(double latitude, double longitude) {
         String url = "https://dapi.kakao.com/v2/local/geo/coord2address.json?x=" + longitude + "&y=" + latitude + "&input_coord=WGS84";
         String apiKey = "86280b843d97a26fbc819a8d0b4b3460";
@@ -70,9 +75,5 @@ public class MarkService {
         String location = region1depthName + " " + region2depthName + " " + region3depthName;
         return location;
     }
-}
-@Service
-class GeolocationService {
-
 
 }
