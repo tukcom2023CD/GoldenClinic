@@ -6,24 +6,34 @@ import com.example.BBGG_Backend.gps.repository.entity.Mark;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
-@RequiredArgsConstructor
+
 @Slf4j
 public class MarkService {
 
+    private static final String KAKAO_MAP_API_URL = "https://dapi.kakao.com/v2/local/geo/coord2regioncode.json?x=%s&y=%s";
+    private final String KAKAO_MAP_API_BASE_URL = "https://dapi.kakao.com/v2/local/geo/coord2regioncode.json";
+    private final String API_KEY = "86280b843d97a26fbc819a8d0b4b3460"; // 카카오 REST API 키
+    //private static final String API_KEY = "86280b843d97a26fbc819a8d0b4b3460";
 
-    private static final String API_KEY = "86280b843d97a26fbc819a8d0b4b3460";
-    private final MarkRepository markRepository;
+    @Autowired
+    private MarkRepository markRepository;
+    private RestTemplate restTemplate;
+
+    public MarkService(){
+        this.restTemplate=new RestTemplate();
+    }
 
     public String save(Markdto markdto){
             markRepository.save(Mark.builder().
@@ -31,7 +41,7 @@ public class MarkService {
                     latitude(markdto.getLatitude()).
                     longitude(markdto.getLongitude()).
                     text(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude())).
-                    area(getBoundaryInfoByCoordinates(markdto.getLatitude(), markdto.getLongitude())).
+                   // area(getBoundaryInfoByCoordinates(markdto.getLatitude(), markdto.getLongitude())).
                     build());
         return "Success";
     }
@@ -39,6 +49,20 @@ public class MarkService {
     public List<Mark> mark(String userId){
         List<Mark> mark=markRepository.findByUserId(userId);
         return mark;
+    }
+
+    public List<String> visit(String userId) {
+        List<Mark> marks = markRepository.findByUserId(userId);
+        Set<String> textSet = new HashSet<>();
+
+        for (Mark mark : marks) {
+            String text = mark.getText();
+            if (text != null) {
+                textSet.add(text);
+            }
+        }
+
+        return new ArrayList<>(textSet);
     }
 
     public String getLocationFromCoordinates(double latitude, double longitude) {
@@ -64,6 +88,7 @@ public class MarkService {
         if (documents.size() == 0) {
             return null;
         }
+
         JsonNode address = documents.get(0).get("address");
         String region1depthName = address.get("region_1depth_name").asText();
         String region2depthName = address.get("region_2depth_name").asText();
@@ -71,6 +96,7 @@ public class MarkService {
         String location = region1depthName + " " + region2depthName + " " + region3depthName;
         return location;
     }
+
     public String getBoundaryInfoByCoordinates(double latitude, double longitude) {
         // WGS84 좌표계를 변환하여 TM 좌표계로 변환
         String transCoordUrl = "https://dapi.kakao.com/v2/local/geo/transcoord.json?x=" + longitude + "&y=" + latitude + "&input_coord=WGS84&output_coord=TM";
@@ -128,8 +154,5 @@ public class MarkService {
         }
         return null;
     }
-
-
-
-
 }
+

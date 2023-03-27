@@ -42,6 +42,7 @@ dependencies {
 	implementation 'org.projectlombok:lombok:1.18.24'
 	//JSON
 	implementation 'org.json:json:20230227'
+	implementation 'org.apache.tomcat:tomcat-jni:9.0.54'
 }
 
 tasks.named('test') {
