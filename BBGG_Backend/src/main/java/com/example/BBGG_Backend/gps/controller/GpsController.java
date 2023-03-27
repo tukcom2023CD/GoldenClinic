@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 @Slf4j
@@ -19,7 +21,7 @@ public class GpsController {
     private final MarkService markService;
 
     @PostMapping("/save")
-    public ResponseEntity save(@RequestBody Markdto markdto) {
+    public ResponseEntity save(@RequestBody Markdto markdto)  {
         if(markService.save(markdto).equals("Success")){
             return new ResponseEntity(HttpStatus.CREATED);
         }
