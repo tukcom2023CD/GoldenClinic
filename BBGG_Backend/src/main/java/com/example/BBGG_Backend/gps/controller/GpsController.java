@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Set;
 
 @Slf4j
 @RequestMapping("/gps")
@@ -35,5 +36,11 @@ public class GpsController {
     public List<Mark> mark(@RequestParam String userId){
         List<Mark> mark=markService.mark(userId);
         return mark;
+    }
+    @GetMapping("/visited_place")
+    @ResponseBody
+    public List<?> visit(@RequestParam String userId){
+        List<?> visit=markService.visit(userId);
+        return visit;
     }
 }

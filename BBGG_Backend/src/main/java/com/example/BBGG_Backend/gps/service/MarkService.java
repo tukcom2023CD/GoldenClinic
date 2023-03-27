@@ -12,13 +12,17 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 
 @Slf4j
 public class MarkService {
 
+    private static final String KAKAO_MAP_API_URL = "https://dapi.kakao.com/v2/local/geo/coord2regioncode.json?x=%s&y=%s";
     private final String KAKAO_MAP_API_BASE_URL = "https://dapi.kakao.com/v2/local/geo/coord2regioncode.json";
     private final String API_KEY = "86280b843d97a26fbc819a8d0b4b3460"; // 카카오 REST API 키
     //private static final String API_KEY = "86280b843d97a26fbc819a8d0b4b3460";
@@ -37,7 +41,7 @@ public class MarkService {
                     latitude(markdto.getLatitude()).
                     longitude(markdto.getLongitude()).
                     text(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude())).
-                    area(getBoundaryInfoByCoordinates(markdto.getLatitude(), markdto.getLongitude())).
+                   // area(getBoundaryInfoByCoordinates(markdto.getLatitude(), markdto.getLongitude())).
                     build());
         return "Success";
     }
@@ -47,6 +51,19 @@ public class MarkService {
         return mark;
     }
 
+    public List<String> visit(String userId) {
+        List<Mark> marks = markRepository.findByUserId(userId);
+        Set<String> textSet = new HashSet<>();
+
+        for (Mark mark : marks) {
+            String text = mark.getText();
+            if (text != null) {
+                textSet.add(text);
+            }
+        }
+
+        return new ArrayList<>(textSet);
+    }
 
     public String getLocationFromCoordinates(double latitude, double longitude) {
         String url = "https://dapi.kakao.com/v2/local/geo/coord2address.json?x=" + longitude + "&y=" + latitude + "&input_coord=WGS84";
@@ -137,6 +154,5 @@ public class MarkService {
         }
         return null;
     }
-
-
 }
+
