@@ -41,7 +41,7 @@ const MainNavigation = () => {
       <nav>
         <ul>
           <li>
-            <Link to='/KakaoMap'>{isLogin ? "Map" : ""}</Link>
+            <Link to='/CurrentLocation'>{isLogin ? "Location" : ""}</Link>
           </li>
           <li>
             <Link to='/profile'>{isLogin ? "Profile" : ""}</Link>
