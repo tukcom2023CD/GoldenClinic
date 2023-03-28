@@ -68,4 +68,5 @@ sketch
 .acorn
 .autoprefixer
 .ansi-html
-
+#API KEY
+.env
