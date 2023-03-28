@@ -5,21 +5,27 @@ import com.example.BBGG_Backend.gps.repository.entity.Mark;
 import com.example.BBGG_Backend.gps.service.MarkService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Set;
 
 @Slf4j
 @RequestMapping("/gps")
 @RestController
-@RequiredArgsConstructor
+
 public class GpsController {
-    private final MarkService markService;
+
+    @Autowired
+    private  MarkService markService;
 
     @PostMapping("/save")
-    public ResponseEntity save(@RequestBody Markdto markdto) {
+    public ResponseEntity save(@RequestBody Markdto markdto)  {
         if(markService.save(markdto).equals("Success")){
             return new ResponseEntity(HttpStatus.CREATED);
         }
@@ -30,5 +36,11 @@ public class GpsController {
     public List<Mark> mark(@RequestParam String userId){
         List<Mark> mark=markService.mark(userId);
         return mark;
+    }
+    @GetMapping("/visited_place")
+    @ResponseBody
+    public List<?> visit(@RequestParam String userId){
+        List<?> visit=markService.visit(userId);
+        return visit;
     }
 }
