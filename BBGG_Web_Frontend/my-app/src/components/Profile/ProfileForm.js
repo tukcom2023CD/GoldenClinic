@@ -96,6 +96,9 @@ const ProfileForm = () => {
   const MarkSwitchBtn = () => {
     window.location.replace('/KakaoMap')
   }
+  const ClusterSwitchBtn = () => {
+    window.location.replace('/Cluster')
+  }
 
   return (
     <div>
@@ -107,7 +110,7 @@ const ProfileForm = () => {
       </div><button className={classes.top_btn} onClick={MarkSwitchBtn}>
         현재 위치 보기
       </button>
-      <button className={classes.top_side_btn} onClick={MarkSwitchBtn}>
+      <button className={classes.top_side_btn} onClick={ClusterSwitchBtn}>
         클러스터로 보기
       </button>
     </div>
