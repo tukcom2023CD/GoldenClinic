@@ -77,7 +77,7 @@ const CurrentLocation = () => {
     });
 
     const MarkSwitchBtn = () => {
-          window.location.replace('/Profile')
+          window.location.replace('/ColoringMap')
       }
 
     return (

@@ -1,4 +1,4 @@
-import classes from './ProfileForm.module.css';
+import classes from './ColoringMap.module.css';
 import axios from "axios";
 import React, { useEffect } from 'react';
 
@@ -72,10 +72,10 @@ const ProfileForm = () => {
   });
 
   const MarkSwitchBtn = () => {
-    window.location.replace('/KakaoMap')
+    window.location.replace('/CurrentLocation')
   }
   const FillBtn = () => {
-    window.location.replace('/Profile')
+    window.location.replace('/ColoringMap')
   }
 
   return (
