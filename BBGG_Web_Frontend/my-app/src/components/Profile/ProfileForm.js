@@ -7,28 +7,6 @@ const ProfileForm = () => {
   const { kakao } = window;
 
   useEffect(() => {
-    // 동 단위 경계선 표시
-    const geoJsonUrl = 'https://apis.openapi.sk.com/tmap/geo/v1/areas?version=1&category=LH&appKey={7238b8878632dc8ebbc9e560144c940c}';
-    fetch(geoJsonUrl)
-        .then((response) => response.json())
-        .then((data) => {
-            const features = data.features;
-            const polygons = features.map((feature) => {
-                const geometry = feature.geometry;
-                const paths = geometry.coordinates[0].map(([lng, lat]) => new kakao.maps.LatLng(lat, lng));
-                const polygon = new kakao.maps.Polygon({
-                    paths: paths,
-                    strokeWeight: 2,
-                    strokeColor: '#004c80',
-                    strokeOpacity: 0.8,
-                    fillColor: '#fff',
-                    fillOpacity: 0.1,
-                });
-                polygon.setMap(map);
-                return polygon;
-            });
-        });
-
     var mapContainer = document.getElementById('map'),
       mapOption = {
         center: new kakao.maps.LatLng(33.450701, 126.570667),
@@ -58,7 +36,7 @@ const ProfileForm = () => {
         });
 
         var markers = [];
-        
+
         markers.push(marker);
         clusterer.addMarkers(markers);
 
@@ -128,6 +106,9 @@ const ProfileForm = () => {
         }}>
       </div><button className={classes.top_btn} onClick={MarkSwitchBtn}>
         현재 위치 보기
+      </button>
+      <button className={classes.top_side_btn} onClick={MarkSwitchBtn}>
+        클러스터로 보기
       </button>
     </div>
   )
