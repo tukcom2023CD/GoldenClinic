@@ -26,6 +26,9 @@
                                     <segment title="BBGG"/>
                                     <segment title="MyPage"/>
                                 </segments>
+                                <connections>
+                                    <action selector="sgChangeLocation:" destination="BYZ-38-t0r" eventType="valueChanged" id="bqu-2D-2vR"/>
+                                </connections>
                             </segmentedControl>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCB-G7-U2w">
                                 <rect key="frame" x="17" y="106" width="360" height="640"/>
