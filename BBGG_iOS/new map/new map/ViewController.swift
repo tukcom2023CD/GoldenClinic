@@ -65,7 +65,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         myMap.addAnnotation(annotaion)
     }
     @IBAction func sgChangeLocation(_ sender: UISegmentedControl) {
-        
+        if sender.selectedSegmentIndex == 0 {
+            
+        } else if sender.selectedSegmentIndex == 1 {
+            
+        }
     }
 } // ViewController
 
