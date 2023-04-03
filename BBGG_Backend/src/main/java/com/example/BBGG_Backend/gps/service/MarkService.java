@@ -13,17 +13,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
 @Service
 @Slf4j
 public class MarkService {
-    private static final String KAKAO_API_TRANS_COORD_URL = "https://dapi.kakao.com/v2/local/geo/transcoord.json";
+    private static final String API_URL = "https://api.vworld.kr/2.0/search/";
+    private static final String API_KEY = "7F82299F-E3DB-3A90-B881-2EC64DD905A9";
     private static final String REST_API_KEY = "2cbdc0c38d1bf24caf3c8015b9f9e3b2";
     private static final String BASE_URL = "https://dapi.kakao.com";
     private static final String SEARCH_ADDRESS_URI = "/v2/local/search/address.json";
@@ -42,12 +41,13 @@ public class MarkService {
     }
 
     public String save(Markdto markdto) {
+
         markRepository.save(Mark.builder().
                 userId(markdto.getUserId()).
                 latitude(markdto.getLatitude()).
                 longitude(markdto.getLongitude()).
                 text(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude())).
-                area(getAddressByQuery(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude())))
+                area(getAdminAreaCode(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude())))
                 .build());
 
         return "Success";
@@ -99,7 +99,6 @@ public class MarkService {
         String region1depthName = address.get("region_1depth_name").asText();
         String region2depthName = address.get("region_2depth_name").asText();
         String region3depthName = address.get("region_3depth_name").asText();
-        //String h = address.get("address_name").asText();
         String location = region1depthName + " " + region2depthName + " " + region3depthName;
         return location;
     }
@@ -141,7 +140,18 @@ public class MarkService {
         }
     }
 
-
+    public static String getAdminAreaCode(String address) {
+        String url = API_URL + "addr2coord.do?key=" + API_KEY + "&domain=land&output=json&addr=" + address;
+        RestTemplate restTemplate = new RestTemplate();
+        String result = restTemplate.getForObject(url, String.class);
+        String[] splitResult = result.split("\"admiCd\":\"");
+        if(splitResult.length > 1) {
+            String code = splitResult[1].substring(0, 8);
+            return code;
+        } else {
+            return null;
+        }
+    }
 
 
 
