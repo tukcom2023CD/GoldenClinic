@@ -15,6 +15,7 @@ const Kakao = () => {
         var map = new kakao.maps.Map(mapContainer, mapOption);
 
 
+
         navigator.geolocation.getCurrentPosition(function (position) {
             var lat = position.coords.latitude,
                 lon = position.coords.longitude;
@@ -75,7 +76,6 @@ const Kakao = () => {
             }
         });
     });
-
     const MarkSwitchBtn = () => {
           window.location.replace('/Profile')
       }
