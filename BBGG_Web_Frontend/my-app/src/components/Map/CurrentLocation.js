@@ -13,9 +13,6 @@ const CurrentLocation = () => {
                 level: 3
             };
         var map = new kakao.maps.Map(mapContainer, mapOption);
-
-
-
         navigator.geolocation.getCurrentPosition(function (position) {
             var lat = position.coords.latitude,
                 lon = position.coords.longitude;
@@ -76,6 +73,7 @@ const CurrentLocation = () => {
             }
         });
     });
+
     const MarkSwitchBtn = () => {
           window.location.replace('/ColoringMap')
       }

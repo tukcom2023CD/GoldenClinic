@@ -12,12 +12,14 @@ const ProfileForm = () => {
         center: new kakao.maps.LatLng(33.450701, 126.570667),
         level: 13
       };
-    let map = new kakao.maps.Map(mapContainer, mapOption);
-    let mapTypeControl = new kakao.maps.MapTypeControl();
+      
+    var map = new kakao.maps.Map(mapContainer, mapOption);
+    var mapTypeControl = new kakao.maps.MapTypeControl();
     map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
 
-    let zoomControl = new kakao.maps.ZoomControl();
+    var zoomControl = new kakao.maps.ZoomControl();
+
     map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
     var clusterer = new kakao.maps.MarkerClusterer({
@@ -55,6 +57,7 @@ const ProfileForm = () => {
           console.log(gpsJson)
 
           for (var i = 0; i < parsedGps.length; i++) {
+
 
             let lat = parsedGps[i].latitude,
               lon = parsedGps[i].longitude;
