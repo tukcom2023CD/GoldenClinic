@@ -23,7 +23,6 @@ public class GpsController {
 
     @Autowired
     private  MarkService markService;
-
     @PostMapping("/save")
     public ResponseEntity save(@RequestBody Markdto markdto)  {
         if(markService.save(markdto).equals("Success")){

@@ -12,12 +12,14 @@ const ProfileForm = () => {
         center: new kakao.maps.LatLng(33.450701, 126.570667),
         level: 13
       };
+      
     var map = new kakao.maps.Map(mapContainer, mapOption);
     var mapTypeControl = new kakao.maps.MapTypeControl();
     map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
 
     var zoomControl = new kakao.maps.ZoomControl();
+
     map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
     var clusterer = new kakao.maps.MarkerClusterer({
@@ -56,10 +58,11 @@ const ProfileForm = () => {
 
           for (var i = 0; i < parsedGps.length; i++) {
 
-            var lat = parsedGps[i].latitude,
+
+            let lat = parsedGps[i].latitude,
               lon = parsedGps[i].longitude;
 
-            var locPosition = new kakao.maps.LatLng(lat, lon);
+            let locPosition = new kakao.maps.LatLng(lat, lon);
 
             displayMarker(locPosition, parsedGps[i].text);
           }
@@ -68,6 +71,7 @@ const ProfileForm = () => {
         })
       };
       getData();
+
     });
   });
 
