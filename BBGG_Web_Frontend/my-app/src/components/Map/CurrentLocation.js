@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useEffect } from 'react';
-import classes from './KakaoMap.module.css';
+import classes from './CurrentLocation.module.css';
 
 const { kakao } = window;
 
-const Kakao = () => {
+const CurrentLocation = () => {
 
     useEffect(() => {
         var mapContainer = document.getElementById('map'),
@@ -77,7 +77,7 @@ const Kakao = () => {
         });
     });
     const MarkSwitchBtn = () => {
-          window.location.replace('/Profile')
+          window.location.replace('/ColoringMap')
       }
 
     return (
@@ -94,4 +94,4 @@ const Kakao = () => {
     )
 }
 
-export default Kakao;
+export default CurrentLocation;
