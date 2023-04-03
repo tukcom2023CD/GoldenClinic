@@ -47,7 +47,7 @@ public class MarkService {
                 latitude(markdto.getLatitude()).
                 longitude(markdto.getLongitude()).
                 text(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude())).
-                area(getAdminAreaCode(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude())))
+                area(getAddressByQuery(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude())))
                 .build());
 
         return "Success";
@@ -139,22 +139,5 @@ public class MarkService {
             throw new RuntimeException("Failed to get address information from Kakao API");
         }
     }
-
-    public static String getAdminAreaCode(String address) {
-        String url = API_URL + "addr2coord.do?key=" + API_KEY + "&domain=land&output=json&addr=" + address;
-        RestTemplate restTemplate = new RestTemplate();
-        String result = restTemplate.getForObject(url, String.class);
-        String[] splitResult = result.split("\"admiCd\":\"");
-        if(splitResult.length > 1) {
-            String code = splitResult[1].substring(0, 8);
-            return code;
-        } else {
-            return null;
-        }
-    }
-
-
-
-
 
 }
