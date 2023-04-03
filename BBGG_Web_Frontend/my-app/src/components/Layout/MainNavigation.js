@@ -41,10 +41,10 @@ const MainNavigation = () => {
       <nav>
         <ul>
           <li>
-            <Link to='/KakaoMap'>{isLogin ? "Map" : ""}</Link>
+            <Link to='/CurrentLocation'>{isLogin ? "Location" : ""}</Link>
           </li>
           <li>
-            <Link to='/profile'>{isLogin ? "Profile" : ""}</Link>
+            <Link to='/ColoringMap'>{isLogin ? "Coloring" : ""}</Link>
           </li>
           <li className={classes.NavName}>
           {isLogin ? localStorage.getItem('userName') + " 님" : ""} 
