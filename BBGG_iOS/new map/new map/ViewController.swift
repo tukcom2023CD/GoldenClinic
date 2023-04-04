@@ -68,7 +68,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if sender.selectedSegmentIndex == 0 {
             
         } else if sender.selectedSegmentIndex == 1 {
-            
+            setAnnotation(latitudeValue: 37.75, longitudeValue: 128.87, delta: 1, title: "한폴대 강릉", subtitle: "여기는 한폴대")
         }
     }
 } // ViewController
