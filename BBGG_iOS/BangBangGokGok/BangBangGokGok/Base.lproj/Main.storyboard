@@ -130,27 +130,39 @@
         <!--Main View-->
         <scene sceneID="FyW-nw-TIK">
             <objects>
-                <viewController id="8uq-7q-ae3" sceneMemberID="viewController">
+                <viewController id="8uq-7q-ae3" customClass="MapViewController" customModule="BangBangGokGok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xJb-8h-xRE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1i-Fv-u0K">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1i-Fv-u0K">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9DN-hZ-oho">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9DN-hZ-oho">
                                 <rect key="frame" x="163" y="783" width="67" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="PLAN"/>
+                                <connections>
+                                    <action selector="btnStart:" destination="8uq-7q-ae3" eventType="touchUpInside" id="QW9-Yg-bBK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="54f-RI-dBo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V1i-Fv-u0K" firstAttribute="centerY" secondItem="xJb-8h-xRE" secondAttribute="centerY" id="MdZ-kM-m0G"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="V1i-Fv-u0K" secondAttribute="bottom" constant="-34" id="QIa-cL-oDG"/>
+                            <constraint firstItem="9DN-hZ-oho" firstAttribute="centerX" secondItem="V1i-Fv-u0K" secondAttribute="centerX" id="T3S-ds-Nal"/>
+                            <constraint firstItem="V1i-Fv-u0K" firstAttribute="centerX" secondItem="xJb-8h-xRE" secondAttribute="centerX" id="bq5-CZ-Hrf"/>
+                            <constraint firstItem="V1i-Fv-u0K" firstAttribute="leading" secondItem="54f-RI-dBo" secondAttribute="leading" id="fxA-Dw-Fbi"/>
+                            <constraint firstItem="9DN-hZ-oho" firstAttribute="bottom" secondItem="54f-RI-dBo" secondAttribute="bottom" id="ogi-Qh-FUL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Main View" id="SDQ-oF-bZD"/>
+                    <connections>
+                        <outlet property="myMap" destination="V1i-Fv-u0K" id="Fa4-1z-eqS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtT-nJ-Xw3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
