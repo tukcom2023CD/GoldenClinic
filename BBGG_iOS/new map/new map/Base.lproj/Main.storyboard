@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,7 +21,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cYF-f2-CMh">
                                 <rect key="frame" x="128" y="59" width="137" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="aSW-rz-6WA"/>
+                                    <constraint firstAttribute="height" constant="30" id="2yr-VW-rGi"/>
                                 </constraints>
                                 <segments>
                                     <segment title="BBGG"/>
@@ -30,8 +31,8 @@
                                     <action selector="sgChangeLocation:" destination="BYZ-38-t0r" eventType="valueChanged" id="bqu-2D-2vR"/>
                                 </connections>
                             </segmentedControl>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCB-G7-U2w">
-                                <rect key="frame" x="17" y="106" width="360" height="640"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCB-G7-U2w">
+                                <rect key="frame" x="16" y="106" width="361" height="640"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujZ-Dk-0aI">
@@ -43,14 +44,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ujZ-Dk-0aI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2BN-g0-Oht"/>
-                            <constraint firstItem="cYF-f2-CMh" firstAttribute="centerX" secondItem="xCB-G7-U2w" secondAttribute="centerX" id="JeP-na-1L4"/>
-                            <constraint firstItem="xCB-G7-U2w" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Kpk-9g-h7P"/>
-                            <constraint firstItem="xCB-G7-U2w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XLi-rT-LSE"/>
-                            <constraint firstItem="xCB-G7-U2w" firstAttribute="top" secondItem="cYF-f2-CMh" secondAttribute="bottom" constant="17" id="aHh-ZN-lwd"/>
-                            <constraint firstItem="xCB-G7-U2w" firstAttribute="centerX" secondItem="ujZ-Dk-0aI" secondAttribute="centerX" id="gQe-24-1VJ"/>
-                            <constraint firstItem="cYF-f2-CMh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rLw-86-ike"/>
-                            <constraint firstItem="cYF-f2-CMh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vo1-Bv-rIT"/>
+                            <constraint firstItem="cYF-f2-CMh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="F77-0r-UrB"/>
+                            <constraint firstItem="xCB-G7-U2w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="M7w-Sy-9LO"/>
+                            <constraint firstItem="ujZ-Dk-0aI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QCN-WN-eva"/>
+                            <constraint firstItem="xCB-G7-U2w" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Rs3-7J-3HB"/>
+                            <constraint firstItem="cYF-f2-CMh" firstAttribute="centerX" secondItem="xCB-G7-U2w" secondAttribute="centerX" id="WUC-Jt-ucF"/>
+                            <constraint firstItem="xCB-G7-U2w" firstAttribute="centerX" secondItem="ujZ-Dk-0aI" secondAttribute="centerX" id="ag3-Sq-JGF"/>
+                            <constraint firstItem="xCB-G7-U2w" firstAttribute="top" secondItem="cYF-f2-CMh" secondAttribute="bottom" constant="17" id="ce1-0W-Kq7"/>
+                            <constraint firstItem="xCB-G7-U2w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="u5N-LJ-UHO"/>
                         </constraints>
                     </view>
                     <connections>
