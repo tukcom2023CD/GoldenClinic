@@ -71,7 +71,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             setAnnotation(latitudeValue: 37.75, longitudeValue: 128.87, delta: 1, title: "한폴대 강릉", subtitle: "여기는 한폴대")
             setAnnotation(latitudeValue: 39.00, longitudeValue: 128.87, delta: 1, title: "북조선인민민주주의공화국", subtitle: "여기는 북한")
             setAnnotation(latitudeValue: 35.98, longitudeValue: 129.88, delta: 1, title: "대한민국", subtitle: "여기는 남한")
-            setAnnotation(latitudeValue: 34.41, longitudeValue: 125.60, delta: 1, title: "KOREA", subtitle: "여기는 남한")
+            setAnnotation(latitudeValue: 34.63, longitudeValue: 126.60, delta: 1, title: "KOREA", subtitle: "여기는 남한")
         }
     }
 } // ViewController
