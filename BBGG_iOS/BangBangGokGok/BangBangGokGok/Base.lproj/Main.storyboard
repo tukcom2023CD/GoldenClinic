@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8uq-7q-ae3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8uq-7q-ae3">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,7 +13,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BangBangGokGok" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="BangBangGokGok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,34 +130,39 @@
         <!--Main View-->
         <scene sceneID="FyW-nw-TIK">
             <objects>
-                <viewController id="8uq-7q-ae3" sceneMemberID="viewController">
+                <viewController id="8uq-7q-ae3" customClass="MapViewController" customModule="BangBangGokGok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xJb-8h-xRE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Picture1" translatesAutoresizingMaskIntoConstraints="NO" id="CUQ-gR-eGr">
-                                <rect key="frame" x="46" y="-227" width="301" height="1306"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7t-8m-XsG">
-                                <rect key="frame" x="163" y="723" width="67" height="35"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1i-Fv-u0K">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9DN-hZ-oho">
+                                <rect key="frame" x="163" y="783" width="67" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="PLAN"/>
                                 <connections>
-                                    <segue destination="Ebh-zh-rpM" kind="show" id="jzF-D6-Ozk"/>
+                                    <action selector="btnStart:" destination="8uq-7q-ae3" eventType="touchUpInside" id="QW9-Yg-bBK"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="54f-RI-dBo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="J7t-8m-XsG" firstAttribute="top" secondItem="54f-RI-dBo" secondAttribute="top" constant="620" id="3hb-rT-vIG"/>
-                            <constraint firstItem="CUQ-gR-eGr" firstAttribute="leading" secondItem="54f-RI-dBo" secondAttribute="leading" constant="46" id="BgK-4W-sqd"/>
-                            <constraint firstItem="CUQ-gR-eGr" firstAttribute="centerX" secondItem="J7t-8m-XsG" secondAttribute="centerX" id="OJ9-23-hiU"/>
-                            <constraint firstItem="J7t-8m-XsG" firstAttribute="centerX" secondItem="xJb-8h-xRE" secondAttribute="centerX" id="ilF-38-sy5"/>
-                            <constraint firstItem="CUQ-gR-eGr" firstAttribute="centerY" secondItem="xJb-8h-xRE" secondAttribute="centerY" id="lzI-Ym-qnK"/>
+                            <constraint firstItem="V1i-Fv-u0K" firstAttribute="centerY" secondItem="xJb-8h-xRE" secondAttribute="centerY" id="MdZ-kM-m0G"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="V1i-Fv-u0K" secondAttribute="bottom" constant="-34" id="QIa-cL-oDG"/>
+                            <constraint firstItem="9DN-hZ-oho" firstAttribute="centerX" secondItem="V1i-Fv-u0K" secondAttribute="centerX" id="T3S-ds-Nal"/>
+                            <constraint firstItem="V1i-Fv-u0K" firstAttribute="centerX" secondItem="xJb-8h-xRE" secondAttribute="centerX" id="bq5-CZ-Hrf"/>
+                            <constraint firstItem="V1i-Fv-u0K" firstAttribute="leading" secondItem="54f-RI-dBo" secondAttribute="leading" id="fxA-Dw-Fbi"/>
+                            <constraint firstItem="9DN-hZ-oho" firstAttribute="bottom" secondItem="54f-RI-dBo" secondAttribute="bottom" id="ogi-Qh-FUL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Main View" id="SDQ-oF-bZD"/>
+                    <connections>
+                        <outlet property="myMap" destination="V1i-Fv-u0K" id="Fa4-1z-eqS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtT-nJ-Xw3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,7 +216,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Picture1" width="1310" height="1306"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
