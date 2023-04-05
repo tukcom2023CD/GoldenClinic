@@ -40,6 +40,9 @@ const MainNavigation = () => {
       </Link>
       <nav>
         <ul>
+        <li>
+            <Link to='/Testing'>{isLogin ? "Location" : ""}</Link>
+          </li>
           <li>
             <Link to='/CurrentLocation'>{isLogin ? "Location" : ""}</Link>
           </li>
