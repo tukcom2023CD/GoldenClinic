@@ -7,6 +7,7 @@ import ClusterPage from "./components/Profile/ClusterPage";
 import AuthPage from "./pages/AuthPage";
 import HomePage from "./pages/HomePage";
 import CurrentLocation from "./components/Map/CurrentLocation";
+import TestingPage from "./components/Profile/TestingPage";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/ColoringMap" element={<ColoringMap />}></Route>
         <Route path="/CurrentLocation" element={<CurrentLocation />}></Route>
         <Route path="/Cluster" element={<ClusterPage />}></Route>
+        <Route path="/Testing" element={<TestingPage />}></Route>
       </Routes>
     </Layout>
   );
