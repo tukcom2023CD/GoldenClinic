@@ -30,8 +30,9 @@ const ProfileForm = () => {
 
             var resultDiv = document.getElementById('resultDiv');
             resultDiv.innerHTML = message;
-
         });
+
+
 
         navigator.geolocation.getCurrentPosition(function () {
 
