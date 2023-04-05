@@ -58,34 +58,34 @@ const ProfileForm = () => {
 
                     }
                 })
-            };getData()
+            }; getData()
 
             const getColoring = (text) => {
                 const encodedText = encodeURIComponent(text);
-              
+
                 axios.get(`http://localhost:8080/api/vworld/req/data?parameter1=${encodedText}`, {
 
                 }).then((vword) => {
-                  const coordinates = vword.data.response.result.featureCollection.features[0].geometry.coordinates[0][0];
-                  const points = [];
-                  for (let i = 0; i < coordinates.length; i++) {
-                    const lat = coordinates[i][1];
-                    const lng = coordinates[i][0];
-                    points.push(new kakao.maps.LatLng(lat, lng));
-                  }
-                  const polygon = new kakao.maps.Polygon({
-                    map: map,
-                    path: points,
-                    strokeWeight: 2,
-                    strokeColor: "#004c80",
-                    strokeOpacity: 0.8,
-                    fillColor: "#fff8e1",
-                    fillOpacity: 0.7
-                  });
-                  // 지도에 다각형을 표시합니다
-                  polygon.setMap(map);
+                    const coordinates = vword.data.response.result.featureCollection.features[0].geometry.coordinates[0][0];
+                    const points = [];
+                    for (let i = 0; i < coordinates.length; i++) {
+                        const lat = coordinates[i][1];
+                        const lng = coordinates[i][0];
+                        points.push(new kakao.maps.LatLng(lat, lng));
+                    }
+                    const polygon = new kakao.maps.Polygon({
+                        map: map,
+                        path: points,
+                        strokeWeight: 2,
+                        strokeColor: "#004c80",
+                        strokeOpacity: 0.8,
+                        fillColor: "#fff8e1",
+                        fillOpacity: 0.7
+                    });
+                    // 지도에 다각형을 표시합니다
+                    polygon.setMap(map);
                 });
-              };
+            };
 
 
         });
