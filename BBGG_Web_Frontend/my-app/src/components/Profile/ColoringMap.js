@@ -44,8 +44,7 @@ const ProfileForm = () => {
                         userId: localStorage.getItem('userId')
                     }
                 }).then((response) => {
-                    const gpsJson = JSON.stringify(response.data)
-                    const parsedGps = JSON.parse(gpsJson);
+                    const parsedGps = response.data;
 
                     for (var i = 0; i < parsedGps.length; i++) {
                         let lat = parsedGps[i].latitude,
