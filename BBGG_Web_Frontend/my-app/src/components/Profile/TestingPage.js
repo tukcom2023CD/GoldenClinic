@@ -107,10 +107,10 @@ const ProfileForm = () => {
                     height: '700px'
                 }}>
             </div><button className={classes.top_btn} onClick={MarkSwitchBtn}>
-                현재 위치 보기
+                여긴 테스팅 페이지입니다
             </button>
             <button className={classes.top_side_btn} onClick={ClusterSwitchBtn}>
-                클러스터로 보기
+                여긴 테스팅 페이지입니다
             </button>
         </div>
     )
