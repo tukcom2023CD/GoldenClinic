@@ -77,9 +77,9 @@ const ProfileForm = () => {
                         map: map,
                         path: points,
                         strokeWeight: 2,
-                        strokeColor: "#004c80",
+                        strokeColor: "#00509c",
                         strokeOpacity: 0.8,
-                        fillColor: "#fff8e1",
+                        fillColor: "#f0e9d3",
                         fillOpacity: 0.7
                     });
                     // 지도에 다각형을 표시합니다
