@@ -41,10 +41,13 @@ const ProfileForm = () => {
                     userId: localStorage.getItem('userId')
                 }).then(function () {
                     alert("클릭으로 현재 위치가 기록되었습니다.");
+                    window.location.replace('/Testing');
                 }).catch(function (error) {
                     console.log(error);
                 });
             };GpsSave()
+
+
             function displayMarker(locPosition, message) {
 
                 var marker = new kakao.maps.Marker({
