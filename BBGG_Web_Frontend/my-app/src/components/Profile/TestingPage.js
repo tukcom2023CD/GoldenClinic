@@ -18,6 +18,7 @@ const ProfileForm = () => {
 
         var zoomControl = new kakao.maps.ZoomControl();
         map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+        
 
         // 지도에 클릭 이벤트를 등록합니다
         kakao.maps.event.addListener(map, 'click', function (mouseEvent) {
@@ -30,6 +31,27 @@ const ProfileForm = () => {
 
             var resultDiv = document.getElementById('resultDiv');
             resultDiv.innerHTML = message;
+
+            //위도 경도 이름 아이디 DB로 전송
+            const GpsSave = () => {
+                axios.post("http://localhost:8080/gps/save", {
+                    latitude: latlng.getLat(),
+                    longitude: latlng.getLng(),
+                    text: localStorage.getItem('userName'),
+                    userId: localStorage.getItem('userId')
+                }).then(function () {
+                    alert("클릭으로 현재 위치가 기록되었습니다.");
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            };GpsSave()
+            function displayMarker(locPosition, message) {
+
+                var marker = new kakao.maps.Marker({
+                    map: map,
+                    position: locPosition
+                });
+            }
         });
 
 
