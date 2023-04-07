@@ -16,9 +16,40 @@ const ProfileForm = () => {
         var mapTypeControl = new kakao.maps.MapTypeControl();
         map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
-
         var zoomControl = new kakao.maps.ZoomControl();
         map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+        
+
+        // 지도에 클릭 이벤트를 등록합니다
+        kakao.maps.event.addListener(map, 'click', function (mouseEvent) {
+
+            // 클릭한 위도, 경도 정보를 가져옵니다 
+            var latlng = mouseEvent.latLng;
+
+            var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
+            message += '경도는 ' + latlng.getLng() + ' 입니다';
+
+            var resultDiv = document.getElementById('resultDiv');
+            resultDiv.innerHTML = message;
+
+            //위도 경도 이름 아이디 DB로 전송
+            const GpsSave = () => {
+                axios.post("http://localhost:8080/gps/save", {
+                    latitude: latlng.getLat(),
+                    longitude: latlng.getLng(),
+                    text: localStorage.getItem('userName'),
+                    userId: localStorage.getItem('userId')
+                }).then(function () {
+                    alert("클릭으로 현재 위치가 기록되었습니다.");
+                    window.location.replace('/Testing');
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            }; GpsSave()
+        });
+
+
+
 
         navigator.geolocation.getCurrentPosition(function () {
 
@@ -107,11 +138,12 @@ const ProfileForm = () => {
                     height: '700px'
                 }}>
             </div><button className={classes.top_btn} onClick={MarkSwitchBtn}>
-                현재 위치 보기
+                여긴 테스팅 페이지입니다
             </button>
             <button className={classes.top_side_btn} onClick={ClusterSwitchBtn}>
-                클러스터로 보기
+                여긴 테스팅 페이지입니다
             </button>
+            <div id='resultDiv'>지도를 클릭하세요</div>
         </div>
     )
 }
