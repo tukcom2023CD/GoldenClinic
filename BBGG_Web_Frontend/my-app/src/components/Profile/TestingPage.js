@@ -45,17 +45,9 @@ const ProfileForm = () => {
                 }).catch(function (error) {
                     console.log(error);
                 });
-            };GpsSave()
-
-
-            function displayMarker(locPosition, message) {
-
-                var marker = new kakao.maps.Marker({
-                    map: map,
-                    position: locPosition
-                });
-            }
+            }; GpsSave()
         });
+
 
 
 
