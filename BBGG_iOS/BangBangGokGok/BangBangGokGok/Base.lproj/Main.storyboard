@@ -145,6 +145,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="PLAN"/>
                                 <connections>
                                     <action selector="btnStart:" destination="8uq-7q-ae3" eventType="touchUpInside" id="QW9-Yg-bBK"/>
+                                    <segue destination="Ebh-zh-rpM" kind="show" id="MaX-kr-4VC"/>
                                 </connections>
                             </button>
                         </subviews>
