@@ -1,28 +1,44 @@
 //
-//  ViewController.swift
-//  new map
+//  MapViewController.swift
+//  BangBangGokGok
 //
-//  Created by 권태우 on 2023/03/16.
+//  Created by 권태우 on 2023/04/04.
 //
 
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var myMap: MKMapView!
-    
     let loctionManger = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
-        
         loctionManger.delegate = self
         loctionManger.desiredAccuracy = kCLLocationAccuracyBest
         loctionManger.requestWhenInUseAuthorization()
         loctionManger.startUpdatingLocation()
         myMap.showsUserLocation = true
+        
+        setAnnotation(latitudeValue: 37.75, longitudeValue: 128.87, delta: 1, title: "한폴대 강릉", subtitle: "여기는 한폴대")
+        setAnnotation(latitudeValue: 39.00, longitudeValue: 128.87, delta: 1, title: "북조선인민민주주의공화국", subtitle: "여기는 북한")
+        setAnnotation(latitudeValue: 35.98, longitudeValue: 129.88, delta: 1, title: "대한민국", subtitle: "여기는 남한")
+        setAnnotation(latitudeValue: 34.63, longitudeValue: 126.60, delta: 1, title: "KOREA", subtitle: "여기는 남한")
     }
     
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
     func goLocation(latitudeValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span: Double) -> CLLocationCoordinate2D {
         let pLocation = CLLocationCoordinate2DMake(latitudeValue, longitudeValue)
         let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
@@ -64,15 +80,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         myMap.addAnnotation(annotaion)
     }
-    @IBAction func sgChangeLocation(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            
-        } else if sender.selectedSegmentIndex == 1 {
-            setAnnotation(latitudeValue: 37.75, longitudeValue: 128.87, delta: 1, title: "한폴대 강릉", subtitle: "여기는 한폴대")
-            setAnnotation(latitudeValue: 39.00, longitudeValue: 128.87, delta: 1, title: "북조선인민민주주의공화국", subtitle: "여기는 북한")
-            setAnnotation(latitudeValue: 35.98, longitudeValue: 129.88, delta: 1, title: "대한민국", subtitle: "여기는 남한")
-            setAnnotation(latitudeValue: 34.63, longitudeValue: 126.60, delta: 1, title: "KOREA", subtitle: "여기는 남한")
-        }
+    
+    @IBAction func btnStart(_ sender: UIButton) {
+        
     }
-} // ViewController
-
+} // MapViewController

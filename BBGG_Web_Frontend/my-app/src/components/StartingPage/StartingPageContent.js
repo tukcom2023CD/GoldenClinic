@@ -11,7 +11,7 @@ const StartingPageContent = () => {
 
   const StartBBGGBtn = () => {
     if (isLogin) {
-      window.location.replace('/KakaoMap')
+      window.location.replace('/CurrentLocation')
     } else {
       window.location.replace('/auth')
     }

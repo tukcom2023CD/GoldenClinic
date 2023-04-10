@@ -9,10 +9,10 @@ const ProfileForm = () => {
   useEffect(() => {
     var mapContainer = document.getElementById('map'),
       mapOption = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667),
+        center: new kakao.maps.LatLng(37.566830959632526, 126.97864942713029),
         level: 13
       };
-      
+
     var map = new kakao.maps.Map(mapContainer, mapOption);
     var mapTypeControl = new kakao.maps.MapTypeControl();
     map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
@@ -52,12 +52,9 @@ const ProfileForm = () => {
             userId: localStorage.getItem('userId')
           }
         }).then((response) => {
-          const gpsJson = JSON.stringify(response.data)
-          const parsedGps = JSON.parse(gpsJson);
-          console.log(gpsJson)
+          const parsedGps = response.data;
 
           for (var i = 0; i < parsedGps.length; i++) {
-
 
             let lat = parsedGps[i].latitude,
               lon = parsedGps[i].longitude;
