@@ -62,13 +62,9 @@ const ProfileForm = () => {
                             displayMarker(locPosition, parsedGps[i].text);
                             uniqueTexts.add(text);
                         }
-                    }   setUniqueTextsCount(uniqueTexts.size);
+                    } setUniqueTextsCount(uniqueTexts.size);
                 })
             }; getData()
-
-            const percent = () => {
-                return (setUniqueTextsCount / 5065) * 100
-            };
 
             const getColoring = (text) => {
 

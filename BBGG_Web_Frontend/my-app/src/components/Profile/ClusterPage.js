@@ -46,35 +46,31 @@ const ProfileForm = () => {
         map.setCenter(locPosition);
       };
 
-       //지역들 이름 추출 후 저장
-       const getData = () => {
+      //지역들 이름 추출 후 저장
+      const getData = () => {
 
         axios.get("http://localhost:8080/gps/mark", {
-            params: {
-                userId: localStorage.getItem('userId')
-            }
+          params: {
+            userId: localStorage.getItem('userId')
+          }
         }).then((response) => {
-            const parsedGps = response.data;
-            const uniqueTexts = new Set();
+          const parsedGps = response.data;
+          const uniqueTexts = new Set();
 
-            for (var i = 0; i < parsedGps.length; i++) {
-                let lat = parsedGps[i].latitude,
-                    lon = parsedGps[i].longitude,
-                    text = parsedGps[i].text;
+          for (var i = 0; i < parsedGps.length; i++) {
+            let lat = parsedGps[i].latitude,
+              lon = parsedGps[i].longitude,
+              text = parsedGps[i].text;
 
-                if (!uniqueTexts.has(text)) {
-                    let locPosition = new kakao.maps.LatLng(lat, lon);
-                    console.log(text);
-                    displayMarker(locPosition, parsedGps[i].text);
-                    uniqueTexts.add(text);
-                }
-            }   setUniqueTextsCount(uniqueTexts.size);
+            if (!uniqueTexts.has(text)) {
+              let locPosition = new kakao.maps.LatLng(lat, lon);
+              console.log(text);
+              displayMarker(locPosition, parsedGps[i].text);
+              uniqueTexts.add(text);
+            }
+          } setUniqueTextsCount(uniqueTexts.size);
         })
-    }; getData()
-
-    const percent = () => {
-        return (setUniqueTextsCount / 5065) * 100
-    };
+      }; getData()
 
 
     });
