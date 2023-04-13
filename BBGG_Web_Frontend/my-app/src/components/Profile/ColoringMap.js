@@ -1,10 +1,11 @@
 import classes from './ColoringMap.module.css';
 import axios from "axios";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ProfileForm = () => {
 
     const { kakao } = window;
+    const [uniqueTextsCount, setUniqueTextsCount] = useState(0);
 
     useEffect(() => {
         var mapContainer = document.getElementById('map'),
@@ -47,23 +48,26 @@ const ProfileForm = () => {
                     }
                 }).then((response) => {
                     const parsedGps = response.data;
+                    const uniqueTexts = new Set();
 
                     for (var i = 0; i < parsedGps.length; i++) {
                         let lat = parsedGps[i].latitude,
                             lon = parsedGps[i].longitude,
                             text = parsedGps[i].text;
 
-                        let locPosition = new kakao.maps.LatLng(lat, lon);
-                        console.log(text);
-                        getColoring(text);
-                        displayMarker(locPosition, parsedGps[i].text);
-
-                    }
+                        if (!uniqueTexts.has(text)) {
+                            let locPosition = new kakao.maps.LatLng(lat, lon);
+                            console.log(text);
+                            getColoring(text);
+                            displayMarker(locPosition, parsedGps[i].text);
+                            uniqueTexts.add(text);
+                        }
+                    }   setUniqueTextsCount(uniqueTexts.size);
                 })
             }; getData()
 
             const getColoring = (text) => {
-                
+
                 //폴리곤 중첩 방지 위해
                 for (var i = 0; i < markers.length; i++) {
                     markers[i].setMap(null);
@@ -121,7 +125,7 @@ const ProfileForm = () => {
             <button className={classes.top_side_btn} onClick={ClusterSwitchBtn}>
                 클러스터로 보기
             </button>
-            <div className={classes.percent}>몇퍼</div>
+            <div className={classes.percent}>{uniqueTextsCount}</div>
         </div>
     )
 }
