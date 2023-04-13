@@ -38,3 +38,10 @@
 .top_side_btn:hover {
   opacity: 1;
 }
+
+.percent {
+    position:fixed;
+    right: 10%;
+    bottom: 20%;
+    z-index: 9999;
+}
