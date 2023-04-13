@@ -20,6 +20,8 @@ const ProfileForm = () => {
         var zoomControl = new kakao.maps.ZoomControl();
         map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
+        var markers = []; //폴리곤 중첩 방지 위한 선언
+
         navigator.geolocation.getCurrentPosition(function () {
 
             function displayMarker(locPosition) {
@@ -61,6 +63,13 @@ const ProfileForm = () => {
             }; getData()
 
             const getColoring = (text) => {
+                
+                //폴리곤 중첩 방지 위해
+                for (var i = 0; i < markers.length; i++) {
+                    markers[i].setMap(null);
+                }
+                markers = [];
+
                 const encodedText = encodeURIComponent(text);
 
                 axios.get(`http://localhost:8080/api/vworld/req/data?parameter1=${encodedText}`, {
