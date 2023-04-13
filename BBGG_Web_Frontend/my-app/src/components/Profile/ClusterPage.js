@@ -1,10 +1,11 @@
 import classes from './ColoringMap.module.css';
 import axios from "axios";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ProfileForm = () => {
 
   const { kakao } = window;
+  const [uniqueTextsCount, setUniqueTextsCount] = useState(0);
 
   useEffect(() => {
     var mapContainer = document.getElementById('map'),
@@ -45,29 +46,36 @@ const ProfileForm = () => {
         map.setCenter(locPosition);
       };
 
-      const getData = () => {
+       //지역들 이름 추출 후 저장
+       const getData = () => {
 
         axios.get("http://localhost:8080/gps/mark", {
-          params: {
-            userId: localStorage.getItem('userId')
-          }
+            params: {
+                userId: localStorage.getItem('userId')
+            }
         }).then((response) => {
-          const parsedGps = response.data;
+            const parsedGps = response.data;
+            const uniqueTexts = new Set();
 
-          for (var i = 0; i < parsedGps.length; i++) {
+            for (var i = 0; i < parsedGps.length; i++) {
+                let lat = parsedGps[i].latitude,
+                    lon = parsedGps[i].longitude,
+                    text = parsedGps[i].text;
 
-            let lat = parsedGps[i].latitude,
-              lon = parsedGps[i].longitude;
-
-            let locPosition = new kakao.maps.LatLng(lat, lon);
-
-            displayMarker(locPosition, parsedGps[i].text);
-          }
-
-
+                if (!uniqueTexts.has(text)) {
+                    let locPosition = new kakao.maps.LatLng(lat, lon);
+                    console.log(text);
+                    displayMarker(locPosition, parsedGps[i].text);
+                    uniqueTexts.add(text);
+                }
+            }   setUniqueTextsCount(uniqueTexts.size);
         })
-      };
-      getData();
+    }; getData()
+
+    const percent = () => {
+        return (setUniqueTextsCount / 5065) * 100
+    };
+
 
     });
   });
@@ -91,7 +99,7 @@ const ProfileForm = () => {
       </button>
       <button className={classes.top_side_btn} onClick={FillBtn}>
         색칠하기로 보기
-      </button>
+      </button><div className={classes.percent}>{Math.round(uniqueTextsCount / 5065)}%</div>
     </div>
   )
 }
