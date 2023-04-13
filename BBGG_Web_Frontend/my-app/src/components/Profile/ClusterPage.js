@@ -1,4 +1,4 @@
-import classes from './ColoringMap.module.css';
+import classes from './ClusterPage.module.css';
 import axios from "axios";
 import React, { useEffect, useState } from 'react';
 
