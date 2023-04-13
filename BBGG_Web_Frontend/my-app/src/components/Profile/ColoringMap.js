@@ -112,6 +112,7 @@ const ProfileForm = () => {
             <button className={classes.top_side_btn} onClick={ClusterSwitchBtn}>
                 클러스터로 보기
             </button>
+            <div className={classes.percent}>몇퍼</div>
         </div>
     )
 }
