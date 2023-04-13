@@ -66,6 +66,10 @@ const ProfileForm = () => {
                 })
             }; getData()
 
+            const percent = () => {
+                return (setUniqueTextsCount / 5065) * 100
+            };
+
             const getColoring = (text) => {
 
                 //폴리곤 중첩 방지 위해
@@ -125,7 +129,7 @@ const ProfileForm = () => {
             <button className={classes.top_side_btn} onClick={ClusterSwitchBtn}>
                 클러스터로 보기
             </button>
-            <div className={classes.percent}>{uniqueTextsCount}</div>
+            <div className={classes.percent}>{Math.round(uniqueTextsCount / 5065)}%</div>
         </div>
     )
 }
