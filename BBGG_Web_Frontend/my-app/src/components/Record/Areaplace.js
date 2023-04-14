@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import classes from "./Area_first.module.css";
+import classes from "./Areafirst.module.css";
 
 const Area_place = () => {
   const [visitedPlaces, setVisitedPlaces] = useState([]);
@@ -31,7 +31,7 @@ const Area_place = () => {
 
   return (
     <div className={classes.starting}>
-      <h1>방문지역</h1>
+      <h1>방문지</h1>
       {visitedPlaces.map((place, index) => (
         <button key={index} onClick={handleClick}>
           {place}
@@ -40,4 +40,4 @@ const Area_place = () => {
     </div>
   );
 };
-export default Area_place;
+export default Areaplace;
