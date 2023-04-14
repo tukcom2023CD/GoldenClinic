@@ -14,4 +14,5 @@ public final class Markdto {
     private double latitude;
     private double longitude;
     private String text;
+    private String title;
 }
