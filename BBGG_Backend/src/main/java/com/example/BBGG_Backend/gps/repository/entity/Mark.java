@@ -29,6 +29,8 @@ public class Mark extends BaseTimeEntity{
     @Column
     private String text;
     @Column
+    private String title;
+    @Column
     private byte[] img;
     @Column
     private String area;
@@ -40,7 +42,7 @@ public class Mark extends BaseTimeEntity{
         return Markdto.builder()
                 .latitude(latitude)
                 .longitude(longitude)
-                .text(text)
+                .text(text).title(title)
                 .build();
     }
 }
