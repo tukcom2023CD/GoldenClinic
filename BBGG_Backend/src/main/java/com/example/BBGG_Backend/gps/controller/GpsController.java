@@ -22,8 +22,8 @@ public class GpsController {
     @Autowired
     private  MarkService markService;
     @PostMapping("/save")
-    public ResponseEntity save(@RequestBody Markdto markdto,@RequestParam("file") MultipartFile file) throws IOException {
-        if(markService.save(markdto,file.getBytes()).equals("Success")){
+    public ResponseEntity save(@RequestBody Markdto markdto)  {
+        if(markService.save(markdto).equals("Success")){
             return new ResponseEntity(HttpStatus.CREATED);
         }
         return new ResponseEntity(HttpStatus. BAD_REQUEST);
