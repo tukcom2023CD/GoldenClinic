@@ -26,24 +26,10 @@ const ProfileForm = () => {
 
         navigator.geolocation.getCurrentPosition(function () {
 
-            function displayMarker(locPosition) {
-
-                var marker = new kakao.maps.Marker({
-                    map: map,
-                    position: locPosition
-                });
-
-                var markers = [];
-
-                markers.push(marker);
-
-                map.setCenter(locPosition);
-            };
-
             //지역들 이름 추출 후 저장
             const getData = () => {
 
-                axios.get("http://localhost:8080/gps/mark", {
+                axios.get("http://localhost:8080/gps/visited_place", {
                     params: {
                         userId: localStorage.getItem('userId')
                     }
@@ -52,15 +38,12 @@ const ProfileForm = () => {
                     const uniqueTexts = new Set();
 
                     for (var i = 0; i < parsedGps.length; i++) {
-                        let lat = parsedGps[i].latitude,
-                            lon = parsedGps[i].longitude,
-                            text = parsedGps[i].text;
+                        let text = parsedGps[i];
 
                         if (!uniqueTexts.has(text)) {
-                            let locPosition = new kakao.maps.LatLng(lat, lon);
                             console.log(text);
                             getColoring(text);
-                            displayMarker(locPosition, parsedGps[i].text);
+                            //displayMarker(locPosition, parsedGps[i].text);
                             uniqueTexts.add(text);
                         }
                     } setUniqueTextsCount(uniqueTexts.size);
@@ -127,7 +110,7 @@ const ProfileForm = () => {
                 클러스터로 보기
             </button>
             <div className={classes.percent}>
-                <DountChart color="#f62459" percent={uniqueTextsCount / 5065} size="65px" /></div>
+                <DountChart color="#f62459" percent={(uniqueTextsCount / 5065)} size="65px" /></div>
         </div>
     )
 }
