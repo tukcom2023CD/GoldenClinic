@@ -99,7 +99,7 @@ public class MarkService {
         String region1depthName = address.get("region_1depth_name").asText();
         String region2depthName = address.get("region_2depth_name").asText();
         String region3depthName = address.get("region_3depth_name").asText();
-        String location = region1depthName + " " + region2depthName + " " + region3depthName;
+        String location =region3depthName;
         return location;
     }
     public static String getAddressByQuery(String query) {
