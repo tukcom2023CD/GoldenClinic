@@ -9,7 +9,6 @@ import HomePage from "./pages/HomePage";
 import CurrentLocation from "./components/Map/CurrentLocation";
 import TestingPage from "./components/Profile/TestingPage";
 import Area_first from "./components/Record/Area_first";
-import RecordPost from "./components/Record/RecordPost";
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
         <Route path="/Cluster" element={<ClusterPage />}></Route>
         <Route path="/Testing" element={<TestingPage />}></Route>
         <Route path="/Area_first" element={<Area_first />}></Route>
-        <Route path="/RecordPost" element={<RecordPost />}></Route>
       </Routes>
     </Layout>
   );

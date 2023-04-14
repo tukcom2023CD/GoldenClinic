@@ -1,14 +1,13 @@
-import { Link } from "react-router-dom";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import classes from "./Area_first.module.css";
 
-const Area_first = () => {
+const Area_place = () => {
   const [visitedPlaces, setVisitedPlaces] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/gps/visited_place", {
+      .get("http://localhost:8080/gps/place", {
         params: {
           userId: localStorage.getItem("userId"),
         },
@@ -41,4 +40,4 @@ const Area_first = () => {
     </div>
   );
 };
-export default Area_first;
+export default Area_place;
