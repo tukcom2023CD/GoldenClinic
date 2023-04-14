@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Slf4j
@@ -20,8 +22,8 @@ public class GpsController {
     @Autowired
     private  MarkService markService;
     @PostMapping("/save")
-    public ResponseEntity save(@RequestBody Markdto markdto)  {
-        if(markService.save(markdto).equals("Success")){
+    public ResponseEntity save(@RequestBody Markdto markdto,@RequestParam("file") MultipartFile file) throws IOException {
+        if(markService.save(markdto,file.getBytes()).equals("Success")){
             return new ResponseEntity(HttpStatus.CREATED);
         }
         return new ResponseEntity(HttpStatus. BAD_REQUEST);
@@ -37,5 +39,11 @@ public class GpsController {
     public List<?> visit(@RequestParam String userId){
         List<?> visit=markService.visit(userId);
         return visit;
+    }
+    @GetMapping("/place")
+    @ResponseBody
+    public List<Mark> place(@RequestParam String dong){
+        List<Mark> place=markService.place(dong);
+        return place;
     }
 }
