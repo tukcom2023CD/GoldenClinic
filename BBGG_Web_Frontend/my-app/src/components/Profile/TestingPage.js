@@ -1,10 +1,12 @@
 import classes from './ColoringMap.module.css';
 import axios from "axios";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import DountChart from "./DountChart.js";
 
 const ProfileForm = () => {
 
     const { kakao } = window;
+    const [uniqueTextsCount, setUniqueTextsCount] = useState(0);
 
     useEffect(() => {
         var mapContainer = document.getElementById('map'),
@@ -18,7 +20,7 @@ const ProfileForm = () => {
 
         var zoomControl = new kakao.maps.ZoomControl();
         map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-        
+
 
         // 지도에 클릭 이벤트를 등록합니다
         kakao.maps.event.addListener(map, 'click', function (mouseEvent) {
@@ -76,18 +78,22 @@ const ProfileForm = () => {
                     }
                 }).then((response) => {
                     const parsedGps = response.data;
+                    const uniqueTexts = new Set();
 
                     for (var i = 0; i < parsedGps.length; i++) {
                         let lat = parsedGps[i].latitude,
                             lon = parsedGps[i].longitude,
                             text = parsedGps[i].text;
 
-                        let locPosition = new kakao.maps.LatLng(lat, lon);
-                        console.log(text);
-                        getColoring(text);
-                        displayMarker(locPosition, parsedGps[i].text);
+                        if (!uniqueTexts.has(text)) {
+                            let locPosition = new kakao.maps.LatLng(lat, lon);
+                            console.log(text);
+                            getColoring(text);
+                            displayMarker(locPosition, parsedGps[i].text);
+                            uniqueTexts.add(text);
+                        }
 
-                    }
+                    } setUniqueTextsCount(uniqueTexts.size);
                 })
             }; getData()
 
@@ -145,6 +151,8 @@ const ProfileForm = () => {
                 여긴 테스팅 페이지입니다
             </button>
             <div id='resultDiv'>지도를 클릭하세요</div>
+            <div className={classes.percent}>
+                <DountChart color="#f62459" percent={uniqueTextsCount / 5065} size="65px" /></div>
         </div>
     )
 }
