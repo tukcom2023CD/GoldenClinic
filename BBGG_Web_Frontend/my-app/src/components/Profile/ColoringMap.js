@@ -1,6 +1,7 @@
 import classes from './ColoringMap.module.css';
 import axios from "axios";
 import React, { useEffect, useState } from 'react';
+import DountChart from "./DountChart.js";
 
 const ProfileForm = () => {
 
@@ -125,7 +126,8 @@ const ProfileForm = () => {
             <button className={classes.top_side_btn} onClick={ClusterSwitchBtn}>
                 클러스터로 보기
             </button>
-            <div className={classes.percent}>{Math.round(uniqueTextsCount / 5065)}%</div>
+            <div className={classes.percent}>
+            <DountChart color="#f62459" percent={Math.round(uniqueTextsCount / 500)} size="65px" /></div>
         </div>
     )
 }
