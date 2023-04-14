@@ -47,8 +47,8 @@ public class MarkService {
                 userId(markdto.getUserId()).
                 latitude(markdto.getLatitude()).
                 longitude(markdto.getLongitude()).
-                text(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude())).
-                area(getAddressByQuery(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude())))
+                text(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude()))
+                .title(markdto.getTitle())
                 .build());
 
         return "Success";
@@ -109,42 +109,6 @@ public class MarkService {
         String location =region1depthName+region2depthName+region3depthName;
         return location;
     }
-    public static String getAddressByQuery(String query) {
-        RestTemplate restTemplate = new RestTemplate();
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", "KakaoAK " + REST_API_KEY);
-
-        UriComponents uri = UriComponentsBuilder.fromHttpUrl(BASE_URL + SEARCH_ADDRESS_URI)
-                .queryParam("query", query)
-                .build();
-
-        HttpEntity<?> entity = new HttpEntity<>(headers);
-
-        ResponseEntity<String> response = restTemplate.exchange(uri.toUriString(), HttpMethod.GET, entity, String.class);
-
-        if (response.getStatusCode() == HttpStatus.OK) {
-            String responseBody = response.getBody();
-
-            ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode root = null;
-            try {
-                root = objectMapper.readTree(responseBody);
-            } catch (JsonProcessingException e) {
-                e.printStackTrace();
-            }
-            JsonNode documents = root.path("documents");
-            if (documents.size() == 0) {
-                return null;
-            }
-
-            JsonNode address = documents.get(0).get("address");
-            String region1depthName = address.get("h_code").asText();
-
-            return region1depthName;
-        } else {
-            throw new RuntimeException("Failed to get address information from Kakao API");
-        }
-    }
 
 }
