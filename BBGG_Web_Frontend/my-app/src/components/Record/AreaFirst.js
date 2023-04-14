@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const Area_first = () => {
-  const [visitedPlaces, setVisitedPlaces] = useState([]);
+  const [, setVisitedPlaces] = useState([]);
 
   useEffect(() => {
     axios
