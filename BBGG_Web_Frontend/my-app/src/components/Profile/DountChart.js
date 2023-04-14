@@ -56,9 +56,10 @@ const AnimatedCircle = styled.circle`
 
 const Percent = styled.span`
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 20px;
+  font-weight: bolder;
   color: ${(props) => props.color};
 `;
