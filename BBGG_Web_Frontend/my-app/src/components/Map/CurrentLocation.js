@@ -50,6 +50,11 @@ const CurrentLocation = () => {
                     position: locPosition
                 });
 
+                // 마커에 클릭이벤트를 등록합니다
+                kakao.maps.event.addListener(marker, 'click', function () {
+                    window.location.replace('/PostWriting')
+                });
+
                 var iwContent = message;
 
                 var infowindow = new kakao.maps.InfoWindow({
@@ -63,7 +68,7 @@ const CurrentLocation = () => {
                 kakao.maps.event.addListener(marker, 'click', function () {
                     GpsSave();
                 });
-                
+
                 var mapTypeControl = new kakao.maps.MapTypeControl();
                 map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
@@ -75,20 +80,20 @@ const CurrentLocation = () => {
     });
 
     const MarkSwitchBtn = () => {
-          window.location.replace('/ColoringMap')
-      }
+        window.location.replace('/ColoringMap')
+    }
 
     return (
         <div>
-        <div id="map"
-            style={{
-                width: "100%",
-                height: '700px'
-            }}>
+            <div id="map"
+                style={{
+                    width: "100%",
+                    height: '700px'
+                }}>
             </div><button className={classes.top_btn} onClick={MarkSwitchBtn}>
                 방문한 지역 보기
             </button>
-            </div>
+        </div>
     )
 }
 
