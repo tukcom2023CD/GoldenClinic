@@ -41,7 +41,7 @@ public class MarkService {
         this.objectMapper=new ObjectMapper();
     }
 
-    public String save(Markdto markdto, byte[] img) {
+    public String save(Markdto markdto) {
 
         markRepository.save(Mark.builder().
                 userId(markdto.getUserId()).
@@ -49,7 +49,6 @@ public class MarkService {
                 longitude(markdto.getLongitude()).
                 text(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude())).
                 area(getAddressByQuery(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude())))
-                .img(img)
                 .build());
 
         return "Success";
