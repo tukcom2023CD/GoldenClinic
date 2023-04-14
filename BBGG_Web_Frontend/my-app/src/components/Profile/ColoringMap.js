@@ -127,7 +127,7 @@ const ProfileForm = () => {
                 클러스터로 보기
             </button>
             <div className={classes.percent}>
-            <DountChart color="#f62459" percent={uniqueTextsCount/100} size="65px" /></div>
+            <DountChart color="#f62459" percent={uniqueTextsCount/5065} size="65px" /></div>
         </div>
     )
 }
