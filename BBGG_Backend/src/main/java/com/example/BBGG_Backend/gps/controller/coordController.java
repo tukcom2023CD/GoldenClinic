@@ -27,7 +27,7 @@ public class coordController {
     ) {
 
         // 요청 URL 생성
-        String url = "http://api.vworld.kr/req/data?service=data&request=GetFeature&data=LT_C_ADEMD_INFO&key=" + "7F82299F-E3DB-3A90-B881-2EC64DD905A9" + "&domain=" + "http://localhost:8080" + "&attrFilter=emd_kor_nm:=:";
+        String url = "http://api.vworld.kr/req/data?service=data&request=GetFeature&data=LT_C_ADEMD_INFO&key=" + "7F82299F-E3DB-3A90-B881-2EC64DD905A9" + "&domain=" + "http://localhost:8080" + "&attrFilter=full_nm:=:";
         if (parameter1 != null) {
             url +=parameter1;
         }

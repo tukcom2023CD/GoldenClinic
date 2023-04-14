@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class MarkService {
         this.objectMapper=new ObjectMapper();
     }
 
-    public String save(Markdto markdto) {
+    public String save(Markdto markdto, byte[] img) {
 
         markRepository.save(Mark.builder().
                 userId(markdto.getUserId()).
@@ -48,6 +49,7 @@ public class MarkService {
                 longitude(markdto.getLongitude()).
                 text(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude())).
                 area(getAddressByQuery(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude())))
+                .img(img)
                 .build());
 
         return "Success";
@@ -57,6 +59,12 @@ public class MarkService {
         List<Mark> mark = markRepository.findByUserId(userId);
         return mark;
     }
+    public List<Mark> place(String userId) {
+        List<Mark> mark = markRepository.findByText(userId);
+        return mark;
+    }
+
+
 
     public List<String> visit(String userId) {
         List<Mark> marks = markRepository.findByUserId(userId);
