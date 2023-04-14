@@ -3,17 +3,13 @@ package com.example.BBGG_Backend.gps.controller;
 import com.example.BBGG_Backend.gps.repository.dto.Markdto;
 import com.example.BBGG_Backend.gps.repository.entity.Mark;
 import com.example.BBGG_Backend.gps.service.MarkService;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URISyntaxException;
 import java.util.List;
-import java.util.Set;
 
 @Slf4j
 @RequestMapping("/gps")
