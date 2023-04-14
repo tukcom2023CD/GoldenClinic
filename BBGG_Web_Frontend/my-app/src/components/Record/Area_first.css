@@ -1,0 +1,31 @@
+.starting {
+  background-image: url("../../images/climbing.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 20px 30px;
+  min-height: 800px;
+  text-align: center;
+}
+
+.starting h1 {
+  margin: 60px 0;
+  font-size: 70px;
+  font-style: normal;
+}
+
+.starting button {
+  border: 1px solid #9f5ccc;
+  border-radius: 5px;
+  padding: 12px 24px;
+  background-color: #f72f47;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.starting button:hover {
+  color: #f72f47;
+  background: white;
+  transition: all 0.5s;
+  transform: scale(1.05);
+}
