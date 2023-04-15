@@ -53,7 +53,7 @@ const MainNavigation = () => {
             <Link to="/ColoringMap">{isLogin ? "Coloring" : ""}</Link>
           </li>
           <li>
-            <Link to="/Area_first">{isLogin ? "Area_first" : ""}</Link>
+            <Link to="/Areafirst">{isLogin ? "Area_first" : ""}</Link>
           </li>
           <li className={classes.NavName}>
             {isLogin ? localStorage.getItem("userName") + " 님" : ""}
