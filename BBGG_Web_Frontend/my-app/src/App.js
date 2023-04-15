@@ -8,8 +8,11 @@ import AuthPage from "./pages/AuthPage";
 import HomePage from "./pages/HomePage";
 import CurrentLocation from "./components/Map/CurrentLocation";
 import TestingPage from "./components/Profile/TestingPage";
-import Area_first from "./components/Record/Area_first";
+
+import AreaFirst from "./components/Record/AreaFirst";
 import RecordPost from "./components/Record/RecordPost";
+import PostWriting from "./components/Record/PostWriting";
+
 
 function App() {
   return (
@@ -21,8 +24,11 @@ function App() {
         <Route path="/CurrentLocation" element={<CurrentLocation />}></Route>
         <Route path="/Cluster" element={<ClusterPage />}></Route>
         <Route path="/Testing" element={<TestingPage />}></Route>
-        <Route path="/Area_first" element={<Area_first />}></Route>
+
+        <Route path="/AreaFirst" element={<AreaFirst />}></Route>
         <Route path="/RecordPost" element={<RecordPost />}></Route>
+        <Route path="/PostWriting" element={<PostWriting />}></Route>
+
       </Routes>
     </Layout>
   );
