@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect } from 'react';
 import classes from './CurrentLocation.module.css';
 
@@ -29,20 +28,6 @@ const CurrentLocation = () => {
 
                 displayMarker(locPosition2, message2);
             }
-
-            //위도 경도 이름 아이디 DB로 전송
-            const GpsSave = () => {
-                axios.post("http://localhost:8080/gps/save", {
-                    latitude: lat,
-                    longitude: lon,
-                    text: localStorage.getItem('userName'),
-                    userId: localStorage.getItem('userId')
-                }).then(function () {
-                    alert("현재 위치가 기록되었습니다.");
-                }).catch(function (error) {
-                    console.log(error);
-                });
-            }
             function displayMarker(locPosition, message) {
 
                 var marker = new kakao.maps.Marker({
@@ -52,7 +37,9 @@ const CurrentLocation = () => {
 
                 // 마커에 클릭이벤트를 등록합니다
                 kakao.maps.event.addListener(marker, 'click', function () {
-                    window.location.replace('/PostWriting')
+                    localStorage.setItem("lat", lat);
+                    localStorage.setItem("lon", lon);
+                    window.location.replace('/PostWriting');
                 });
 
                 var iwContent = message;
@@ -64,10 +51,6 @@ const CurrentLocation = () => {
                 infowindow.open(map, marker);
 
                 map.setCenter(locPosition);
-
-                kakao.maps.event.addListener(marker, 'click', function () {
-                    GpsSave();
-                });
 
                 var mapTypeControl = new kakao.maps.MapTypeControl();
                 map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
