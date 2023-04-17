@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import classes from "./Areafirst.module.css";
 
-const Area_place = () => {
+const Areaplace = () => {
   const [visitedPlaces, setVisitedPlaces] = useState([]);
 
   useEffect(() => {
@@ -40,4 +40,4 @@ const Area_place = () => {
     </div>
   );
 };
-export default Areaplace;
+export  default Areaplace;
