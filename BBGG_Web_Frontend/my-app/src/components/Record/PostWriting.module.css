@@ -2,16 +2,17 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
   }
   
-  input {
+  .input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     resize: none; 
   }
 
-  textarea {
+  .textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -19,13 +20,27 @@
     height: 400px;
   }
   
-  button {
+  .button {
     display: block;
+    width: 100%;
     margin: 0 auto;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #74B4FF;
     color: #fff;
     border: none;
     cursor: pointer;
+  }
+
+  .button:hover {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #f44040;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: scale(1.02);
   }
   
