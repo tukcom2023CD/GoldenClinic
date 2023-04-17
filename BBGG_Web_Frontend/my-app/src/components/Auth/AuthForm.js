@@ -85,7 +85,7 @@ const AuthForm = () => {
         alert("로그인 성공");
         localStorage.setItem("userId", response.data.userId);
         localStorage.setItem("userName", response.data.userName);
-        return window.location.replace('/KakaoMap')
+        return window.location.replace('/CurrentLocation');
       })
       .catch(function (error) {
         alert("아이디와 비밀번호를 확인해주세요.");
