@@ -1,6 +1,7 @@
 import classes from './ClusterPage.module.css';
 import axios from "axios";
 import React, { useEffect, useState } from 'react';
+import DountChart from "./DountChart.js";
 
 const ProfileForm = () => {
 
@@ -95,7 +96,8 @@ const ProfileForm = () => {
       </button>
       <button className={classes.top_side_btn} onClick={FillBtn}>
         색칠하기로 보기
-      </button><div className={classes.percent}>{Math.round(uniqueTextsCount / 5065)}%</div>
+      </button><div className={classes.percent}>
+                <DountChart color="#f62459" percent={(uniqueTextsCount / 5065)} size="65px" /></div>
     </div>
   )
 }
