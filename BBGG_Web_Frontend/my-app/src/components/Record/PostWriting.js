@@ -1,9 +1,10 @@
+import axios from "axios";
 import React, { useState } from "react";
-import styles from "./PostWriting.module.css";
+import classes from "./PostWriting.module.css";
 
 const PostWriting = () => {
-  const [title, setTitle] = useState(""); // 제목을 위한 상태 변수
-  const [content, setContent] = useState(""); // 내용을 위한 상태 변수
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -15,30 +16,46 @@ const PostWriting = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 게시글 작성 로직
-    console.log("제목: ", title);
-    console.log("내용: ", content);
-    // 게시글 작성 후 초기화
-    setTitle("");
-    setContent("");
+    GpsSave();
+  };
+
+  //위도 경도 이름 아이디 DB로 전송
+  const GpsSave = () => {
+    axios.post("http://localhost:8080/gps/save", {
+      latitude: localStorage.getItem('lat'),
+      longitude: localStorage.getItem('lon'),
+      text: content,
+      title: title,
+      userId: localStorage.getItem('userId')
+    }).then(function () {
+      alert("현재 위치가 기록되었습니다.");
+      window.location.replace('/ColoringMap');
+    }).catch(function (error) {
+      console.log(error);
+    });
+  }
+  //이 페이지를 벗어나면 위도 경도 값 지워져야 함
+  window.onbeforeunload = function () {
+    localStorage.removeItem("lat");
+    localStorage.removeItem("lon");
   };
 
   return (
-    <div className={styles.postWritingContainer}>
-      <h1>게시글 작성</h1>
+    <div className={classes.postWritingContainer}>
+      <h1>게시글 등록하기</h1>
       <form onSubmit={handleSubmit}>
-        <input
+        <input className={classes.input}
           type="text"
-          placeholder="제목을 입력하세요."
+          placeholder="제목을 입력하세요"
           value={title}
           onChange={handleTitleChange}
         />
-        <textarea
-          placeholder="내용을 입력하세요."
+        <textarea className={classes.textarea}
+          placeholder="내용을 입력하세요"
           value={content}
           onChange={handleContentChange}
         ></textarea>
-        <button type="submit">작성</button>
+        <button className={classes.button} type="submit">게시글과 위치 등록하기</button>
       </form>
     </div>
   );
