@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import classes from "./Area_first.module.css";
 
-const Area_first = () => {
+const Areafirst = () => {
   const [visitedPlaces, setVisitedPlaces] = useState([]);
 
   useEffect(() => {
@@ -41,4 +41,4 @@ const Area_first = () => {
     </div>
   );
 };
-export default Area_first;
+export default Areafirst;
