@@ -15,4 +15,5 @@ public final class Markdto {
     private double longitude;
     private String text;
     private String title;
+    private String area;
 }
