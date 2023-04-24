@@ -50,6 +50,7 @@ public class MarkService {
                 longitude(markdto.getLongitude()).
                 text(getLocationFromCoordinates(markdto.getLatitude(), markdto.getLongitude()))
                 .title(markdto.getTitle())
+                .area(markdto.getText())
                 .build());
 
         return "Success";
