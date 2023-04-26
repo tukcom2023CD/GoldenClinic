@@ -10,9 +10,9 @@ import CurrentLocation from "./components/Map/CurrentLocation";
 import TestingPage from "./components/Profile/TestingPage";
 
 import AreaFirst from "./components/Record/Areafirst";
-import RecordPost from "./components/Record/RecordPost";
-import PostWriting from "./components/Record/PostWriting";
 
+import PostWriting from "./components/Record/PostWriting";
+import Areaplace from "./components/Record/Areaplace";
 
 function App() {
   return (
@@ -26,9 +26,8 @@ function App() {
         <Route path="/Testing" element={<TestingPage />}></Route>
 
         <Route path="/Areafirst" element={<AreaFirst />}></Route>
-        <Route path="/RecordPost" element={<RecordPost />}></Route>
+        <Route path="/Areaplace" element={<Areaplace />}></Route>
         <Route path="/PostWriting" element={<PostWriting />}></Route>
-
       </Routes>
     </Layout>
   );

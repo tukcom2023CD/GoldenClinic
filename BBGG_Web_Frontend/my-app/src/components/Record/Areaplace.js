@@ -1,23 +1,28 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import classes from "./Areafirst.module.css";
+import classes from "./Area_first.module.css";
 
 const Areaplace = () => {
-  const [visitedPlaces, setVisitedPlaces] = useState([]);
+  const [visitedHotPlaces, setVisitedHotPlaces] = useState([]);
 
   useEffect(() => {
     axios
       .get("http://localhost:8080/gps/place", {
         params: {
-          userId: localStorage.getItem("userId"),
+          dong: localStorage.getItem("text"),
         },
       })
       .then((response) => {
-        for (var i = 0; i < response.data.length; i++) {
-          const cityJson = response.data;
-          setVisitedPlaces(response.data);
-          console.log(cityJson[i]);
-        }
+        const places = response.data.map((place) => place.title);
+        setVisitedHotPlaces(places);
+        // for (var i = 0; i < response.data.length; i++) {
+        //   const text = response.data.title;
+        //   setVisitedHotPlaces(response.data.title);
+        //   console.log(text[i]);
+        // }
+        // const title = response.data.title;
+        // setVisitedHotPlaces(response.data.title);
+        // console.log(title[i]);
       })
       .catch((error) => {
         console.error(error);
@@ -26,18 +31,17 @@ const Areaplace = () => {
 
   const handleClick = () => {
     console.log("Button Clicked");
-    localStorage.setItem("text");
   };
 
   return (
     <div className={classes.starting}>
-      <h1>방문지</h1>
-      {visitedPlaces.map((place, index) => (
+      <h1>동별 방문지</h1>
+      {visitedHotPlaces.map((text, index) => (
         <button key={index} onClick={handleClick}>
-          {place}
+          {text}
         </button>
       ))}
     </div>
   );
 };
-export  default Areaplace;
+export default Areaplace;

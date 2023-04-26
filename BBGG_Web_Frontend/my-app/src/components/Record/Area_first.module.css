@@ -1,7 +1,9 @@
 .starting {
+  background-image: url("../../images/climbing.jpg");
   background-size: cover;
+  background-repeat: none;
   background-position: center;
-  color: rgb(32, 31, 31);
+  color: rgb(245, 240, 240);
   padding: 20px 30px;
   min-height: 800px;
   text-align: center;
@@ -19,18 +21,23 @@
 }
 
 .starting button {
-  background-image: url("../../images/climbing.jpg");
-  border: 1px solid #19191a;
+  justify-content: center;
+  align-content: center;
+  opacity: 0.7;
+  border: none;
   border-radius: 5px;
   padding: 12px 24px;
-  background-color: #e7707e;
+  background-color: white;
   color: rgb(18, 18, 18);
   font-weight: bold;
   font-size: 20px;
   display: flex;
-  width: 93vw;
+  width: 70vw;
   height: 5vh;
+  margin: auto;
+  margin-bottom: 0.8%;
 }
+
 .starting button:hover {
   color: #f72f47;
   background: white;
