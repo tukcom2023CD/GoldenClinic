@@ -152,16 +152,16 @@
             </objects>
             <point key="canvasLocation" x="1043.5114503816794" y="674.64788732394368"/>
         </scene>
-        <!--Item-->
+        <!--Visited Cities-->
         <scene sceneID="D4U-hP-Rl5">
             <objects>
-                <tableViewController id="45R-mb-575" sceneMemberID="viewController">
+                <tableViewController title="Visited Cities" id="45R-mb-575" customClass="VisitedCitiesViewController" customModule="BangBangGokGok" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="3ko-SK-LY8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Jcg-ZW-lQ9">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="Jcg-ZW-lQ9">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jcg-ZW-lQ9" id="Z5D-VR-6fG">
@@ -175,7 +175,7 @@
                             <outlet property="delegate" destination="45R-mb-575" id="T35-Vc-WEf"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="vdb-rf-ZCJ"/>
+                    <tabBarItem key="tabBarItem" title="Visited" image="list.bullet.circle" catalog="system" selectedImage="list.bullet.circle.fill" id="vdb-rf-ZCJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ol3-vN-lXv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -202,7 +202,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="PLAN"/>
                                 <connections>
                                     <action selector="btnStart:" destination="8uq-7q-ae3" eventType="touchUpInside" id="QW9-Yg-bBK"/>
-                                    <segue destination="Ebh-zh-rpM" kind="show" id="MaX-kr-4VC"/>
+                                    <segue destination="Ebh-zh-rpM" kind="show" id="CHI-b4-65D"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -216,7 +216,7 @@
                             <constraint firstItem="9DN-hZ-oho" firstAttribute="top" secondItem="54f-RI-dBo" secondAttribute="top" constant="580" id="uMI-5d-qSw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="ZSn-bB-zkq"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" selectedImage="map.fill" id="ZSn-bB-zkq"/>
                     <navigationItem key="navigationItem" title="Main View" id="SDQ-oF-bZD"/>
                     <connections>
                         <outlet property="myMap" destination="V1i-Fv-u0K" id="Fa4-1z-eqS"/>
@@ -289,6 +289,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="6K4-bQ-3ac"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7hw-qF-8V8">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -303,6 +304,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="list.bullet.circle" catalog="system" width="128" height="123"/>
+        <image name="list.bullet.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
