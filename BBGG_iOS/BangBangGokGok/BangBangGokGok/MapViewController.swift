@@ -20,24 +20,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         loctionManger.desiredAccuracy = kCLLocationAccuracyBest
         loctionManger.requestWhenInUseAuthorization()
         loctionManger.startUpdatingLocation()
-        myMap.showsUserLocation = true
+        myMap.showsUserLocation = true // show user location
+        myMap.isZoomEnabled = false // zoom available
+        myMap.isScrollEnabled = false // scroll available
+        myMap.isRotateEnabled = false // rotation available
+        myMap.isPitchEnabled = false // angle change available
         
         setAnnotation(latitudeValue: 37.56471, longitudeValue: 126.97512, delta: 1, title: "서울특별시", subtitle: "서울특별시")
         setAnnotation(latitudeValue: 36.15299, longitudeValue: 128.34538, delta: 1, title: "구미시", subtitle: "경상북도 구미시")
         setAnnotation(latitudeValue: 37.33972, longitudeValue: 126.73354, delta: 1, title: "시흥시", subtitle: "경기도 시흥시")
         setAnnotation(latitudeValue: 35.89086, longitudeValue: 128.59930, delta: 1, title: "대구광역시", subtitle: "대구광역시")
         
-        // 사용자 위치 보기 설정
         myMap.showsUserLocation = true
-            
-        // 줌 가능 여부
-        myMap.isZoomEnabled = false
-        // 스크롤 가능 여부
-        myMap.isScrollEnabled = false
-        // 회전 가능 여부
-        myMap.isRotateEnabled = false
-        // 각도 가능 여부
-        myMap.isPitchEnabled = false
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
