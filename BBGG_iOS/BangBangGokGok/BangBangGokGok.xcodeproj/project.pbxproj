@@ -10,6 +10,7 @@
 		39236F4F29DC68D5009DCCF4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39236F4E29DC68D5009DCCF4 /* MapViewController.swift */; };
 		393F08432987AA3400CE88E4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F08422987AA3400CE88E4 /* SignUpViewController.swift */; };
 		396AF7DF29FA6293006B0CCD /* VisitedCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396AF7DE29FA6293006B0CCD /* VisitedCitiesViewController.swift */; };
+		396AF7E129FA6C1B006B0CCD /* CityRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396AF7E029FA6C1B006B0CCD /* CityRecViewController.swift */; };
 		39712CA629FA252C006963FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39712CA529FA252C006963FE /* TabBarController.swift */; };
 		39D212FC296BCB620023D0CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D212FB296BCB620023D0CF /* AppDelegate.swift */; };
 		39D212FE296BCB620023D0CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D212FD296BCB620023D0CF /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 		39236F4E29DC68D5009DCCF4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		393F08422987AA3400CE88E4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		396AF7DE29FA6293006B0CCD /* VisitedCitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedCitiesViewController.swift; sourceTree = "<group>"; };
+		396AF7E029FA6C1B006B0CCD /* CityRecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityRecViewController.swift; sourceTree = "<group>"; };
 		39712CA529FA252C006963FE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		39D212F8296BCB620023D0CF /* BangBangGokGok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangBangGokGok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D212FB296BCB620023D0CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		39D212FA296BCB620023D0CF /* BangBangGokGok */ = {
 			isa = PBXGroup;
 			children = (
+				396AF7E029FA6C1B006B0CCD /* CityRecViewController.swift */,
 				396AF7DE29FA6293006B0CCD /* VisitedCitiesViewController.swift */,
 				39D212FB296BCB620023D0CF /* AppDelegate.swift */,
 				39D212FD296BCB620023D0CF /* SceneDelegate.swift */,
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396AF7E129FA6C1B006B0CCD /* CityRecViewController.swift in Sources */,
 				396AF7DF29FA6293006B0CCD /* VisitedCitiesViewController.swift in Sources */,
 				39D21300296BCB620023D0CF /* SignInViewController.swift in Sources */,
 				39D212FC296BCB620023D0CF /* AppDelegate.swift in Sources */,
