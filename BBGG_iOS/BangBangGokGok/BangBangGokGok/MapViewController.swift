@@ -28,6 +28,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         setAnnotation(latitudeValue: 34.63, longitudeValue: 126.60, delta: 1, title: "KOREA", subtitle: "여기는 남한")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.hidesBackButton = true
+    }
+    
 
     /*
     // MARK: - Navigation
