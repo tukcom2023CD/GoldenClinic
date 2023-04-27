@@ -168,6 +168,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="w1D-51-ZKe" kind="show" id="kRW-5W-MCO"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -180,6 +183,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ol3-vN-lXv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2708" y="675"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="siQ-gP-hUd">
+            <objects>
+                <viewController id="w1D-51-ZKe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fY8-LR-o7o">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="AGJ-PX-UGd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vLG-KS-s1z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K8C-o5-mSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3605" y="675"/>
         </scene>
         <!--Main View-->
         <scene sceneID="FyW-nw-TIK">
@@ -226,10 +245,10 @@
             </objects>
             <point key="canvasLocation" x="2707.6335877862593" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--City Rec View Controller-->
         <scene sceneID="mYl-e8-4jL">
             <objects>
-                <viewController id="Ebh-zh-rpM" sceneMemberID="viewController">
+                <viewController id="Ebh-zh-rpM" customClass="CityRecViewController" customModule="BangBangGokGok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JzY-eD-7Wy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -244,6 +263,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="u2B-i1-L9S">
                                 <rect key="frame" x="0.0" y="421" width="393" height="397"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Lj4-ZC-w6z">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lj4-ZC-w6z" id="B9s-Fz-A5Y">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QUG-C0-8OO"/>
