@@ -34,11 +34,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         myMap.showsUserLocation = true
 
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationItem.hidesBackButton = true
-    }
-    
 
     /*
     // MARK: - Navigation
