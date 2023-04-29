@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBOutlet weak var myMap: MKMapView!
     let loctionManger = CLLocationManager()
     
@@ -16,10 +16,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        myMap.delegate = self
         loctionManger.delegate = self
         loctionManger.desiredAccuracy = kCLLocationAccuracyBest
         loctionManger.requestWhenInUseAuthorization()
         loctionManger.startUpdatingLocation()
+        
         myMap.showsUserLocation = true // show user location
         myMap.isZoomEnabled = false // zoom available
         myMap.isScrollEnabled = false // scroll available
@@ -31,8 +33,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         setAnnotation(latitudeValue: 37.33972, longitudeValue: 126.73354, delta: 1, title: "시흥시", subtitle: "경기도 시흥시")
         setAnnotation(latitudeValue: 35.89086, longitudeValue: 128.59930, delta: 1, title: "대구광역시", subtitle: "대구광역시")
         
-        myMap.showsUserLocation = true
-
+        let center = CLLocationCoordinate2D(latitude: 37.5665, longitude: 126.9780)
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        let region = MKCoordinateRegion(center: center, span: span)
+        myMap.setRegion(region, animated: true)
     }
 
     /*
@@ -85,6 +89,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         annotaion.subtitle = strSubtitle
         
         myMap.addAnnotation(annotaion)
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let mapWidthInPixels = mapView.bounds.width
+        let metersPerPixel = mapView.visibleMapRect.size.width / Double(mapWidthInPixels)
+        let scale = metersPerPixel * MKMapSize.world.width / 1000
     }
     
     @IBAction func btnStart(_ sender: UIButton) {
