@@ -1,5 +1,5 @@
 //
-//  CityRecViewController.swift
+//  RecommendCityTableViewController.swift
 //  BangBangGokGok
 //
 //  Created by 권태우 on 2023/04/27.
@@ -8,51 +8,52 @@
 import UIKit
 import MapKit
 
-class CityRecViewController: UITableViewController, CLLocationManagerDelegate {
+class RecommendCityTableViewController: UITableViewController, CLLocationManagerDelegate {
     
-    let loctionManger = CLLocationManager()
-
+    var dataArray: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataInit()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        loctionManger.delegate = self
-        loctionManger.desiredAccuracy = kCLLocationAccuracyBest
-        loctionManger.requestWhenInUseAuthorization()
-        loctionManger.startUpdatingLocation()
-//        myMap.showsUserLocation = true // show user location
-//        myMap.isZoomEnabled = false // zoom available
-//        myMap.isScrollEnabled = false // scroll available
-//        myMap.isRotateEnabled = false // rotation available
-//        myMap.isPitchEnabled = false // angle change available
+    }
+    
+    func dataInit() {
+        dataArray.append("서울특별시")
+        dataArray.append("경상북도 구미시")
+        dataArray.append("경기도 시흥시")
+        dataArray.append("대구광역시")
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return dataArray.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell2", for: indexPath)
 
-        // Configure the cell...
-
+//        cell.textLabel?.text = dataArray[indexPath.row]
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = dataArray[indexPath.row]
+        content.image = UIImage(systemName: "mappin.and.ellipse")
+        cell.contentConfiguration = content
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -62,24 +63,23 @@ class CityRecViewController: UITableViewController, CLLocationManagerDelegate {
     }
     */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
+//    // Override to support editing the table view.
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            // Delete the row from the data source
+//            dataArray.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        } else if editingStyle == .insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        }
+//    }
+//
+//    // Override to support rearranging the table view.
+//    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+//        let itemToMove = dataArray[fromIndexPath.row]
+//        dataArray.remove(at: fromIndexPath.row)
+//        dataArray.insert(itemToMove, at: to.row)
+//    }
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -98,5 +98,4 @@ class CityRecViewController: UITableViewController, CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
