@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBOutlet weak var myMap: MKMapView!
     let loctionManger = CLLocationManager()
     
@@ -16,18 +16,28 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        myMap.delegate = self
         loctionManger.delegate = self
         loctionManger.desiredAccuracy = kCLLocationAccuracyBest
         loctionManger.requestWhenInUseAuthorization()
         loctionManger.startUpdatingLocation()
-        myMap.showsUserLocation = true
         
-        setAnnotation(latitudeValue: 37.75, longitudeValue: 128.87, delta: 1, title: "한폴대 강릉", subtitle: "여기는 한폴대")
-        setAnnotation(latitudeValue: 39.00, longitudeValue: 128.87, delta: 1, title: "북조선인민민주주의공화국", subtitle: "여기는 북한")
-        setAnnotation(latitudeValue: 35.98, longitudeValue: 129.88, delta: 1, title: "대한민국", subtitle: "여기는 남한")
-        setAnnotation(latitudeValue: 34.63, longitudeValue: 126.60, delta: 1, title: "KOREA", subtitle: "여기는 남한")
+        myMap.showsUserLocation = true // show user location
+        myMap.isZoomEnabled = false // zoom available
+        myMap.isScrollEnabled = false // scroll available
+        myMap.isRotateEnabled = false // rotation available
+        myMap.isPitchEnabled = false // angle change available
+        
+        setAnnotation(latitudeValue: 37.56471, longitudeValue: 126.97512, delta: 1, title: "서울특별시", subtitle: "서울특별시")
+        setAnnotation(latitudeValue: 36.15299, longitudeValue: 128.34538, delta: 1, title: "구미시", subtitle: "경상북도 구미시")
+        setAnnotation(latitudeValue: 37.33972, longitudeValue: 126.73354, delta: 1, title: "시흥시", subtitle: "경기도 시흥시")
+        setAnnotation(latitudeValue: 35.89086, longitudeValue: 128.59930, delta: 1, title: "대구광역시", subtitle: "대구광역시")
+        
+        let center = CLLocationCoordinate2D(latitude: 37.5665, longitude: 126.9780)
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        let region = MKCoordinateRegion(center: center, span: span)
+        myMap.setRegion(region, animated: true)
     }
-    
 
     /*
     // MARK: - Navigation
@@ -79,6 +89,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         annotaion.subtitle = strSubtitle
         
         myMap.addAnnotation(annotaion)
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let mapWidthInPixels = mapView.bounds.width
+        let metersPerPixel = mapView.visibleMapRect.size.width / Double(mapWidthInPixels)
+        let scale = metersPerPixel * MKMapSize.world.width / 1000
     }
     
     @IBAction func btnStart(_ sender: UIButton) {
