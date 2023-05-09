@@ -41,9 +41,9 @@ function Food() {
 
   const handleItemSend = () => {
     const sendData = {
-      name: selectedItem.title,
+      placeName: selectedItem.title,
       address: selectedItem.address,
-      userid: localStorage.getItem("userId"),
+      userId: localStorage.getItem("userId"),
     };
     axios
       .post("http://localhost:8080/bbgg/placesave", sendData)
@@ -51,7 +51,7 @@ function Food() {
         console.log(response);
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.response.data);
       });
   };
 
