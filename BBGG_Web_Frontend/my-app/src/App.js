@@ -28,7 +28,7 @@ function App() {
         <Route path="/Areafirst" element={<AreaFirst />}></Route>
         <Route path="/Areaplace" element={<Areaplace />}></Route>
         <Route path="/PostWriting" element={<PostWriting />}></Route>
-        <Route path="/Food" element={<HotPlace />}></Route>
+        <Route path="/HotPlace" element={<HotPlace />}></Route>
       </Routes>
     </Layout>
   );

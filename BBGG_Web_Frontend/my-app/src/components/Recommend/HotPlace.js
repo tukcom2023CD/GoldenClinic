@@ -65,6 +65,7 @@ function Food() {
           <div className={classes.Food}>
             <h2>{selectedItem.title}</h2>
             <p>{selectedItem.category}</p>
+            <p>{selectedItem.description}</p>
             <button
               className={`${classes.button} ${classes["button-close"]}`}
               onClick={handleCloseDetail}
@@ -80,6 +81,7 @@ function Food() {
           <div>
             <h2>{item.title}</h2>
             <p>{item.address}</p>
+            <p>{item.description}</p>
             <button
               className={`${classes.button} ${classes["button-detail"]}`}
               onClick={() => handleItemSelected(item)}
