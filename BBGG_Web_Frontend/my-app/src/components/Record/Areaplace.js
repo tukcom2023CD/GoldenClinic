@@ -36,9 +36,9 @@ const Areaplace = () => {
   return (
     <div className={classes.starting}>
       <h1>동별 방문지</h1>
-      {visitedHotPlaces.map((text, index) => (
+      {visitedHotPlaces.map((title, index) => (
         <button key={index} onClick={handleClick}>
-          {text}
+          {title}
         </button>
       ))}
     </div>

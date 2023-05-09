@@ -13,6 +13,7 @@ import AreaFirst from "./components/Record/Areafirst";
 
 import PostWriting from "./components/Record/PostWriting";
 import Areaplace from "./components/Record/Areaplace";
+import HotPlace from "./components/Recommend/HotPlace";
 
 function App() {
   return (
@@ -24,10 +25,10 @@ function App() {
         <Route path="/CurrentLocation" element={<CurrentLocation />}></Route>
         <Route path="/Cluster" element={<ClusterPage />}></Route>
         <Route path="/Testing" element={<TestingPage />}></Route>
-
         <Route path="/Areafirst" element={<AreaFirst />}></Route>
         <Route path="/Areaplace" element={<Areaplace />}></Route>
         <Route path="/PostWriting" element={<PostWriting />}></Route>
+        <Route path="/HotPlace" element={<HotPlace />}></Route>
       </Routes>
     </Layout>
   );
