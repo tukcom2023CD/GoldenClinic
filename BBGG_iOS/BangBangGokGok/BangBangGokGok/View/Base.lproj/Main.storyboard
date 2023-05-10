@@ -394,6 +394,9 @@
                                     <backgroundConfiguration key="background" image="1" imageContentMode="scaleAspectFill"/>
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnVisited:" destination="ohv-kS-o6u" eventType="touchUpInside" id="T3K-T2-09O"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvj-Kv-cxJ">
                                 <rect key="frame" x="146" y="305" width="100" height="100"/>
@@ -464,6 +467,12 @@
                             <constraint firstItem="WF7-0O-JzD" firstAttribute="top" secondItem="3kt-cf-lfa" secondAttribute="bottom" constant="28" id="uxJ-zq-kxM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgBanner" destination="LgJ-OU-rz1" id="A0U-eV-tXX"/>
+                        <outlet property="lblPercentage" destination="3kt-cf-lfa" id="bzh-3F-KBq"/>
+                        <outlet property="lblRecoReg" destination="Pw1-eF-dnE" id="Qwl-Fx-sKi"/>
+                        <outlet property="progressView" destination="WF7-0O-JzD" id="L0X-x3-2hE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppL-q3-vzY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
