@@ -12,3 +12,15 @@
     height: 5rem;
     background-color: white;
   }
+
+  .container {
+    display: inline-flex;
+  }
+
+  .underAdContainer {
+    margin-top: 2%;
+    margin-left: 28%;
+    margin-right: 28%;
+  }
+
+  
