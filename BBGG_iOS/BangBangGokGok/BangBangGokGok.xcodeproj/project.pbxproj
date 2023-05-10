@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		39236F4F29DC68D5009DCCF4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39236F4E29DC68D5009DCCF4 /* MapViewController.swift */; };
 		393F08432987AA3400CE88E4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F08422987AA3400CE88E4 /* SignUpViewController.swift */; };
+		3954A1CD2A0B5EFA008F512A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3954A1CC2A0B5EFA008F512A /* HomeViewController.swift */; };
 		396AF7DF29FA6293006B0CCD /* VisitedCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396AF7DE29FA6293006B0CCD /* VisitedCitiesViewController.swift */; };
 		396AF7E329FA7260006B0CCD /* RecommendCityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396AF7E229FA7260006B0CCD /* RecommendCityTableViewController.swift */; };
 		39712CA629FA252C006963FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39712CA529FA252C006963FE /* TabBarController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		39236F4E29DC68D5009DCCF4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		393F08422987AA3400CE88E4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3954A1CC2A0B5EFA008F512A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = BangBangGokGok/Model/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		396AF7DE29FA6293006B0CCD /* VisitedCitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedCitiesViewController.swift; sourceTree = "<group>"; };
 		396AF7E229FA7260006B0CCD /* RecommendCityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCityTableViewController.swift; sourceTree = "<group>"; };
 		39712CA529FA252C006963FE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -52,6 +54,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3954A1CA2A0B5E97008F512A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				39D21306296BCB640023D0CF /* LaunchScreen.storyboard */,
+				39D21301296BCB620023D0CF /* Main.storyboard */,
+				3954A1CC2A0B5EFA008F512A /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3954A1CB2A0B5EB2008F512A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				396AF7DE29FA6293006B0CCD /* VisitedCitiesViewController.swift */,
+				39D212FF296BCB620023D0CF /* SignInViewController.swift */,
+				396AF7E229FA7260006B0CCD /* RecommendCityTableViewController.swift */,
+				39712CA529FA252C006963FE /* TabBarController.swift */,
+				39236F4E29DC68D5009DCCF4 /* MapViewController.swift */,
+				393F08422987AA3400CE88E4 /* SignUpViewController.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		39D212EF296BCB620023D0CF = {
 			isa = PBXGroup;
 			children = (
@@ -73,17 +98,11 @@
 		39D212FA296BCB620023D0CF /* BangBangGokGok */ = {
 			isa = PBXGroup;
 			children = (
-				396AF7DE29FA6293006B0CCD /* VisitedCitiesViewController.swift */,
+				3954A1CB2A0B5EB2008F512A /* Model */,
+				3954A1CA2A0B5E97008F512A /* View */,
 				39D212FB296BCB620023D0CF /* AppDelegate.swift */,
 				39D212FD296BCB620023D0CF /* SceneDelegate.swift */,
-				39D212FF296BCB620023D0CF /* SignInViewController.swift */,
-				39D21301296BCB620023D0CF /* Main.storyboard */,
-				396AF7E229FA7260006B0CCD /* RecommendCityTableViewController.swift */,
-				39712CA529FA252C006963FE /* TabBarController.swift */,
-				39236F4E29DC68D5009DCCF4 /* MapViewController.swift */,
-				393F08422987AA3400CE88E4 /* SignUpViewController.swift */,
 				39D21304296BCB640023D0CF /* Assets.xcassets */,
-				39D21306296BCB640023D0CF /* LaunchScreen.storyboard */,
 				39D21309296BCB640023D0CF /* Info.plist */,
 			);
 			path = BangBangGokGok;
@@ -226,6 +245,7 @@
 				39D212FC296BCB620023D0CF /* AppDelegate.swift in Sources */,
 				396AF7E329FA7260006B0CCD /* RecommendCityTableViewController.swift in Sources */,
 				393F08432987AA3400CE88E4 /* SignUpViewController.swift in Sources */,
+				3954A1CD2A0B5EFA008F512A /* HomeViewController.swift in Sources */,
 				39712CA629FA252C006963FE /* TabBarController.swift in Sources */,
 				39236F4F29DC68D5009DCCF4 /* MapViewController.swift in Sources */,
 				39D212FE296BCB620023D0CF /* SceneDelegate.swift in Sources */,
@@ -384,6 +404,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -415,6 +436,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
