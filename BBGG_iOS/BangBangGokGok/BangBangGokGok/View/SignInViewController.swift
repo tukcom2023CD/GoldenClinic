@@ -8,12 +8,17 @@
 import UIKit
 
 class SignInViewController: UIViewController {
-
     @IBOutlet weak var tfId: UITextField!
     @IBOutlet weak var tfPw: UITextField!
+    var isSignedIn = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        if (isSignedIn){
+            pushViewController(vcName: "home")
+        }
     }
 
     @IBAction func btnSignIn(_ sender: UIButton) {
