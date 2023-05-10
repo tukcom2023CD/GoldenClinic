@@ -94,7 +94,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let mapWidthInPixels = mapView.bounds.width
         let metersPerPixel = mapView.visibleMapRect.size.width / Double(mapWidthInPixels)
-        let scale = metersPerPixel * MKMapSize.world.width / 1000
+//        let scale = metersPerPixel * MKMapSize.world.width / 1000
     }
     
     @IBAction func btnStart(_ sender: UIButton) {

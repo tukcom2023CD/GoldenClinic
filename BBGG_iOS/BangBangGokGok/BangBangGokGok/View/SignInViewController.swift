@@ -21,7 +21,7 @@ class SignInViewController: UIViewController {
             tfId.text == "go8882"
         ){
             if (tfPw.text == "test1234"){
-                pushViewController(vcName: "tabBar")
+                pushViewController(vcName: "home")
             }
         }
     }

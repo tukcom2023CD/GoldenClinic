@@ -29,7 +29,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PW" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kPN-zY-lhO">
                                 <rect key="frame" x="96" y="409" width="201" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartQuotesType="no" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KUs-Op-uQZ">
                                 <rect key="frame" x="96" y="353" width="201" height="34"/>
@@ -343,7 +343,7 @@
         <!--Home View Controller-->
         <scene sceneID="nCi-gJ-YtR">
             <objects>
-                <viewController id="ohv-kS-o6u" customClass="HomeViewController" customModule="BangBangGokGok" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" id="ohv-kS-o6u" customClass="HomeViewController" customModule="BangBangGokGok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9gQ-v5-GOX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -371,7 +371,7 @@
                                     <segue destination="VZc-L5-cie" kind="show" id="Tb4-Ew-BZY"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WF7-0O-JzD">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="WF7-0O-JzD">
                                 <rect key="frame" x="16" y="794" width="283" height="4"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completion Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kt-cf-lfa">
@@ -471,6 +471,7 @@
                         <outlet property="imgBanner" destination="LgJ-OU-rz1" id="A0U-eV-tXX"/>
                         <outlet property="lblPercentage" destination="3kt-cf-lfa" id="bzh-3F-KBq"/>
                         <outlet property="lblRecoReg" destination="Pw1-eF-dnE" id="Qwl-Fx-sKi"/>
+                        <outlet property="percentageBtn" destination="5Ki-pz-HJe" id="TYv-Zn-tbO"/>
                         <outlet property="progressView" destination="WF7-0O-JzD" id="L0X-x3-2hE"/>
                     </connections>
                 </viewController>
