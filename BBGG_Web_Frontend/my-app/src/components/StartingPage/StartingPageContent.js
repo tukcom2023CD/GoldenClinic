@@ -1,5 +1,6 @@
 import classes from './StartingPageContent.module.css';
 import { useState, useEffect } from "react";
+import MobileStoreButton from 'react-mobile-store-button';
 
 const StartingPageContent = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -52,7 +53,13 @@ const StartingPageContent = () => {
 
   return (
     <div onWheel={handleScroll}><div className={classes.headerSpacer}>.</div>
-      <button className={classes.yellow}>앱 다운로드 ⤓</button>
+      {/* <button className={classes.yellow}>앱 다운로드 ⤓</button> */}
+      <div className={classes.yellow}>
+				<MobileStoreButton
+				  store="ios"
+				  linkProps={{ title: 'iOS Store Button' }}
+				/>
+			</div>
       <div className={classes.starting2}>
         <h1>TO TRAVEL IS TO LIVE</h1>
       </div>
