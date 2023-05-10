@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
         imgBanner.image = UIImage(named: images[numImage])
         
         lblRecoReg.text = "이달의 추천 여행지"
+        lblBannerCnt.text = "<"+String(numImage+1)+"/"+String(images.count)+">"
         lblPercentage.text = "전국일주 완료율"
         percentageBtn.setTitle(String(percentageCom * 100)+"%", for: .normal)
         progressView.setProgress(Float(percentageCom), animated: true)
@@ -60,6 +61,7 @@ class HomeViewController: UIViewController {
             numImage = 0
         }
         imgBanner.image = UIImage(named: images[numImage])
+        lblBannerCnt.text = "<"+String(numImage+1)+"/"+String(images.count)+">"
     }
 
 } // HomeViewController
