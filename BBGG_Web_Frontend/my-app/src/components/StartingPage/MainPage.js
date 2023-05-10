@@ -1,8 +1,11 @@
 import React from 'react';
 import classes from './MainPage.module.css';
+import IntroduceBBGG from "../../images/IntroduceBBGG.png"
+import NightMarket from "../../images/NightMarket.png"
+import yummy from "../../images/yummy.png"
 
 const MainPage = () => {
-    const imglist = ["https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/a47bfcb8-63df-4be5-a60f-9434baa6da18.jpg", "https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/20139e33-d871-4de9-a2e8-18a3024af36d.jpg", "https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/f736706e-a26a-4105-b1d2-f1843b9f2aef.jpg"]
+    const imglist = [IntroduceBBGG, NightMarket, yummy]
     const delay = 2500;
 
     const [State, setState] = React.useState(0);
