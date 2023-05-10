@@ -6,18 +6,30 @@ const StartingPageContent = () => {
   const [page, setPage] = useState(1);
 
   const posTop = (page - 1) * window.innerHeight;
-    window.scrollTo({ top: posTop, behavior: 'smooth' });
+  window.scrollTo({ top: posTop, behavior: 'smooth' });
 
   const handleScroll = (e) => {
+    const h1Elements = document.querySelectorAll("h1");
+    
     if (e.deltaY > 0) {
       if (page === 3) return;
       setPage(page + 1);
+      h1Elements.forEach((h1Element) => {
+        h1Element.style.transition = "left 2s, opacity 2s";
+        h1Element.style.left = "0";
+        h1Element.style.opacity = "1";
+      });
     } else if (e.deltaY < 0) {
       if (page === 1) return;
       setPage(page - 1);
+      h1Elements.forEach((h1Element) => {
+        h1Element.style.transition = "left 2s, opacity 2s";
+        h1Element.style.left = "-100px";
+        h1Element.style.opacity = "0";
+      });
     }
-    
   };
+  
 
   useEffect(() => {
     if (localStorage.getItem('userId') === null) {
