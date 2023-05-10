@@ -32,9 +32,7 @@ const MainPage = () => {
     return (
         <div>
             <div className={classes.headerSpacer}></div>
-            <div className="marketimg">
-                <img src={imglist[State]} alt="banner"></img>
-            </div>
+                <img src={imglist[State]} className={classes.marketimg} alt="banner"></img>
             <div className={classes.underAdContainer}>
                 <div>추천 여행지</div>
                 <div className={classes.container}>
