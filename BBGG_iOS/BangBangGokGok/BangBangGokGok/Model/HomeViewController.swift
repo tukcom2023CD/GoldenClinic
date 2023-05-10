@@ -10,16 +10,16 @@ import UIKit
 class HomeViewController: UIViewController {
     @IBOutlet weak var lblRecoReg: UILabel!
     @IBOutlet weak var imgBanner: UIImageView!
-    @IBOutlet weak var lblBannerCnt: UILabel!
+    @IBOutlet weak var bannerControl: UIPageControl!
     @IBOutlet weak var lblPercentage: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var percentageBtn: UIButton!
     
-    var percentageCom = 0.25
-    var images = ["banner1.png","banner2.png","banner3.png","banner4.png"]
+    var percentageCom = 7.0/159.0
+    var banners = ["banner1.png","banner2.png","banner3.png","banner4.png"]
     let interval = 3.0 // 3초
     let timeSelector: Selector = #selector(HomeViewController.updateTime)
-    var numImage = 0
+    var numBanner = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +28,15 @@ class HomeViewController: UIViewController {
         
         navigationItem.hidesBackButton = true
         
-        
         Timer.scheduledTimer(timeInterval: interval, target: self, selector: timeSelector, userInfo: nil, repeats: true)
-        imgBanner.image = UIImage(named: images[numImage])
+        imgBanner.image = UIImage(named: banners[numBanner])
+        
+        bannerControl.numberOfPages = banners.count
+        bannerControl.currentPage = numBanner
         
         lblRecoReg.text = "이달의 추천 여행지"
-        lblBannerCnt.text = "<"+String(numImage+1)+"/"+String(images.count)+">"
         lblPercentage.text = "전국일주 완료율"
-        percentageBtn.setTitle(String(percentageCom * 100)+"%", for: .normal)
+        percentageBtn.setTitle(String(format: "%.1f", percentageCom * 100)+"%", for: .normal)
         progressView.setProgress(Float(percentageCom), animated: true)
     }
     
@@ -55,13 +56,13 @@ class HomeViewController: UIViewController {
     }
     
     @objc func updateTime(){
-        numImage += 1
+        numBanner += 1
         
-        if numImage >= images.count{
-            numImage = 0
+        if numBanner >= banners.count{
+            numBanner = 0
         }
-        imgBanner.image = UIImage(named: images[numImage])
-        lblBannerCnt.text = "<"+String(numImage+1)+"/"+String(images.count)+">"
+        imgBanner.image = UIImage(named: banners[numBanner])
+        bannerControl.currentPage = numBanner
     }
 
 } // HomeViewController
