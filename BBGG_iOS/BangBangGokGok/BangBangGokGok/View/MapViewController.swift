@@ -33,8 +33,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         setAnnotation(latitudeValue: 37.33972, longitudeValue: 126.73354, delta: 1, title: "시흥시", subtitle: "경기도 시흥시")
         setAnnotation(latitudeValue: 35.89086, longitudeValue: 128.59930, delta: 1, title: "대구광역시", subtitle: "대구광역시")
         
-        let center = CLLocationCoordinate2D(latitude: 37.5665, longitude: 126.9780)
-        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        let center = CLLocationCoordinate2D(latitude: 36.5, longitude: 127.5)
+        let span = MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5)
         let region = MKCoordinateRegion(center: center, span: span)
         myMap.setRegion(region, animated: true)
     }
@@ -91,13 +91,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         myMap.addAnnotation(annotaion)
     }
     
-    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        let mapWidthInPixels = mapView.bounds.width
-        let metersPerPixel = mapView.visibleMapRect.size.width / Double(mapWidthInPixels)
+//    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+//        let mapWidthInPixels = mapView.bounds.width
+//        let metersPerPixel = mapView.visibleMapRect.size.width / Double(mapWidthInPixels)
 //        let scale = metersPerPixel * MKMapSize.world.width / 1000
-    }
-    
-    @IBAction func btnStart(_ sender: UIButton) {
-        
-    }
+//    }
 } // MapViewController
