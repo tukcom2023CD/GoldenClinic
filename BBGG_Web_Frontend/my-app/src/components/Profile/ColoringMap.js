@@ -11,8 +11,8 @@ const ProfileForm = () => {
     useEffect(() => {
         var mapContainer = document.getElementById('map'),
             mapOption = {
-                center: new kakao.maps.LatLng(37.566830959632526, 126.97864942713029),
-                level: 13
+                center: new kakao.maps.LatLng(37.45277794033423, 126.92151996899025),
+                level: 9
             };
         var map = new kakao.maps.Map(mapContainer, mapOption);
         var mapTypeControl = new kakao.maps.MapTypeControl();
