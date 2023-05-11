@@ -34,15 +34,16 @@ const MainPage = () => {
             <div className={classes.headerSpacer}></div>
                 <img src={imglist[State]} className={classes.marketimg} alt="banner"></img>
             <div className={classes.underAdContainer}>
-                <div>추천 여행지</div>
+                <div className={classes.recommendString}>추천 여행지</div>
                 <div className={classes.container}>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
+                    <button className={classes.recommendImg1}>서울특별시</button>
+                    <button className={classes.recommendImg2}>경기도</button>
+                    <button className={classes.recommendImg3}>대전광역시</button>
+                    <button className={classes.recommendImg4}>대구광역시</button>
+                    <button className={classes.recommendImg5}>부산광역시</button>
                 </div>
             </div>
+            <div></div>
         </div>
     )
 
