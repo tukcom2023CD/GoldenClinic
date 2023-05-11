@@ -11,7 +11,7 @@ const StartingPageContent = () => {
 
   const handleScroll = (e) => {
     const h1Elements = document.querySelectorAll("h1");
-    
+
     if (e.deltaY > 0) {
       if (page === 3) return;
       setPage(page + 1);
@@ -30,7 +30,7 @@ const StartingPageContent = () => {
       });
     }
   };
-  
+
 
   useEffect(() => {
     if (localStorage.getItem('userId') === null) {
@@ -46,20 +46,22 @@ const StartingPageContent = () => {
     }
   }
 
-  window.addEventListener("wheel", function (e) {
-    e.preventDefault();
-  }, { passive: false });
+  if (page.StartingPageContent) {
+    window.addEventListener("wheel", function (e) {
+      e.preventDefault();
+    }, { passive: false });
+  }
 
 
   return (
     <div onWheel={handleScroll}><div className={classes.headerSpacer}>.</div>
       {/* <button className={classes.yellow}>앱 다운로드 ⤓</button> */}
       <div className={classes.yellow}>
-				<MobileStoreButton
-				  store="ios"
-				  linkProps={{ title: 'iOS Store Button' }}
-				/>
-			</div>
+        <MobileStoreButton
+          store="ios"
+          linkProps={{ title: 'iOS Store Button' }}
+        />
+      </div>
       <div className={classes.starting2}>
         <h1>TO TRAVEL IS TO LIVE</h1>
       </div>
