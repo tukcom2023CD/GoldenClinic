@@ -61,8 +61,7 @@ function Food() {
   };
 
   return (
-    <div className={classes.Food}>
-      <div className={classes.headerSpacer}></div>
+    <div className={classes.Food}><div className={classes.headerSpacer}></div>
       <input type="text" value={searchTerm} onChange={handleInputChange} />
       <button onClick={handleSearch}>Search</button>
 
