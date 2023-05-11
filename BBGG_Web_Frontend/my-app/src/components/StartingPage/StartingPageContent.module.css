@@ -124,6 +124,6 @@ body {
 }
 
 /* 세로 스크롤바 숨기기 */
-.StartingPageContent::-webkit-scrollbar-vertical {
+::-webkit-scrollbar-vertical {
   display: none;
 }

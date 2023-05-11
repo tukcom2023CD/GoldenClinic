@@ -43,7 +43,9 @@ const MainPage = () => {
                     <button className={classes.recommendImg5}>부산광역시</button>
                 </div>
             </div>
-            <div></div>
+            <div className={classes.threeContents}>
+                
+            </div>
         </div>
     )
 
