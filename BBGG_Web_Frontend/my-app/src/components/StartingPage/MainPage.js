@@ -44,7 +44,10 @@ const MainPage = () => {
                 </div>
             </div>
             <div className={classes.threeContents}>
-                
+                <div>
+                    <div className={classes.locationRecord}>위치 기록</div>
+                    <button className={classes.locationRecordBtn}></button>
+                </div>
             </div>
         </div>
     )

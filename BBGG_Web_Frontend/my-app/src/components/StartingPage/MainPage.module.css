@@ -92,4 +92,18 @@
     font-weight: bold;
   }
 
-  
+.threeContents {
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: inline-flex;
+}
+
+.locationRecord {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.locationRecordBtn {
+    background-image: url();
+}
