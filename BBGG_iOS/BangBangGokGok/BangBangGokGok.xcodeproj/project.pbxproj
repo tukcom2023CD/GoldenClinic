@@ -19,6 +19,7 @@
 		39D21303296BCB620023D0CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D21301296BCB620023D0CF /* Main.storyboard */; };
 		39D21305296BCB640023D0CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D21304296BCB640023D0CF /* Assets.xcassets */; };
 		39D21308296BCB640023D0CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D21306296BCB640023D0CF /* LaunchScreen.storyboard */; };
+		39E9DD162A0CCDDD00F1AD86 /* VisitedPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E9DD152A0CCDDD00F1AD86 /* VisitedPlacesViewController.swift */; };
 		6CDECCFA660C84806F858C74 /* Pods_BangBangGokGok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B1330CED7E8E8D7FF2BDC9 /* Pods_BangBangGokGok.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		39D21304296BCB640023D0CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39D21307296BCB640023D0CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39D21309296BCB640023D0CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39E9DD152A0CCDDD00F1AD86 /* VisitedPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedPlacesViewController.swift; sourceTree = "<group>"; };
 		5937E161A9B3601331412BE6 /* Pods-BangBangGokGok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BangBangGokGok.release.xcconfig"; path = "Target Support Files/Pods-BangBangGokGok/Pods-BangBangGokGok.release.xcconfig"; sourceTree = "<group>"; };
 		62B1330CED7E8E8D7FF2BDC9 /* Pods_BangBangGokGok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BangBangGokGok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A17C96D363C383ECAB1A8CB6 /* Pods-BangBangGokGok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BangBangGokGok.debug.xcconfig"; path = "Target Support Files/Pods-BangBangGokGok/Pods-BangBangGokGok.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				396AF7DE29FA6293006B0CCD /* VisitedCitiesViewController.swift */,
+				39E9DD152A0CCDDD00F1AD86 /* VisitedPlacesViewController.swift */,
 				39D212FF296BCB620023D0CF /* SignInViewController.swift */,
 				396AF7E229FA7260006B0CCD /* RecommendCityTableViewController.swift */,
 				39712CA529FA252C006963FE /* TabBarController.swift */,
@@ -249,6 +252,7 @@
 				39712CA629FA252C006963FE /* TabBarController.swift in Sources */,
 				39236F4F29DC68D5009DCCF4 /* MapViewController.swift in Sources */,
 				39D212FE296BCB620023D0CF /* SceneDelegate.swift in Sources */,
+				39E9DD162A0CCDDD00F1AD86 /* VisitedPlacesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
