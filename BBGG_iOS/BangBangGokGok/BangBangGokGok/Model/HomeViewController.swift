@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var percentageBtn: UIButton!
     
-    var percentageCom = 7.0/159.0
+    var percentageCom = 13.0/349.0
     var banners = ["banner1.png","banner2.png","banner3.png","banner4.png"]
     let interval = 3.0 // 3초
     let timeSelector: Selector = #selector(HomeViewController.updateTime)
