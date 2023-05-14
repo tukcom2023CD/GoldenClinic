@@ -10,7 +10,7 @@ import UIKit
 class SignInViewController: UIViewController {
     @IBOutlet weak var tfId: UITextField!
     @IBOutlet weak var tfPw: UITextField!
-    var isSignedIn = true
+    var isSignedIn = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
