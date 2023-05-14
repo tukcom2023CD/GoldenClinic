@@ -27,6 +27,15 @@ class VisitedCitiesViewController: UITableViewController {
         dataArray.append("경상북도 구미시")
         dataArray.append("경기도 시흥시")
         dataArray.append("대구광역시")
+        dataArray.append("부산광역시")
+        dataArray.append("광주광역시")
+        dataArray.append("경상북도 의성군")
+        dataArray.append("전라남도 목포시")
+        dataArray.append("경기도 안산시")
+        dataArray.append("강원도 철원군")
+        dataArray.append("제주특별자치도 제주시")
+        dataArray.append("제주특별자치도 서귀포시")
+        dataArray.append("세종특별자치시")
     }
 
     // MARK: - Table view data source
@@ -42,7 +51,7 @@ class VisitedCitiesViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "visitedCitiesCell", for: indexPath)
 
 //        cell.textLabel?.text = dataArray[indexPath.row]
         
