@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var percentageBtn: UIButton!
     
     var percentageCom = 13.0/349.0
-    var banners = ["banner1.png","banner2.png","banner3.png","banner4.png"]
+    var banners = ["banner0.png", "banner1.png","banner2.png","banner3.png","banner4.png", "banner5.png", "banner6.png"]
     let interval = 3.0 // 3초
     let timeSelector: Selector = #selector(HomeViewController.updateTime)
     var numBanner = 0
