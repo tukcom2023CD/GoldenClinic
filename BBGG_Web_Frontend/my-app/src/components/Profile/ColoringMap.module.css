@@ -1,0 +1,47 @@
+.top_btn {
+  position:absolute;
+  top:85px;
+  left:5px;
+  padding:7px 12px;
+  border: 1px solid #1c1e34;
+  border-radius: 5px;
+  padding: 6px 12px;
+  background-color: #1c1e34;
+  opacity: 0.5;
+  color:#F6F9FB;
+  font-weight: bold;
+  font-size: 15px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.04);
+  z-index:1;cursor:pointer;
+}
+.top_side_btn {
+  position:absolute;
+  top:120px;
+  left:5px;
+  padding:7px 12px;
+  border: 1px solid #1c1e34;
+  border-radius: 5px;
+  padding: 6px 12px;
+  background-color: #1c1e34;
+  opacity: 0.5;
+  color:#F6F9FB;
+  font-weight: bold;
+  font-size: 15px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.04);
+  z-index:1;cursor:pointer;
+}
+
+.top_btn:hover {
+  opacity: 1;
+}
+
+.top_side_btn:hover {
+  opacity: 1;
+}
+
+.percent {
+    position:fixed;
+    right: 10%;
+    bottom: 20%;
+    z-index: 9999;
+}

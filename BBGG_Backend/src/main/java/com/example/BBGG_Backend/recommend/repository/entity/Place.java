@@ -1,6 +1,5 @@
-package com.example.BBGG_Backend.login.repository.entity;
+package com.example.BBGG_Backend.recommend.repository.entity;
 
-import com.example.BBGG_Backend.login.repository.dto.UserDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -16,8 +15,7 @@ import javax.persistence.*;
 @Builder
 @Getter
 @Table
-public class User {
-
+public class Place {
     @GeneratedValue
     private long seq;
 
@@ -26,16 +24,8 @@ public class User {
     private String userId;
 
     @Column(nullable = false)
-    private String password;
+    private String placeName;
 
     @Column(nullable = false)
-    private String userName;
-
-    public UserDto toDto(){
-        return UserDto.builder()
-                .userId(userId)
-                .password(password)
-                .userName(userName)
-                .build();
-    }
+    private String address;
 }

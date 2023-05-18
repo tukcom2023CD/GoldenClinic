@@ -23,12 +23,12 @@
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=Figma&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/IntelliJ IDEA-000000?style=flat-square&logo=IntelliJ IDEA&logoColor=white"/>
 <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/></svg><br>
+## 팀원 
+| 이름 | [권태우](https://github.com/boifromangye) | [이현구](https://github.com/kugu98) | [최유빈](https://github.com/cybin050300) | [유하임](https://github.com/typeYu) |
+| --- | --- | --- | --- | --- |
+| 역할 | iOS | Backend | Web | Web |
+| 연락처 | kwontaewoo0901@gmail.com | kugu98@naver.com | cybin050300@naver.com | mytypeyu@gmail.com |
 
-## 구성원 및 연락처
-[권태우](https://github.com/boifromangye) : kwontaewoo0901@gmail.com  
-[이현구](https://github.com/kugu98) : kugu98@naver.com  
-[최유빈](https://github.com/cybin050300) : cybin050300@naver.com  
-[유하임](https://github.com/typeYu) : mytypeyu@gmail.com  
 
 ## 링크
 <a href="https://kwontaewoo0901.atlassian.net/jira/software/projects/BBGG/boards/1/roadmap"><img src="https://img.shields.io/badge/JIRA-blue?style=flat-square&logo=JIRA&logoColor=white"/></a> 
