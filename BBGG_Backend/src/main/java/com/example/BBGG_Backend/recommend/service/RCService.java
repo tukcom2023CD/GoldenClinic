@@ -1,5 +1,6 @@
 package com.example.BBGG_Backend.recommend.service;
 
+import com.example.BBGG_Backend.gps.repository.entity.Mark;
 import com.example.BBGG_Backend.recommend.PlaceRepository;
 import com.example.BBGG_Backend.recommend.repository.dto.PlaceDto;
 import com.example.BBGG_Backend.recommend.repository.entity.Place;
@@ -16,9 +17,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.http.ResponseEntity;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 @Slf4j
@@ -37,7 +36,7 @@ public class RCService {
 
     public String ps(PlaceDto request){
         Map<String, String> location = getLocationFromCoordinates(request.getAddress());
-        placeRepository.save(Place.builder().userId(request.getUserId()).placeName(request.getPlaceName()).address(request.getAddress())
+        placeRepository.save(Place.builder().userId(request.getUserId()).placeName(request.getPlaceName()).address(location.get("r1")+location.get("r2"))
                 .lat(location.get("x")).longitude(location.get("y")).build());
         return "Success";
     }
@@ -71,11 +70,26 @@ public class RCService {
         JsonNode addressNode = documents.get(0).get("address");
         String x = addressNode.get("x").asText();
         String y = addressNode.get("y").asText();
-
+        String r1=addressNode.get("region_1depth_name").asText();
+        String r2=addressNode.get("region_2depth_name").asText();
         Map<String, String> locationMap = new HashMap<>();
         locationMap.put("x", x);
         locationMap.put("y", y);
+        locationMap.put("r1",r1);
+        locationMap.put("r2",r2);
         return locationMap;
+    }
+    public List<String> re_place(String userId) {
+        List<Place> mark = placeRepository.findByUserId(userId);
+        Set<String> textSet = new HashSet<>();
+
+        for (Place place : mark) {
+            String text = place.getAddress();
+            if (text != null) {
+                textSet.add(text);
+            }
+        }
+        return new  ArrayList<>(textSet);
     }
 
 }

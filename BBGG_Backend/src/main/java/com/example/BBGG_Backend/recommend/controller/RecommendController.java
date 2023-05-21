@@ -34,4 +34,10 @@ public class RecommendController {
         List<Place> p2=rcService.pp(userId,dong);
         return p2;
     }
+    @GetMapping("/re_place")
+    @ResponseBody
+    public List<?> place(@RequestParam String userId){
+        List<?> place=rcService.re_place(userId);
+        return place;
+    }
 }
