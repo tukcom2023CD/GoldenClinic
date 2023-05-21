@@ -13,4 +13,6 @@ public class PlaceDto {
     private String userId;
     private String placeName;
     private String address;
+    private String lat;
+    private String longitude;
 }

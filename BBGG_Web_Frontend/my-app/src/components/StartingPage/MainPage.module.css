@@ -1,0 +1,148 @@
+.marketimg {
+    z-index: 1;
+    max-width: 100%;
+  }
+
+  .headerSpacer {
+    height: 5rem;
+    background-color: white;
+  }
+
+  .container {
+    display: inline-flex;
+  }
+
+  .underAdContainer {
+    margin-top: 2%;
+    margin-left: 23%;
+    margin-right: 27%;
+
+  }
+
+  .recommendImg1 {
+    background-image: url(https://images.unsplash.com/photo-1516264665768-5525834929bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8JUVBJUIyJUJEJUVCJUIzJUI1JUVBJUI2JTgxJTIwJUVCJUFDJUI0JUVCJThBJUFDfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60);
+    width: 200px;
+    height: 200px;
+    margin-top: 2%;
+    margin-right: 1%;
+    border:0;
+    color:white;
+    font-weight: bold;
+    font-size: large;
+  }
+  .recommendImg2 {
+    background-image: url(https://t1.daumcdn.net/cfile/tistory/996EB03D5F06B5CD31);
+    background-position: 400px;
+    width: 200px;
+    height: 200px;
+    margin-top: 2%;
+    margin-right: 1%;
+    border:0;
+    color:white;
+    font-weight: bold;
+    font-size: large;
+  }
+  .recommendImg3 {
+    background-image: url(https://cphoto.asiae.co.kr/listimglink/1/2023020114044210217_1675227882.jpg);
+    background-position: 400px;
+    width: 200px;
+    height: 200px;
+    margin-top: 2%;
+    margin-right: 1%;
+    border:0;
+    color:white;
+    font-weight: bold;
+    font-size: large;
+  }
+  .recommendImg4 {
+    background-image: url(https://tour.daegu.go.kr/cmsh/tour.daegu.go.kr/images/img/front/sub/dgtour30_14.jpg);
+    background-position: 200px;
+    width: 200px;
+    height: 200px;
+    margin-top: 2%;
+    margin-right: 1%;
+    border:0;
+    color:white;
+    font-weight: bold;
+    font-size: large;
+  }
+  .recommendImg5 {
+    background-image: url(https://images.unsplash.com/photo-1551506448-074afa034c05?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fCVFQiVCMCU5NCVFQiU4QiVBNHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60);
+    background-position: px;
+    width: 200px;
+    height: 200px;
+    margin-top: 2%;
+    margin-right: 1%;
+    border:0;
+    color:black;
+    font-weight: bold;
+    font-size: large;
+  }
+
+  .recommendImg1:hover,
+  .recommendImg2:hover,
+  .recommendImg3:hover,
+  .recommendImg4:hover,
+  .recommendImg5:hover {
+    transform: scale(1.02);
+  }
+
+  .recommendString {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+.threeContents {
+    margin-top: 6%;
+    margin-left: 10%;
+    margin-right: 5%;
+    display: inline-flex;
+}
+
+.stringIconContainer {
+    text-align: center;
+    margin-right: 8%;
+}
+
+.locationRecord {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.locationRecordBtn {
+    background-image: url(../../images/red-flag.png);
+    width: 380px;
+    height: 380px;
+    background-size: cover;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-right: 5%;
+    border: 0;
+}
+
+.locationRecordBtn2 {
+    background-image: url(../../images/map.png);
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-right: 10%;
+    border: 0;
+}
+
+.locationRecordBtn3 {
+    background-image: url(../../images/map2.png);
+    width: 350px;
+    height: 350px;
+    background-size: cover;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border: 0;
+}
+
+.locationRecordBtn:hover,
+.locationRecordBtn2:hover,
+.locationRecordBtn3:hover {
+    transform: scale(1.02);
+}
