@@ -82,7 +82,7 @@ public class MarkService {
 
         return new ArrayList<>(textSet);
     }
-    public String getLocationFromCoordinates(double latitude, double longitude) {
+    public String getLocationFromCoordinatess(double latitude, double longitude) {
         String url = String.format(VWORLD_API_URL, longitude, latitude, API_KEY);
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
         String responseBody = response.getBody();
@@ -107,7 +107,7 @@ public class MarkService {
 
         return location;
     }
-    /*public String getLocationFromCoordinates(double latitude, double longitude) {
+    public String getLocationFromCoordinates(double latitude, double longitude) {
         String url = "https://dapi.kakao.com/v2/local/geo/coord2address.json?x=" + longitude + "&y=" + latitude + "&input_coord=WGS84";
         String apiKey = "2cbdc0c38d1bf24caf3c8015b9f9e3b2";
 
@@ -136,7 +136,7 @@ public class MarkService {
         String region3depthName = address.get("region_3depth_name").asText();
         String location =region1depthName+region2depthName+region3depthName;
         return location;
-    }*/
+    }
 
 
 }
