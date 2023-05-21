@@ -16,11 +16,12 @@ import javax.persistence.*;
 @Getter
 @Table
 public class Place {
+    @Id
     @GeneratedValue
     private long seq;
 
-    @Id
-    @Column(unique = true)
+
+    @Column
     private String userId;
 
     @Column(nullable = false)
@@ -28,4 +29,10 @@ public class Place {
 
     @Column(nullable = false)
     private String address;
+
+    @Column(nullable = false)
+    private String lat;
+
+    @Column(nullable = false)
+    private String longitude;
 }
