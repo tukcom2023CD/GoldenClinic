@@ -94,14 +94,13 @@
 
 .threeContents {
     margin-top: 6%;
-    margin-left: 10%;
-    margin-right: 5%;
+    margin-left: 16%;
+    margin-right: 27%;
     display: inline-flex;
 }
 
 .stringIconContainer {
     text-align: center;
-    margin-right: 8%;
 }
 
 .locationRecord {
@@ -114,30 +113,6 @@
     width: 380px;
     height: 380px;
     background-size: cover;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    margin-right: 5%;
-    border: 0;
-}
-
-.locationRecordBtn2 {
-    background-image: url(../../images/map.png);
-    width: 400px;
-    height: 400px;
-    background-size: cover;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    margin-right: 10%;
-    border: 0;
-}
-
-.locationRecordBtn3 {
-    background-image: url(../../images/map2.png);
-    width: 350px;
-    height: 350px;
-    background-size: cover;
-    margin-top: 10%;
-    margin-bottom: 10%;
     border: 0;
 }
 
