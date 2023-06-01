@@ -53,23 +53,31 @@ const MainPage = () => {
                     <button className={classes.recommendImg5}>부산광역시</button>
                 </div>
             </div>
-            <div className={classes.threeContents}>
-                <div className={classes.stringIconContainer}>
-                    <div className={classes.locationRecord}>위치 기록</div>
-                    <button className={classes.locationRecordBtn}
-                        onClick={replace1}></button>
-                </div>
-                <div className={classes.stringIconContainer}>
-                    <div className={classes.locationRecord}>색칠 현황</div>
-                    <button className={classes.locationRecordBtn2}
-                        onClick={replace2}></button>
-                </div>
-                <div className={classes.stringIconContainer}>
-                    <div className={classes.locationRecord}>방문 확인</div>
-                    <button className={classes.locationRecordBtn3}
-                        onClick={replace3}></button>
-                </div>
+            <div className={classes.underAdContainer}>
+            <div className={classes.recommendString}>위치 기록</div>
+            <div className={classes.container}>
+                <button className={classes.locationRecordBtn}
+                    onClick={replace1}></button>
             </div>
+            </div>
+            <div className={classes.underAdContainer}>
+            <div className={classes.recommendString}>색칠 현황</div>
+            <div className={classes.container}>
+                <button className={classes.locationRecordBtn2}
+                    onClick={replace2}></button>
+            </div>
+            </div>
+            <div className={classes.underAdContainer}>
+            <div className={classes.recommendString}>방문 확인</div>
+            <div className={classes.container}>
+                <button className={classes.locationRecordBtn3}
+                    onClick={replace3}></button>
+            </div>
+            </div>
+
+            <br/>
+
+            <div></div>
         </div>
     )
 
