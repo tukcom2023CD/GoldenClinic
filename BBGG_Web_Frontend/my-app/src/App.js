@@ -14,7 +14,9 @@ import AreaFirst from "./components/Record/Areafirst";
 import PostWriting from "./components/Record/PostWriting";
 import Areaplace from "./components/Record/Areaplace";
 import HotPlace from "./components/Recommend/HotPlace";
-
+import LocalFood from "./components/Recommend/LocalFood";
+import Plan from "./components/Recommend/Plan";
+import PlanTrip from "./components/Recommend/PlanTrip";
 function App() {
   return (
     <Layout>
@@ -30,6 +32,9 @@ function App() {
         <Route path="/Areaplace" element={<Areaplace />}></Route>
         <Route path="/PostWriting" element={<PostWriting />}></Route>
         <Route path="/HotPlace" element={<HotPlace />}></Route>
+        <Route path="/LocalFood" element={<LocalFood />}></Route>
+        <Route path="/Plan" element={<Plan />}></Route>
+        <Route path="/PlanTrip" element={<PlanTrip />}></Route>
       </Routes>
     </Layout>
   );
