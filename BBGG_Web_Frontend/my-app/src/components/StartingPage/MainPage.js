@@ -74,6 +74,10 @@ const MainPage = () => {
                     onClick={replace3}></button>
             </div>
             </div>
+
+            <br/>
+
+            <div></div>
         </div>
     )
 
