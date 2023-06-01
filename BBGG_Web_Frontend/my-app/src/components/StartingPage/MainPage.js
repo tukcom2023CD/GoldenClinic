@@ -32,12 +32,12 @@ const MainPage = () => {
     const replace1 = () => {
         window.location.replace('/CurrentLocation')
     }
-    // const replace2 = () => {
-    //     window.location.replace('/ColoringMap')
-    // }
-    // const replace3 = () => {
-    //     window.location.replace('/Areafirst')
-    // }
+    const replace2 = () => {
+        window.location.replace('/ColoringMap')
+    }
+    const replace3 = () => {
+        window.location.replace('/Areafirst')
+    }
 
     return (
         <div>
@@ -63,15 +63,15 @@ const MainPage = () => {
             <div className={classes.underAdContainer}>
             <div className={classes.recommendString}>색칠 현황</div>
             <div className={classes.container}>
-                <button className={classes.locationRecordBtn}
-                    onClick={replace1}></button>
+                <button className={classes.locationRecordBtn2}
+                    onClick={replace2}></button>
             </div>
             </div>
             <div className={classes.underAdContainer}>
             <div className={classes.recommendString}>방문 확인</div>
             <div className={classes.container}>
-                <button className={classes.locationRecordBtn}
-                    onClick={replace1}></button>
+                <button className={classes.locationRecordBtn3}
+                    onClick={replace3}></button>
             </div>
             </div>
         </div>

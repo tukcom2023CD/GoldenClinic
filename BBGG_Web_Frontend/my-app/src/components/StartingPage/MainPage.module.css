@@ -103,8 +103,8 @@
     border-radius: 12px;
 }
 
-.locationRecordBtn {
-  background-image: url(../../images/locationPicture.png);
+.locationRecordBtn2 {
+  background-image: url(../../images/mapColoring.png);
   background-size: cover;
   border: 0;
   margin-top: 2%;
@@ -113,7 +113,7 @@
   border-radius: 12px;
 }
 
-.locationRecordBtn {
+.locationRecordBtn3 {
   background-image: url(../../images/locationPicture.png);
   background-size: cover;
   border: 0;
