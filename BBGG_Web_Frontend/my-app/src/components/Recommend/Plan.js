@@ -1,18 +1,24 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 const Plan = () => {
   const { kakao } = window;
   const [inputValue, setInputValue] = useState("");
   const [markers, setMarkers] = useState([]);
-
+  const mapRef = useRef(null);
   useEffect(() => {
+    console.log("map load");
     const mapContainer = document.getElementById("map");
     const mapOption = {
       center: new kakao.maps.LatLng(33.450701, 126.570667),
       level: 3,
     };
     const map = new kakao.maps.Map(mapContainer, mapOption);
+    mapContainer.style.width = "1200px";
+    mapContainer.style.height = "800px";
+
+    map.relayout();
+
     const mapTypeControl = new kakao.maps.MapTypeControl();
     map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
@@ -26,7 +32,7 @@ const Plan = () => {
       if (navigator.geolocation) {
         const locPosition = new kakao.maps.LatLng(lat, lon);
         const message = '<div style="padding:5px;"></div>';
-        displayMarker(locPosition, message);
+        displayMarker(locPosition, message, "Current Location");
       } else {
         const locPosition2 = new kakao.maps.LatLng(33.450701, 126.570667);
         const message2 = "geolocation을 사용할 수 없어용";
@@ -47,52 +53,10 @@ const Plan = () => {
             const parsedGps = JSON.parse(gpsJson);
             console.log(gpsJson);
 
-            const waypoints = parsedGps.map((gps) => {
-              return {
-                name: gps.placeName,
-                x: gps.lat,
-                y: gps.longitude,
-              };
+            parsedGps.forEach((gps) => {
+              const locPosition = new kakao.maps.LatLng(gps.lat, gps.longitude);
+              displayMarker(locPosition, "", gps.placeName);
             });
-
-            const origin = {
-              x: parsedGps[0].lat,
-              y: parsedGps[0].longitude,
-            };
-
-            const destination = {
-              x: parsedGps[parsedGps.length - 1].lat,
-              y: parsedGps[parsedGps.length - 1].longitude,
-            };
-
-            const data = {
-              origin: origin,
-              destination: destination,
-              waypoints: waypoints,
-              priority: "RECOMMEND",
-              car_fuel: "GASOLINE",
-              car_hipass: false,
-              alternatives: false,
-              road_details: false,
-            };
-
-            axios
-              .post(
-                "https://apis-navi.kakaomobility.com/v1/waypoints/directions",
-                data,
-                {
-                  headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `KakaoAK e40b35dcd31ca39d7233a07618a1aae2`,
-                  },
-                }
-              )
-              .then((response) => {
-                console.log(response.data);
-              })
-              .catch((error) => {
-                console.log(error);
-              });
           });
       };
       getData();
@@ -141,7 +105,8 @@ const Plan = () => {
 
           const locPosition = new kakao.maps.LatLng(lat, lon);
 
-          // displayMarker(locPosition, "", inputValue);
+          //displayMarker(locPosition, "", inputValue);
+          //mapRef.current.relayout();
         } else {
           console.log("Geocoding failed: " + status);
         }
