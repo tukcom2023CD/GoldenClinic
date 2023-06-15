@@ -1,13 +1,13 @@
-import classes from './StartingPageContent.module.css';
+import classes from "./StartingPageContent.module.css";
 import { useState, useEffect } from "react";
-import MobileStoreButton from 'react-mobile-store-button';
+import MobileStoreButton from "react-mobile-store-button";
 
 const StartingPageContent = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [page, setPage] = useState(1);
 
   const posTop = (page - 1) * window.innerHeight;
-  window.scrollTo({ top: posTop, behavior: 'smooth' });
+  window.scrollTo({ top: posTop, behavior: "smooth" });
 
   const handleScroll = (e) => {
     const h1Elements = document.querySelectorAll("h1");
@@ -31,40 +31,48 @@ const StartingPageContent = () => {
     }
   };
 
-
   useEffect(() => {
-    if (localStorage.getItem('userId') === null) {
+    if (localStorage.getItem("userId") === null) {
     } else setIsLogin(true);
-
   }, []);
 
   const StartBBGGBtn = () => {
     if (isLogin) {
-      window.location.replace('/MainPage')
+      window.location.replace("/MainPage");
     } else {
-      window.location.replace('/auth')
+      window.location.replace("/auth");
     }
-  }
+  };
 
-  window.addEventListener("wheel", function (e) {
-    e.preventDefault();
-  }, { passive: false });
-
+  window.addEventListener(
+    "wheel",
+    function (e) {
+      e.preventDefault();
+    },
+    { passive: false }
+  );
 
   return (
-    <div onWheel={handleScroll}><div className={classes.headerSpacer}>.</div>
+    <div onWheel={handleScroll}>
+      <div className={classes.headerSpacer}>.</div>
       {/* <button className={classes.yellow}>앱 다운로드 ⤓</button> */}
       <div className={classes.yellow}>
         <MobileStoreButton
           store="ios"
-          linkProps={{ title: 'iOS Store Button' }}
+          linkProps={{ title: "iOS Store Button" }}
         />
       </div>
       <div className={classes.starting2}>
         <h1>TO TRAVEL IS TO LIVE</h1>
       </div>
       <div className={classes.starting3}>
-        <h1>한번쯤<br />꿈에 그리던<br />전국일주</h1>
+        <h1>
+          한번쯤
+          <br />
+          꿈에 그리던
+          <br />
+          전국일주
+        </h1>
       </div>
       <div className={classes.starting}>
         <h1>웹사이트에서 시작하기</h1>

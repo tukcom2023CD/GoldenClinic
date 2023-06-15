@@ -38,7 +38,6 @@ const MainPage = () => {
   const replace3 = () => {
     window.location.replace("/Areafirst");
   };
-
   const replace4 = () => {
     window.location.replace("/LocalFood");
   };
@@ -62,44 +61,38 @@ const MainPage = () => {
           <button className={classes.recommendImg3}>대전광역시</button>
           <button className={classes.recommendImg4}>대구광역시</button>
           <button className={classes.recommendImg5}>부산광역시</button>
-          <div className={classes.locationRecord}>
-            맛집/명소 검색
-            <button onClick={replace4}>맛집검색</button>
-            <button onClick={replace5}>명소검색</button>
+          <div className={classes.stringIconContainer}>
+            <div className={classes.locationRecord}>
+              맛집/명소 검색
+              <button onClick={replace4}>맛집검색</button>
+              <button onClick={replace5}>명소검색</button>
+            </div>
           </div>
         </div>
       </div>
-      <div className={classes.underAdContainer}>
-        <div className={classes.recommendString}>위치 기록</div>
-        <div className={classes.container}>
+      <div className={classes.threeContents}>
+        <div className={classes.stringIconContainer}>
+          <div className={classes.locationRecord}>위치 기록</div>
           <button
             className={classes.locationRecordBtn}
             onClick={replace1}
           ></button>
         </div>
-      </div>
-      <div className={classes.underAdContainer}>
-        <div className={classes.recommendString}>색칠 현황</div>
-        <div className={classes.container}>
+        <div className={classes.stringIconContainer}>
+          <div className={classes.locationRecord}>색칠 현황</div>
           <button
             className={classes.locationRecordBtn2}
             onClick={replace2}
           ></button>
         </div>
-      </div>
-      <div className={classes.underAdContainer}>
-        <div className={classes.recommendString}>방문 확인</div>
-        <div className={classes.container}>
+        <div className={classes.stringIconContainer}>
+          <div className={classes.locationRecord}>방문 확인</div>
           <button
             className={classes.locationRecordBtn3}
             onClick={replace3}
           ></button>
         </div>
       </div>
-
-      <br />
-
-      <div></div>
     </div>
   );
 };
