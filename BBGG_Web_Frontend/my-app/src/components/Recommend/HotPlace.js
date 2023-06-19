@@ -1,111 +1,67 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import classes from "./HotPlace.module.css";
 
-function Food() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
-  const [selectedItem, setSelectedItem] = useState(null);
+const HotPlace = () => {
+  const [category, setCategory] = useState("");
+  const [places, setPlaces] = useState([]);
 
-  const handleInputChange = (e) => setSearchTerm(e.target.value);
-
-  const handleSearch = async () => {
-    const clientId = "tIYv4dIy_lgnmbEWd8Ws";
-    const clientSecret = "6aQbFlm8kR";
-    const apiLocalUrl = `/v1/search/local.json?query=${searchTerm}&display=10`;
-    const apiBlogUrl = `/v1/search/blog.json?query=${searchTerm}&display=10`;
-
-    try {
-      const [localResponse, blogResponse] = await axios.all([
-        axios.get(apiLocalUrl, {
-          headers: {
-            "X-Naver-Client-Id": clientId,
-            "X-Naver-Client-Secret": clientSecret,
-          },
-        }),
-        axios.get(apiBlogUrl, {
-          headers: {
-            "X-Naver-Client-Id": clientId,
-            "X-Naver-Client-Secret": clientSecret,
-          },
-        }),
-      ]);
-      setSearchResult([
-        ...localResponse.data.items,
-        ...blogResponse.data.items,
-      ]);
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    if (category !== "") {
+      searchPlaces();
     }
-  };
+  }, [category]);
 
-  const handleItemSelected = (item) => setSelectedItem(item);
+  const searchPlaces = () => {
+    const { kakao } = window;
+    const map = new kakao.maps.Map(document.getElementById("map"), {
+      center: new kakao.maps.LatLng(37.5665, 126.978),
+      level: 13,
+    });
 
-  const handleCloseDetail = () => setSelectedItem(null);
+    const placesService = new kakao.maps.services.Places();
 
-  const handleItemSend = async () => {
-    const sendData = {
-      placeName: selectedItem.title,
-      address: selectedItem.address,
-      userId: localStorage.getItem("userId"),
+    const searchOptions = {
+      location: map.getCenter(),
+      radius: 1000,
+      category_group_code: category,
+      useMapBounds: true,
     };
-    try {
-      const response = await axios.post(
-        "http://localhost:8080/bbgg/placesave",
-        sendData
-      );
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
+
+    placesService.categorySearch(
+      category,
+      (results, status) => {
+        if (status === kakao.maps.services.Status.OK) {
+          setPlaces(results);
+        }
+      },
+      searchOptions
+    );
   };
 
   return (
-    <div className={classes.Food}><div className={classes.headerSpacer}></div>
-      <input type="text" value={searchTerm} onChange={handleInputChange} />
-      <button onClick={handleSearch}>Search</button>
+    <div>
+      <select value={category} onChange={(e) => setCategory(e.target.value)}>
+        <option value="">카테고리 선택</option>
+        <option value="MT1">대형마트</option>
+        <option value="CS2">편의점</option>
+        <option value="CE7">카페</option>
+        <option value="AD5">학문/교육</option>
+        <option value="FD6">음식점</option>
+      </select>
 
-      {selectedItem && (
-        <div className={classes.Food}>
-          <h1>{selectedItem.title}</h1>
-          <p>{selectedItem.category}</p>
-          <p>{selectedItem.roadAddress}</p>
+      <div id="map" style={{ width: "100%", height: "500px" }}></div>
 
-          <p>{selectedItem.description}</p>
-          <button
-            className={`${classes.button} ${classes["button-close"]}`}
-            onClick={handleCloseDetail}
-          >
-            Close
-          </button>
-        </div>
-      )}
-
-      {searchResult.map((item) => (
-        <div className={classes.Food} key={item.title}>
-          <h2>{item.title}</h2>
-          <p>{item.category}</p>
-          <p>{item.roadAddress}</p>
-
-          <button
-            className={`${classes.button} ${classes["button-detail"]}`}
-            onClick={() => handleItemSelected(item)}
-          >
-            View Detail
-          </button>
-
-          {selectedItem && selectedItem === item && (
-            <button
-              className={`${classes.button} ${classes["button-send"]}`}
-              onClick={handleItemSend}
-            >
-              Send
-            </button>
-          )}
-        </div>
-      ))}
+      <div>
+        {places.map((place) => (
+          <div key={place.id}>
+            <h3>{place.place_name}</h3>
+            <p>{place.address_name}</p>
+            <hr />
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
-export default Food;
+export default HotPlace;
