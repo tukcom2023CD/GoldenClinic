@@ -86,6 +86,7 @@ const ProfileForm = () => {
 
   return (
     <div>
+      <div className={classes.headerSpacer}></div>
       <div id="map"
         style={{
           width: "100%",
@@ -97,7 +98,8 @@ const ProfileForm = () => {
       <button className={classes.top_side_btn} onClick={FillBtn}>
         색칠하기로 보기
       </button><div className={classes.percent}>
-                <DountChart color="#f62459" percent={(uniqueTextsCount / 5065)} size="65px" /></div>
+        <DountChart color="#f62459" percent={(uniqueTextsCount / 500)} size="65px" /></div>
+      {/* 원래 5056개임 */}
     </div>
   )
 }
