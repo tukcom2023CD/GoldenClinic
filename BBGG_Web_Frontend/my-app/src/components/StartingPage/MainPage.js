@@ -38,7 +38,6 @@ const MainPage = () => {
   const replace3 = () => {
     window.location.href ="/Areafirst";
   };
-
   const replace4 = () => {
     window.location.href ="/LocalFood";
   };
