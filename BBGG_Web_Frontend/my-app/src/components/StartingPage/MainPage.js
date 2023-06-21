@@ -33,16 +33,31 @@ const MainPage = () => {
     window.location.href = "/CurrentLocation";
   };
   const replace2 = () => {
-    window.location.href ="/ColoringMap";
+    window.location.href = "/ColoringMap";
   };
   const replace3 = () => {
-    window.location.href ="/Areafirst";
+    window.location.href = "/Areafirst";
   };
   const replace4 = () => {
-    window.location.href ="/LocalFood";
+    window.location.href = "/LocalFood";
   };
   const replace5 = () => {
-    window.location.href ="/HotPlace";
+    window.location.href = "/HotPlace";
+  };
+  const replace6 = () => {
+    window.location.href = "/HotPlace?city=서울특별시";
+  };
+  const replace7 = () => {
+    window.location.href = "/HotPlace?city=경기도";
+  };
+  const replace8 = () => {
+    window.location.href = "/HotPlace?city=대전광역시";
+  };
+  const replace9 = () => {
+    window.location.href = "/HotPlace?city=대구광역시";
+  };
+  const replace10 = () => {
+    window.location.href = "/HotPlace?city=부산광역시";
   };
 
   return (
@@ -56,11 +71,21 @@ const MainPage = () => {
       <div className={classes.underAdContainer}>
         <div className={classes.recommendString}>추천 여행지</div>
         <div className={classes.container}>
-          <button className={classes.recommendImg1}>서울특별시</button>
-          <button className={classes.recommendImg2}>경기도</button>
-          <button className={classes.recommendImg3}>대전광역시</button>
-          <button className={classes.recommendImg4}>대구광역시</button>
-          <button className={classes.recommendImg5}>부산광역시</button>
+          <button className={classes.recommendImg1} onClick={replace6}>
+            서울특별시
+          </button>
+          <button className={classes.recommendImg2} onClick={replace7}>
+            경기도
+          </button>
+          <button className={classes.recommendImg3} onClick={replace8}>
+            대전광역시
+          </button>
+          <button className={classes.recommendImg4} onClick={replace9}>
+            대구광역시
+          </button>
+          <button className={classes.recommendImg5} onClick={replace10}>
+            부산광역시
+          </button>
         </div>
       </div>
       <div className={classes.underAdContainer}>
@@ -94,9 +119,13 @@ const MainPage = () => {
       <br />
 
       <div className={classes.fixedBox}>
-            <button className = {classes.fixedBox1} onClick={replace4}>맛집 검색</button>
-            <button className = {classes.fixedBox2} onClick={replace5}>명소 검색</button>
-          </div>
+        <button className={classes.fixedBox1} onClick={replace4}>
+          맛집 검색
+        </button>
+        <button className={classes.fixedBox2} onClick={replace5}>
+          명소 검색
+        </button>
+      </div>
     </div>
   );
 };
