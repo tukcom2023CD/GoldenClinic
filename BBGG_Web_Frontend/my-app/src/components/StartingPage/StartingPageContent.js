@@ -38,19 +38,23 @@ const StartingPageContent = () => {
 
   const StartBBGGBtn = () => {
     if (isLogin) {
-      window.location.replace("/MainPage");
+      window.location.href ="/MainPage";
     } else {
       window.location.replace("/auth");
     }
   };
 
-  window.addEventListener(
-    "wheel",
-    function (e) {
+  useEffect(() => {
+    const wheelHandler = (e) => {
       e.preventDefault();
-    },
-    { passive: false }
-  );
+    };
+
+    window.addEventListener("wheel", wheelHandler, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", wheelHandler);
+    };
+  }, []);
 
   return (
     <div onWheel={handleScroll}>

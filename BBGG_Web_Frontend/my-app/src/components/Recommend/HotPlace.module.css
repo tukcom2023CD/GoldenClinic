@@ -9,6 +9,36 @@
   border: #626014;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: fixed;
+  top: 15%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.center input {
+  padding: 10px;
+  border: 1px solid rgb(63, 63, 63);
+  border-radius: 5px;
+  font-size: 16px;
+  width: 300px;
+  margin-right: 10px;
+}
+
+.center button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #6bb0ff;
+  color: #f7f7f7;
+  cursor: pointer;
+}
+
 .button {
   position: absolute;
   left: 5px;

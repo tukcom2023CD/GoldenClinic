@@ -57,6 +57,8 @@ const MainNavigation = () => {
           </li>
           <li>
             <Link to="/PlanTrip">{isLogin ? "PlanTrip" : ""}</Link>
+          </li>
+          <li>
             <Link to="/Plan">{isLogin ? "Plan" : ""}</Link>
           </li>
           <li className={classes.NavName}>

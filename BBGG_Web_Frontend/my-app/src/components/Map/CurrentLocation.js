@@ -39,7 +39,7 @@ const CurrentLocation = () => {
                 kakao.maps.event.addListener(marker, 'click', function () {
                     localStorage.setItem("lat", lat);
                     localStorage.setItem("lon", lon);
-                    window.location.replace('/PostWriting');
+                    window.location.href = '/PostWriting';
                 });
 
                 var iwContent = message;
@@ -68,6 +68,7 @@ const CurrentLocation = () => {
 
     return (
         <div>
+            <div className={classes.headerSpacer}></div>
             <div id="map"
                 style={{
                     width: "100%",
