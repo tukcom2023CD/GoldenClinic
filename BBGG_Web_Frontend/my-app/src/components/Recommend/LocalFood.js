@@ -67,14 +67,14 @@ function Food() {
   return (
     <div className={classes.Food}>
       <div className={classes.headerSpacer}></div>
-
+      <div className= {classes.center}>
       <input
         type="text"
         placeholder="맛집을 검색하세요"
         value={searchTerm}
         onChange={handleInputChange}
       />
-      <button onClick={handleSearch}>Search</button>
+      <button onClick={handleSearch}>Search</button></div>
 
       {selectedItem && (
         <div className={classes.Food}>
