@@ -1,65 +1,125 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import classes from "./HotPlace.module.css";
+import { useLocation } from "react-router-dom";
 
 const HotPlace = () => {
-  const [category, setCategory] = useState("");
-  const [places, setPlaces] = useState([]);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const city = searchParams.get("city");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResult, setSearchResult] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleInputChange = (e) => setSearchTerm(e.target.value);
 
   useEffect(() => {
-    if (category !== "") {
-      searchPlaces();
+    handleSearch();
+  }, []);
+
+  useEffect(() => {
+    if (searchTerm) {
+      handleSearch();
     }
-  }, [category]);
+  }, [searchTerm]);
 
-  const searchPlaces = () => {
-    const { kakao } = window;
-    const map = new kakao.maps.Map(document.getElementById("map"), {
-      center: new kakao.maps.LatLng(37.5665, 126.978),
-      level: 13,
-    });
+  const handleSearch = async () => {
+    const clientId = "tIYv4dIy_lgnmbEWd8Ws";
+    const clientSecret = "6aQbFlm8kR";
+    const apiLocalUrl = `/v1/search/local.json?query=${
+      city + "명소"
+    }&display=10`;
+    const apiBlogUrl = `/v1/search/blog.json?query=${city + "명소"}&display=10`;
 
-    const placesService = new kakao.maps.services.Places();
+    try {
+      const [localResponse, blogResponse] = await axios.all([
+        axios.get(apiLocalUrl, {
+          headers: {
+            "X-Naver-Client-Id": clientId,
+            "X-Naver-Client-Secret": clientSecret,
+          },
+        }),
+        axios.get(apiBlogUrl, {
+          headers: {
+            "X-Naver-Client-Id": clientId,
+            "X-Naver-Client-Secret": clientSecret,
+          },
+        }),
+      ]);
+      setSearchResult([
+        ...localResponse.data.items,
+        ...blogResponse.data.items,
+      ]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    const searchOptions = {
-      location: map.getCenter(),
-      radius: 1000,
-      category_group_code: category,
-      useMapBounds: true,
+  const handleItemSelected = (item) => setSelectedItem(item);
+
+  const handleCloseDetail = () => setSelectedItem(null);
+
+  const handleItemSend = async () => {
+    const sendData = {
+      placeName: selectedItem.title,
+      address: selectedItem.roadAddress,
+      userId: localStorage.getItem("userId"),
     };
-
-    placesService.categorySearch(
-      category,
-      (results, status) => {
-        if (status === kakao.maps.services.Status.OK) {
-          setPlaces(results);
-        }
-      },
-      searchOptions
-    );
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/bbgg/placesave",
+        sendData
+      );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
-    <div>
-      <select value={category} onChange={(e) => setCategory(e.target.value)}>
-        <option value="">카테고리 선택</option>
-        <option value="MT1">대형마트</option>
-        <option value="CS2">편의점</option>
-        <option value="CE7">카페</option>
-        <option value="AD5">학문/교육</option>
-        <option value="FD6">음식점</option>
-      </select>
+    <div className={classes.Food}>
+      <div className={classes.headerSpacer}></div>
+      <div className={classes.center}></div>
 
-      <div id="map" style={{ width: "100%", height: "500px" }}></div>
+      {selectedItem && (
+        <div className={classes.Food}>
+          <h1>{selectedItem.title}</h1>
+          <p>{selectedItem.category}</p>
+          <p>{selectedItem.roadAddress}</p>
 
-      <div>
-        {places.map((place) => (
-          <div key={place.id}>
-            <h3>{place.place_name}</h3>
-            <p>{place.address_name}</p>
-            <hr />
-          </div>
-        ))}
-      </div>
+          <p>{selectedItem.description}</p>
+          <button
+            className={`${classes.button} ${classes["button-close"]}`}
+            onClick={handleCloseDetail}
+          >
+            Close
+          </button>
+        </div>
+      )}
+
+      {searchResult.map((item) => (
+        <div className={classes.Food} key={item.title}>
+          <h2>{item.title}</h2>
+          <p>{item.category}</p>
+          <p>{item.roadAddress}</p>
+
+          <button
+            className={`${classes.button} ${classes["button-detail"]}`}
+            onClick={() => handleItemSelected(item)}
+          >
+            View Detail
+          </button>
+
+          {selectedItem && selectedItem === item && (
+            <button
+              className={`${classes.button} ${classes["button-send"]}`}
+              onClick={handleItemSend}
+            >
+              Send
+            </button>
+          )}
+        </div>
+      ))}
     </div>
   );
 };

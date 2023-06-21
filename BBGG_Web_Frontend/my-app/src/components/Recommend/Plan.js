@@ -143,6 +143,66 @@ const Plan = () => {
     }
   };
 
+  const handleFindShortestPath = async () => {
+    try {
+      const REST_API_KEY = "e40b35dcd31ca39d7233a07618a1aae2"; // 카카오디벨로퍼스에서 발급 받은 API 키 값
+      const getData = async () => {
+        try {
+          const response = await axios.get("http://localhost:8080/bbgg/pp", {
+            params: {
+              dong: localStorage.getItem("placeplan"),
+              userId: localStorage.getItem("userId"),
+            },
+          });
+          const parsedGps = response.data;
+          return parsedGps.map((gps) => ({
+            name: gps.placeName,
+            x: gps.lat,
+            y: gps.longitude,
+          }));
+        } catch (error) {
+          console.log(error);
+          return [];
+        }
+      };
+
+      const waypoints = await getData();
+      const data = {
+        origin: {
+          x: "127.11024293202674",
+          y: "37.394348634049784",
+        },
+        destination: {
+          x: "127.10860518470294",
+          y: "37.401999820065534",
+        },
+        waypoints: waypoints,
+        priority: "RECOMMEND",
+        car_fuel: "GASOLINE",
+        car_hipass: false,
+        alternatives: false,
+        road_details: false,
+      };
+
+      const response = await axios.post(
+        "https://apis-navi.kakaomobility.com/v1/waypoints/directions",
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `KakaoAK ${REST_API_KEY}`,
+          },
+        }
+      );
+
+      console.log(response.data); // 응답 데이터 처리 예시
+
+      // TODO: 응답 데이터를 상태로 저장하거나 필요한 작업을 수행
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div>
       <div
@@ -160,6 +220,7 @@ const Plan = () => {
           placeholder="Enter a location"
         />
         <button type="submit">Add Marker</button>
+        <button onClick={handleFindShortestPath}>최단경로 찾기</button>
       </form>
     </div>
   );
