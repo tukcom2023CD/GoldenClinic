@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import classes from "./Plan.module.css";
+import classes from "./PlanTrip.module.css";
 
 const PlanTrip = () => {
   const [visitedPlaces, setVisitedPlaces] = useState([]);
@@ -28,10 +28,10 @@ const PlanTrip = () => {
       .then((response) => {
         const cityJson = response.data;
         setVisitedPlaces(cityJson);
+      })
+      .catch((error) => {
+        console.error(error);
       });
-    // .catch((error) => {
-    //  console.error(error);
-    //});
   }, []);
 
   const handleClick = (placeplan) => {
