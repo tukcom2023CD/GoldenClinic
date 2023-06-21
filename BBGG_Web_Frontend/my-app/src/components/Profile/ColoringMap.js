@@ -11,7 +11,7 @@ const ProfileForm = () => {
     useEffect(() => {
         var mapContainer = document.getElementById('map'),
             mapOption = {
-                center: new kakao.maps.LatLng(37.45277794033423, 126.92151996899025),
+                center: new kakao.maps.LatLng(37.4948313, 126.8733483),
                 level: 9
             };
         var map = new kakao.maps.Map(mapContainer, mapOption);
@@ -98,19 +98,22 @@ const ProfileForm = () => {
 
     return (
         <div>
+      <div className={classes.headerSpacer}></div>
             <div id="map"
                 style={{
                     width: "100%",
                     height: '700px'
                 }}>
-            </div><button className={classes.top_btn} onClick={MarkSwitchBtn}>
+            </div>
+            <button className={classes.top_btn} onClick={MarkSwitchBtn}>
                 현재 위치 보기
             </button>
             <button className={classes.top_side_btn} onClick={ClusterSwitchBtn}>
                 클러스터로 보기
             </button>
             <div className={classes.percent}>
-                <DountChart color="#f62459" percent={(uniqueTextsCount / 5065)} size="65px" /></div>
+                <DountChart color="#f62459" percent={(uniqueTextsCount / 500)} size="65px" /></div>
+            {/* 원래 5056개임 */}
         </div>
     )
 }
