@@ -30,20 +30,20 @@ const MainPage = () => {
   }, [State]);
 
   const replace1 = () => {
-    window.location.replace("/CurrentLocation");
+    window.location.href = "/CurrentLocation";
   };
   const replace2 = () => {
-    window.location.replace("/ColoringMap");
+    window.location.href ="/ColoringMap";
   };
   const replace3 = () => {
-    window.location.replace("/Areafirst");
+    window.location.href ="/Areafirst";
   };
 
   const replace4 = () => {
-    window.location.replace("/LocalFood");
+    window.location.href ="/LocalFood";
   };
   const replace5 = () => {
-    window.location.replace("/HotPlace");
+    window.location.href ="/HotPlace";
   };
 
   return (
@@ -62,11 +62,6 @@ const MainPage = () => {
           <button className={classes.recommendImg3}>대전광역시</button>
           <button className={classes.recommendImg4}>대구광역시</button>
           <button className={classes.recommendImg5}>부산광역시</button>
-          <div className={classes.locationRecord}>
-            맛집/명소 검색
-            <button onClick={replace4}>맛집검색</button>
-            <button onClick={replace5}>명소검색</button>
-          </div>
         </div>
       </div>
       <div className={classes.underAdContainer}>
@@ -99,7 +94,10 @@ const MainPage = () => {
 
       <br />
 
-      <div></div>
+      <div className={classes.fixedBox}>
+            <button className = {classes.fixedBox1} onClick={replace4}>맛집 검색</button>
+            <button className = {classes.fixedBox2} onClick={replace5}>명소 검색</button>
+          </div>
     </div>
   );
 };
