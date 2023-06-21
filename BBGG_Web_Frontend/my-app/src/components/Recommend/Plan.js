@@ -17,8 +17,6 @@ const Plan = () => {
     mapContainer.style.width = "1200px";
     mapContainer.style.height = "800px";
 
-    map.relayout();
-
     const mapTypeControl = new kakao.maps.MapTypeControl();
     map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
@@ -54,7 +52,7 @@ const Plan = () => {
             console.log(gpsJson);
 
             parsedGps.forEach((gps) => {
-              const locPosition = new kakao.maps.LatLng(gps.lat, gps.longitude);
+              const locPosition = new kakao.maps.LatLng(gps.longitude, gps.lat);
               displayMarker(locPosition, "", gps.placeName);
             });
           });
