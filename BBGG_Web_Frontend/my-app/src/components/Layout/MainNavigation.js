@@ -43,23 +43,23 @@ const MainNavigation = () => {
       </Link>
       <nav>
         <ul>
-          <li>
+          {/* <li>
             <Link to="/Testing">{isLogin ? "Testing" : ""}</Link>
+          </li> */}
+          <li>
+            <Link to="/CurrentLocation">{isLogin ? "현재 위치" : ""}</Link>
           </li>
           <li>
-            <Link to="/CurrentLocation">{isLogin ? "Location" : ""}</Link>
+            <Link to="/ColoringMap">{isLogin ? "지도 색칠" : ""}</Link>
           </li>
           <li>
-            <Link to="/ColoringMap">{isLogin ? "Coloring" : ""}</Link>
+            <Link to="/Areafirst">{isLogin ? "동별 방문지" : ""}</Link>
           </li>
           <li>
-            <Link to="/Areafirst">{isLogin ? "Area_first" : ""}</Link>
+            <Link to="/PlanTrip">{isLogin ? "예정 장소" : ""}</Link>
           </li>
           <li>
-            <Link to="/PlanTrip">{isLogin ? "PlanTrip" : ""}</Link>
-          </li>
-          <li>
-            <Link to="/Plan">{isLogin ? "Plan" : ""}</Link>
+            <Link to="/Plan">{isLogin ? "여행 계획" : ""}</Link>
           </li>
           <li className={classes.NavName}>
             {isLogin ? localStorage.getItem("userName") + " 님" : ""}
