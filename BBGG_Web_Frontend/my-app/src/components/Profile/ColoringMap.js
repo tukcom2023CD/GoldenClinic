@@ -7,6 +7,7 @@ const ProfileForm = () => {
 
     const { kakao } = window;
     const [uniqueTextsCount, setUniqueTextsCount] = useState(0);
+    const [chartSize, setChartSize] = useState("large");
 
     useEffect(() => {
         var mapContainer = document.getElementById('map'),
@@ -50,6 +51,11 @@ const ProfileForm = () => {
                 })
             }; getData()
 
+            const handleChartAnimation = () => {
+                setChartSize("small");
+              };
+              setTimeout(handleChartAnimation, 2000);
+
             const getColoring = (text) => {
 
                 //폴리곤 중첩 방지 위해
@@ -90,10 +96,10 @@ const ProfileForm = () => {
     });
 
     const MarkSwitchBtn = () => {
-        window.location.replace('/CurrentLocation')
+        window.location.href = '/CurrentLocation'
     }
     const ClusterSwitchBtn = () => {
-        window.location.replace('/Cluster')
+        window.location.href = '/Cluster'
     }
 
     return (

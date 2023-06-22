@@ -1,12 +1,22 @@
+.parent {
+  width: 100%;
+  height: 100%;
+}
+
 .Food {
   background-size: cover;
   background-repeat: none;
   background-position: center;
   color: rgb(33, 166, 122);
-  padding: 20px 30px;
+  padding: 20px 50px;
   clear: both;
   min-height: 150px;
   border: #626014;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .center {
