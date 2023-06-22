@@ -77,8 +77,10 @@ const HotPlace = () => {
   };
 
   return (
-    <div className={classes.Food}>
+    <div className = {classes.parent}>
       <div className={classes.headerSpacer}></div>
+     <div className={classes.Food}>
+      {/* <div className={classes.headerSpacer}></div> */}
       <div className={classes.center}></div>
 
       {selectedItem && (
@@ -120,6 +122,7 @@ const HotPlace = () => {
           )}
         </div>
       ))}
+    </div>
     </div>
   );
 };

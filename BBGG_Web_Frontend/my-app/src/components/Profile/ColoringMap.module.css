@@ -39,14 +39,40 @@
   opacity: 1;
 }
 
-.percent {
-    position:fixed;
-    right: 10%;
-    bottom: 20%;
-    z-index: 9999;
-}
-
 .headerSpacer {
   height: 5rem;
   background-color: white;
+}
+
+.percent {
+  position: fixed;
+  right: 10%;
+  bottom: 20%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: all 1s ease-in-out;
+}
+
+.large {
+  width: 700px;
+  height: 700px;
+}
+
+.small {
+  width: 65px;
+  height: 65px;
+}
+
+.center {
+  right: auto;
+  bottom: auto;
+}
+
+.bottom-right {
+  right: 10%;
+  bottom: 20%;
+}
+
+.fontLarge {
+  font-size: 100px;
 }

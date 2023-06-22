@@ -65,7 +65,7 @@ function Food() {
   };
 
   return (
-    <div className={classes.Food}>
+    <div>
       <div className={classes.headerSpacer}></div>
       <div className= {classes.center}>
       <input
