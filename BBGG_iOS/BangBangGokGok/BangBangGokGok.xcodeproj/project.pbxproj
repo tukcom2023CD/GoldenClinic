@@ -13,6 +13,8 @@
 		3954A1CD2A0B5EFA008F512A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3954A1CC2A0B5EFA008F512A /* HomeViewController.swift */; };
 		396AF7DF29FA6293006B0CCD /* VisitedCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396AF7DE29FA6293006B0CCD /* VisitedCitiesViewController.swift */; };
 		396AF7E329FA7260006B0CCD /* RecommendCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396AF7E229FA7260006B0CCD /* RecommendCityViewController.swift */; };
+		396EC0902A42BAF90076C993 /* TripPlanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EC08F2A42BAF90076C993 /* TripPlanningViewController.swift */; };
+		396EC0972A436CA50076C993 /* PlanningCitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EC0962A436CA50076C993 /* PlanningCitiesTableViewController.swift */; };
 		39712CA629FA252C006963FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39712CA529FA252C006963FE /* TabBarController.swift */; };
 		39D212FC296BCB620023D0CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D212FB296BCB620023D0CF /* AppDelegate.swift */; };
 		39D212FE296BCB620023D0CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D212FD296BCB620023D0CF /* SceneDelegate.swift */; };
@@ -31,6 +33,8 @@
 		3954A1CC2A0B5EFA008F512A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = BangBangGokGok/Model/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		396AF7DE29FA6293006B0CCD /* VisitedCitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedCitiesViewController.swift; sourceTree = "<group>"; };
 		396AF7E229FA7260006B0CCD /* RecommendCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCityViewController.swift; sourceTree = "<group>"; };
+		396EC08F2A42BAF90076C993 /* TripPlanningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanningViewController.swift; sourceTree = "<group>"; };
+		396EC0962A436CA50076C993 /* PlanningCitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCitiesTableViewController.swift; sourceTree = "<group>"; };
 		39712CA529FA252C006963FE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		39D212F8296BCB620023D0CF /* BangBangGokGok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangBangGokGok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D212FB296BCB620023D0CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 		3954A1CA2A0B5E97008F512A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				396EC08F2A42BAF90076C993 /* TripPlanningViewController.swift */,
 				394EFBAD2A16561C0030509C /* RecommendCityCell.swift */,
 				396AF7DE29FA6293006B0CCD /* VisitedCitiesViewController.swift */,
 				39E9DD152A0CCDDD00F1AD86 /* VisitedPlacesViewController.swift */,
@@ -70,6 +75,7 @@
 				39236F4E29DC68D5009DCCF4 /* MapViewController.swift */,
 				393F08422987AA3400CE88E4 /* SignUpViewController.swift */,
 				3954A1CC2A0B5EFA008F512A /* HomeViewController.swift */,
+				396EC0962A436CA50076C993 /* PlanningCitiesTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,7 +252,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396EC0902A42BAF90076C993 /* TripPlanningViewController.swift in Sources */,
 				394EFBAE2A16561C0030509C /* RecommendCityCell.swift in Sources */,
+				396EC0972A436CA50076C993 /* PlanningCitiesTableViewController.swift in Sources */,
 				396AF7DF29FA6293006B0CCD /* VisitedCitiesViewController.swift in Sources */,
 				39D21300296BCB620023D0CF /* SignInViewController.swift in Sources */,
 				39D212FC296BCB620023D0CF /* AppDelegate.swift in Sources */,

@@ -10,7 +10,8 @@ import UIKit
 class RecommendCityViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var dataArr =  ["banner0.png", "banner1.png","banner2.png","banner3.png","banner4.png", "banner5.png", "banner6.png"]
+    var dataArr =  ["btn0.png", "btn1.png","btn2.png","btn3.png","btn4.png", "btn5.png", "btn6.png", "btn7.png", "btn8.png",
+                    "btn9.png", "btn10.png", "btn11.png", "btn12.png", "btn13.png", "btn14.png", "btn15.png", "btn16.png"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
