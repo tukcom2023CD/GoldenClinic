@@ -93,7 +93,9 @@ class SearchingViewController: UIViewController, UITableViewDataSource, UITableV
                 let alert = UIAlertController(title: "안내", message: "아직 제공하지 않는 검색어 입니다.\n 추후 업데이트 예정입니다.", preferredStyle: .alert)
                 
                 let action = UIAlertAction(title: "확인", style: .default, handler: { ACTION in
+                    self.tfSearch.text?.removeAll()
                     self.dataArray = []
+                    self.resultTableView.reloadData()
                 })
                 alert.addAction(action)
                 
