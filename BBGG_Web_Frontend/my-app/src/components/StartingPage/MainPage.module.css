@@ -144,10 +144,6 @@
   justify-content: center;
 }
 
-.fixedBox h1 {
-  margin-bottom: 10px;
-}
-
 .fixedBox button {
   margin: 5px;
   padding: 0;
@@ -158,10 +154,6 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: large;
-}
-
-.fixedBox button:hover {
-  transform: scale(1.02);
 }
 
 .fixedBox1 {
