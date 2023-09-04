@@ -10,16 +10,16 @@ const Areafirst = () => {
   const [districts, setDistricts] = useState([]);
   const navigate = useNavigate();
   const cityImages = [
-    "https://t1.daumcdn.net/cfile/tistory/996EB03D5F06B5CD31",
     "https://images.unsplash.com/photo-1516264665768-5525834929bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8JUVBJUIyJUJEJUVCJUIzJUI1JUVBJUI2JTgxJTIwJUVCJUFDJUI0JUVCJThBJUFDfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
+    "https://t1.daumcdn.net/cfile/tistory/996EB03D5F06B5CD31",
     "https://youimg1.tripcdn.com/target/0105e1200089ltwhz1FE7_C_800_10000.jpg",
+    "https://youimg1.tripcdn.com/target/100f1f000001gq90a8E91_C_640_320_R5_Q70.jpg_.webp?proc=source%2Ftrip",
     "https://cphoto.asiae.co.kr/listimglink/1/2023020114044210217_1675227882.jpg",
-    "https://youimg1.tripcdn.com/target/100f1f000001gq90a8E91_C_640_320_R5_Q70.jpg_.webp?proc=source%2Ftrip"
   ];
   
   const districtsImages = [
-    "https://static.news.zumst.com/images/25/2018/03/30/67736bb4ef064919b4a7a4a01066552d.jpg",
-    "https://mblogthumb-phinf.pstatic.net/MjAyMDEyMTBfMjQz/MDAxNjA3NTcxMjg1Mjkw.axsCQebkofVy9ozqHbYdQnqN24AkqhUqtDiBQ_J9ymsg.hgjxSQ7e9UbSIJ8uKDb2bN06dbUEWrjEwdRU8ic9guEg.JPEG.kjchol123/%EC%A3%BC%EC%82%B0%EC%A7%80-_%EA%B5%AD%EB%A6%BD%EA%B3%B5%EC%9B%90%EA%B3%B5%EB%8B%A81.jpg?type=w800",
+    "https://a.cdn-hotels.com/gdcs/production84/d288/5924730a-7ee1-4723-bc9e-f1be5b2ca901.jpg",
+    "https://mblogthumb-phinf.pstatic.net/MjAyMzAzMjVfMTI2/MDAxNjc5NzI2NjQ5MzY0.tfJ3FzY9fvpIuMsjwzkpNUNhOo8fkmqjqQ9A0Y7ysbsg.fUxUxBF4zBvO-OvgoDIzibeEoLfaXq-gmp6TEaQzLDwg.JPEG.tonygina/20230325%EF%BC%BF101629.jpg?type=w800",
     "https://www.korea.kr/newsWeb/resources/attaches/2019.11/27/PYH2019091103240001300.jpg",
     "https://img1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/18m1/image/0S_DBylhRNHZzijKdylJRbEsgJI.jpg",
     "https://dimg.donga.com/wps/NEWS/IMAGE/2023/02/27/118086448.2.jpg",
