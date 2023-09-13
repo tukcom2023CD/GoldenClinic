@@ -13,7 +13,16 @@
 		3954A1CD2A0B5EFA008F512A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3954A1CC2A0B5EFA008F512A /* HomeViewController.swift */; };
 		396AF7DF29FA6293006B0CCD /* VisitedCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396AF7DE29FA6293006B0CCD /* VisitedCitiesViewController.swift */; };
 		396AF7E329FA7260006B0CCD /* RecommendCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396AF7E229FA7260006B0CCD /* RecommendCityViewController.swift */; };
+		396EC0902A42BAF90076C993 /* TripPlanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EC08F2A42BAF90076C993 /* TripPlanningViewController.swift */; };
+		396EC0972A436CA50076C993 /* PlanningCitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EC0962A436CA50076C993 /* PlanningCitiesTableViewController.swift */; };
+		396EC0992A43DFF20076C993 /* SearchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EC0982A43DFF20076C993 /* SearchingViewController.swift */; };
 		39712CA629FA252C006963FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39712CA529FA252C006963FE /* TabBarController.swift */; };
+		39B45C992A43F9270058FE1A /* GallryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B45C982A43F9270058FE1A /* GallryViewController.swift */; };
+		39B45C9B2A43FF310058FE1A /* GalleryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B45C9A2A43FF310058FE1A /* GalleryViewCell.swift */; };
+		39B45CA02A441B950058FE1A /* DetailGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B45C9F2A441B950058FE1A /* DetailGalleryViewController.swift */; };
+		39B45CA22A441CD50058FE1A /* DetailImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B45CA12A441CD50058FE1A /* DetailImage.swift */; };
+		39B45CA42A442ED90058FE1A /* RecommendRegionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B45CA32A442ED90058FE1A /* RecommendRegionsViewController.swift */; };
+		39B45CA62A442EF70058FE1A /* RecommendRegionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B45CA52A442EF70058FE1A /* RecommendRegionsCollectionViewCell.swift */; };
 		39D212FC296BCB620023D0CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D212FB296BCB620023D0CF /* AppDelegate.swift */; };
 		39D212FE296BCB620023D0CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D212FD296BCB620023D0CF /* SceneDelegate.swift */; };
 		39D21300296BCB620023D0CF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D212FF296BCB620023D0CF /* SignInViewController.swift */; };
@@ -31,7 +40,16 @@
 		3954A1CC2A0B5EFA008F512A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = BangBangGokGok/Model/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		396AF7DE29FA6293006B0CCD /* VisitedCitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedCitiesViewController.swift; sourceTree = "<group>"; };
 		396AF7E229FA7260006B0CCD /* RecommendCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCityViewController.swift; sourceTree = "<group>"; };
+		396EC08F2A42BAF90076C993 /* TripPlanningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanningViewController.swift; sourceTree = "<group>"; };
+		396EC0962A436CA50076C993 /* PlanningCitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCitiesTableViewController.swift; sourceTree = "<group>"; };
+		396EC0982A43DFF20076C993 /* SearchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingViewController.swift; sourceTree = "<group>"; };
 		39712CA529FA252C006963FE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		39B45C982A43F9270058FE1A /* GallryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GallryViewController.swift; path = Pods/GallryViewController.swift; sourceTree = SOURCE_ROOT; };
+		39B45C9A2A43FF310058FE1A /* GalleryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewCell.swift; sourceTree = "<group>"; };
+		39B45C9F2A441B950058FE1A /* DetailGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGalleryViewController.swift; sourceTree = "<group>"; };
+		39B45CA12A441CD50058FE1A /* DetailImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImage.swift; sourceTree = "<group>"; };
+		39B45CA32A442ED90058FE1A /* RecommendRegionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendRegionsViewController.swift; sourceTree = "<group>"; };
+		39B45CA52A442EF70058FE1A /* RecommendRegionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendRegionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		39D212F8296BCB620023D0CF /* BangBangGokGok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangBangGokGok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D212FB296BCB620023D0CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39D212FD296BCB620023D0CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +79,13 @@
 		3954A1CA2A0B5E97008F512A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				39B45CA32A442ED90058FE1A /* RecommendRegionsViewController.swift */,
+				39B45CA52A442EF70058FE1A /* RecommendRegionsCollectionViewCell.swift */,
+				39B45C982A43F9270058FE1A /* GallryViewController.swift */,
+				396EC0982A43DFF20076C993 /* SearchingViewController.swift */,
+				396EC08F2A42BAF90076C993 /* TripPlanningViewController.swift */,
 				394EFBAD2A16561C0030509C /* RecommendCityCell.swift */,
+				39B45C9A2A43FF310058FE1A /* GalleryViewCell.swift */,
 				396AF7DE29FA6293006B0CCD /* VisitedCitiesViewController.swift */,
 				39E9DD152A0CCDDD00F1AD86 /* VisitedPlacesViewController.swift */,
 				39D212FF296BCB620023D0CF /* SignInViewController.swift */,
@@ -70,6 +94,8 @@
 				39236F4E29DC68D5009DCCF4 /* MapViewController.swift */,
 				393F08422987AA3400CE88E4 /* SignUpViewController.swift */,
 				3954A1CC2A0B5EFA008F512A /* HomeViewController.swift */,
+				396EC0962A436CA50076C993 /* PlanningCitiesTableViewController.swift */,
+				39B45C9F2A441B950058FE1A /* DetailGalleryViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -77,6 +103,7 @@
 		3954A1CB2A0B5EB2008F512A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				39B45CA12A441CD50058FE1A /* DetailImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,17 +273,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396EC0902A42BAF90076C993 /* TripPlanningViewController.swift in Sources */,
 				394EFBAE2A16561C0030509C /* RecommendCityCell.swift in Sources */,
+				39B45C992A43F9270058FE1A /* GallryViewController.swift in Sources */,
+				396EC0972A436CA50076C993 /* PlanningCitiesTableViewController.swift in Sources */,
 				396AF7DF29FA6293006B0CCD /* VisitedCitiesViewController.swift in Sources */,
 				39D21300296BCB620023D0CF /* SignInViewController.swift in Sources */,
 				39D212FC296BCB620023D0CF /* AppDelegate.swift in Sources */,
 				396AF7E329FA7260006B0CCD /* RecommendCityViewController.swift in Sources */,
 				393F08432987AA3400CE88E4 /* SignUpViewController.swift in Sources */,
 				3954A1CD2A0B5EFA008F512A /* HomeViewController.swift in Sources */,
+				39B45CA42A442ED90058FE1A /* RecommendRegionsViewController.swift in Sources */,
 				39712CA629FA252C006963FE /* TabBarController.swift in Sources */,
+				39B45C9B2A43FF310058FE1A /* GalleryViewCell.swift in Sources */,
+				39B45CA02A441B950058FE1A /* DetailGalleryViewController.swift in Sources */,
 				39236F4F29DC68D5009DCCF4 /* MapViewController.swift in Sources */,
+				39B45CA22A441CD50058FE1A /* DetailImage.swift in Sources */,
+				396EC0992A43DFF20076C993 /* SearchingViewController.swift in Sources */,
 				39D212FE296BCB620023D0CF /* SceneDelegate.swift in Sources */,
 				39E9DD162A0CCDDD00F1AD86 /* VisitedPlacesViewController.swift in Sources */,
+				39B45CA62A442EF70058FE1A /* RecommendRegionsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
